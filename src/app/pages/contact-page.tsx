@@ -115,10 +115,10 @@ export function ContactPage() {
                     <div>
                       <h3 className="font-semibold mb-1">Téléphone</h3>
                       <a 
-                        href="tel:+237600000000"
+                        href="tel:+237697765352"
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
-                        +237 6 00 00 00 00
+                        +237 697 765 352
                       </a>
                       <p className="text-sm text-muted-foreground mt-1">
                         Lun-Ven, 9h-18h (GMT+1)

@@ -3,7 +3,7 @@ import { Header } from "../components/header";
 import { Footer } from "../components/footer";
 import { ScrollToTop } from "../components/scroll-to-top";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
-import { Heart, Users, Globe, Target, Award, Zap } from "lucide-react";
+import { Heart, Users, Globe, Target, Award, Zap, BookOpen } from "lucide-react";
 import logo from "figma:asset/189dbb7d9fefdb250ffd1b5b14a8ba3709ee199d.png";
 import founderImage from "figma:asset/6850c23ad10a139a5e9a54a59e397bfad2fbcd1e.png";
 import founderPhoto from "figma:asset/581adecacb510194b718426d60054c54309cd477.png";
@@ -42,10 +42,30 @@ const values = [
 ];
 
 const stats = [
-  { value: "50 000+", label: "Utilisateurs actifs" },
-  { value: "8", label: "Langues disponibles" },
-  { value: "15 000+", label: "Leçons complétées/jour" },
-  { value: "4.8/5", label: "Note moyenne" }
+  { 
+    icon: "users",
+    value: "5 000+",
+    label: "Apprenants actifs pour l'année 1",
+    sub: "À travers l'Afrique"
+  },
+  { 
+    icon: "book",
+    value: "10+",
+    label: "Langues à venir",
+    sub: "Avec de nouvelles langues chaque mois"
+  },
+  { 
+    icon: "award",
+    value: "15 000+",
+    label: "Leçons complétées pour l'année 1",
+    sub: "Des milliers d'heures d'apprentissage"
+  },
+  { 
+    icon: "globe",
+    value: "25+",
+    label: "Pays représentés",
+    sub: "Une communauté mondiale"
+  }
 ];
 
 const team = [
@@ -142,28 +162,38 @@ export function AboutPage() {
           </div>
         </section>
 
-        {/* Statistiques */}
+        {/* Statistiques — cartes avec icônes */}
         <section className="py-16 bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5">
           <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="grid grid-cols-2 lg:grid-cols-4 gap-8"
-            >
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
               {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div 
-                    className="text-4xl md:text-5xl font-bold text-primary mb-2"
-                    style={{ fontFamily: 'var(--font-heading)' }}
-                  >
-                    {stat.value}
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="bg-background rounded-2xl p-6 shadow-sm flex flex-col items-center text-center gap-4"
+                >
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    {stat.icon === 'users' && <Users className="text-primary" size={22} />}
+                    {stat.icon === 'book' && <BookOpen className="text-primary" size={22} />}
+                    {stat.icon === 'award' && <Award className="text-primary" size={22} />}
+                    {stat.icon === 'globe' && <Globe className="text-primary" size={22} />}
                   </div>
-                  <div className="text-muted-foreground">{stat.label}</div>
-                </div>
+                  <div>
+                    <div
+                      className="text-4xl font-bold text-primary mb-1"
+                      style={{ fontFamily: 'var(--font-heading)' }}
+                    >
+                      {stat.value}
+                    </div>
+                    <div className="font-medium text-foreground text-sm mb-1">{stat.label}</div>
+                    <div className="text-xs text-muted-foreground">{stat.sub}</div>
+                  </div>
+                </motion.div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </section>
 

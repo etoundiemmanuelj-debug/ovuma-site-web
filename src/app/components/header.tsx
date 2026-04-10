@@ -39,12 +39,7 @@ export function Header() {
           >
             Blog
           </Link>
-          <Link 
-            to="/boutique"
-            className={`transition-colors text-sm lg:text-base ${location.pathname === '/boutique' ? 'text-primary font-medium' : 'text-foreground hover:text-primary'}`}
-          >
-            Boutique
-          </Link>
+
           <Link 
             to="/faq"
             className={`transition-colors text-sm lg:text-base ${location.pathname === '/faq' ? 'text-primary font-medium' : 'text-foreground hover:text-primary'}`}
@@ -94,13 +89,7 @@ export function Header() {
             >
               Blog
             </Link>
-            <Link
-              to="/boutique"
-              className={`transition-colors py-2.5 px-3 rounded-lg ${location.pathname === '/boutique' ? 'text-primary bg-primary/10 font-medium' : 'text-foreground hover:text-primary hover:bg-muted'}`}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Boutique
-            </Link>
+
             <Link
               to="/faq"
               className={`transition-colors py-2.5 px-3 rounded-lg ${location.pathname === '/faq' ? 'text-primary bg-primary/10 font-medium' : 'text-foreground hover:text-primary hover:bg-muted'}`}
