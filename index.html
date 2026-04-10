@@ -1,16 +1,29 @@
 
   <!DOCTYPE html>
-  <html lang="en">
+  <html lang="fr">
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Vitrine mobile-first pour Ovúmá</title>
+      <title>Ovúmá — Apprenez les langues africaines</title>
       <style>html, body { height: 100%; margin: 0; } #root { height: 100%; }</style>
+      <!-- Netlify Identity Widget : nécessaire pour gérer les invitations et réinitialisation de mot de passe -->
+      <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     </head>
 
     <body>
       <div id="root"></div>
       <script type="module" src="/src/main.tsx"></script>
+      <!-- Redirige vers /admin/ après connexion via lien d'invitation -->
+      <script>
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on("init", function(user) {
+            if (!user) {
+              window.netlifyIdentity.on("login", function() {
+                document.location.href = "/admin/";
+              });
+            }
+          });
+        }
+      </script>
     </body>
   </html>
-  
