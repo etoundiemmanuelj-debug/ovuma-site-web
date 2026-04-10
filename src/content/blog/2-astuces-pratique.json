@@ -1,12 +1,12 @@
 {
-  "id": 2,
-  "title": "5 astuces pour pratiquer tous les jours",
-  "category": "culture",
-  "date": "10 Mars 2026",
-  "author": "Pierre Nnanga",
-  "authorRole": "Lingusite",
-  "authorBio": "Enseignant chevronné de langues nationales à l'Université de Yaoundé I, Pierre est convaincu que chaque camerounais peut maîtriser au moins 3 langues.",
-  "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwbGVhcm5pbmclMjBjb2RlfGVufDB8fHx8MTc3NTY2NzQ3MHww&ixlib=rb-4.1.0&q=80&w=1080",
+  "authorRole": "",
   "excerpt": "Intégrez facilement l'apprentissage dans votre routine grâce à ces 5 conseils pratiques.",
-  "body": "<p>Il est souvent complexe de trouver le temps de s'imprégner d'une nouvelle langue sans résider dans son biotope naturel. Pourtant, des méthodes simples existent.</p><h2>1. Ecouter de la musique traditionnelle</h2><p>Le bikutsi, l'assiko, le makossa ou le mbolé... tous ces rythmes populaires utilisent les dialectes locaux. Cherchez à comprendre les paroles, c'est le moyen le plus simple d'acquérir du vocabulaire.</p><h2>2. Modifier la langue de son téléphone</h2><p>Une petite astuce pour les plus motivés : configurez vos applications pour qu'elles diffusent des notifications dans la langue que vous cherchez à maîtriser.</p>"
+  "body": "<p>Il est souvent complexe de trouver le temps de s'imprégner d'une nouvelle langue sans résider dans son biotope naturel. Pourtant, des méthodes simples existent.</p><h2>1. Ecouter de la musique traditionnelle</h2><p>Le bikutsi, l'assiko, le makossa ou le mbolé... tous ces rythmes populaires utilisent les dialectes locaux. Cherchez à comprendre les paroles, c'est le moyen le plus simple d'acquérir du vocabulaire.</p><h2>2. Modifier la langue de son téléphone</h2><p>Une petite astuce pour les plus motivés : configurez vos applications pour qu'elles diffusent des notifications dans la langue que vous cherchez à maîtriser.</p>",
+  "author": "Etoundi Emmanuel",
+  "date": "10 Mars 2026",
+  "title": "5 astuces pour pratiquer tous les jours",
+  "id": 2,
+  "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwbGVhcm5pbmclMjBjb2RlfGVufDB8fHx8MTc3NTY2NzQ3MHww&ixlib=rb-4.1.0&q=80&w=1080",
+  "authorBio": "",
+  "category": "culture"
 }
