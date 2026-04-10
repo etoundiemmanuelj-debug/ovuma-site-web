@@ -1,12 +1,12 @@
 {
-  "id": 1,
-  "title": "La méthode révolutionnaire pour apprendre",
-  "category": "apprentissage",
-  "date": "15 Mars 2026",
-  "author": "Dr. Jean Mendouga",
-  "authorRole": "Expert en Didactique",
-  "authorBio": "Auteur de nombreuses publications sur l'apprentissage des langues nationales au Cameroun. Docteur en lettres modernes.",
-  "image": "https://images.unsplash.com/photo-1577708082662-7f7223bdfbc1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXZlbG9wZXIlMjBsZWFybmluZ3xlbnwwfHx8fDE3NzU2Njc0NzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+  "authorRole": "",
   "excerpt": "Découvrez comment l'apprentissage espacé peut accélérer votre maîtrise des langues nationales.",
-  "body": "<p>La méthode de la répétition espacée n'est plus à démontrer en Occident, mais que se passe-t-il lorsque nous l'appliquons de manière ciblée à nos langues nationales très tonales et très contextuelles ? C'est ce que nous expérimentons avec une méthode révolutionnaire.</p><h2>L'importance du contexte</h2><p>Une langue nationale n'est pas seulement une suite de mots, c'est l'essence d'une société entière, sa philosophie, son rapport à la terre, à la chasse, et aux ancêtres. Apprendre en ignorant l'héritage culturel qui va avec est illusoire.</p><blockquote>L'apprentissage devient plus facile lorsqu'il s'ancre dans des rites ou des habitudes quotidiennes, par exemple cuisiner tout en nommant les ingrédients.</blockquote><p>L'application que nous développons a pour vocation de transposer cet esprit d'immersion via des scénarios pédagogiques authentiques et des situations de la vie courante au village ou en ville.</p>"
+  "body": "<p>La méthode de la répétition espacée n'est plus à démontrer en Occident, mais que se passe-t-il lorsque nous l'appliquons de manière ciblée à nos langues nationales très tonales et très contextuelles ? C'est ce que nous expérimentons avec une méthode révolutionnaire.</p><h2>L'importance du contexte</h2><p>Une langue nationale n'est pas seulement une suite de mots, c'est l'essence d'une société entière, sa philosophie, son rapport à la terre, à la chasse, et aux ancêtres. Apprendre en ignorant l'héritage culturel qui va avec est illusoire.</p><blockquote>L'apprentissage devient plus facile lorsqu'il s'ancre dans des rites ou des habitudes quotidiennes, par exemple cuisiner tout en nommant les ingrédients.</blockquote><p>L'application que nous développons a pour vocation de transposer cet esprit d'immersion via des scénarios pédagogiques authentiques et des situations de la vie courante au village ou en ville.</p>",
+  "author": "Etoundi Emmanuel",
+  "date": "15 Mars 2026",
+  "title": "La méthode révolutionnaire pour apprendre",
+  "id": 1,
+  "image": "https://images.unsplash.com/photo-1577708082662-7f7223bdfbc1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXZlbG9wZXIlMjBsZWFybmluZ3xlbnwwfHx8fDE3NzU2Njc0NzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+  "authorBio": "",
+  "category": "apprentissage"
 }
