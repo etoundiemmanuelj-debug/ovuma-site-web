@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1400" viewBox="0 0 900 1400" role="img" aria-labelledby="title desc">
+  <title id="title">Carte stylisée du Cameroun divisée en régions</title>
+  <desc id="desc">Carte vectorielle stylisée du Cameroun avec 10 régions: Extrême-Nord, Nord, Adamaoua, Est, Nord-Ouest, Ouest, Centre, Littoral, Sud-Ouest et Sud.</desc>
+  <style>
+    .region { stroke:#ffffff; stroke-width:6; }
+    .label { font-family: Arial, Helvetica, sans-serif; font-size:30px; font-weight:700; fill:#1f2937; text-anchor:middle; }
+    .small { font-size:24px; }
+    .outline { fill:none; stroke:#111827; stroke-width:8; stroke-linejoin:round; }
+    .sea { fill:#eef6ff; }
+  </style>
+
+  <rect class="sea" x="0" y="0" width="900" height="1400"/>
+
+  <!-- Régions -->
+  <g>
+    <polygon class="region" fill="#f4a261" points="420,60 500,75 565,105 615,150 655,200 640,235 590,250 520,240 460,215 405,175 385,120" />
+    <polygon class="region" fill="#e76f51" points="385,120 405,175 460,215 520,240 590,250 640,235 660,290 645,360 605,430 545,470 480,470 425,430 390,365 370,285" />
+    <polygon class="region" fill="#e9c46a" points="370,285 390,365 425,430 480,470 545,470 605,430 635,505 625,585 585,660 520,710 445,710 385,655 345,575 335,500" />
+    <polygon class="region" fill="#8ecae6" points="605,430 700,450 765,530 780,640 760,770 730,900 700,1030 665,1170 610,1310 545,1325 505,1275 525,1180 555,1085 575,975 585,860 580,750 585,660 625,585 635,505" />
+    <polygon class="region" fill="#90be6d" points="255,455 310,430 345,455 360,505 345,560 300,605 255,595 225,540 225,490" />
+    <polygon class="region" fill="#43aa8b" points="255,595 300,605 345,560 385,655 370,735 320,805 270,780 235,715 230,645" />
+    <polygon class="region" fill="#577590" points="385,655 445,710 520,710 580,750 585,860 520,915 445,950 370,925 330,865 320,805 370,735" />
+    <polygon class="region" fill="#2a9d8f" points="230,645 235,715 270,780 300,855 270,930 225,920 185,860 180,770 195,690" />
+    <polygon class="region" fill="#264653" points="180,770 185,860 225,920 270,930 290,995 265,1060 225,1110 190,1100 155,1030 145,930 150,840" />
+    <polygon class="region" fill="#a8dadc" points="290,995 370,925 445,950 520,915 575,975 555,1085 525,1180 505,1275 455,1330 385,1315 320,1265 275,1185 265,1060" />
+  </g>
+
+  <!-- Contour général -->
+  <path class="outline" d="M420,60
+    L500,75 L565,105 L615,150 L655,200 L660,290 L645,360 L635,505 L700,450 L765,530 L780,640 L760,770 L730,900
+    L700,1030 L665,1170 L610,1310 L545,1325 L455,1330 L385,1315 L320,1265 L275,1185 L225,1110 L190,1100 L155,1030
+    L145,930 L150,840 L180,770 L195,690 L225,540 L225,490 L255,455 L310,430 L335,500 L345,575 L320,805 L290,995
+    L265,1060 L290,995 L370,925 L385,655 L335,500 L370,285 L385,120 Z"/>
+
+  <!-- Libellés -->
+  <g>
+    <text class="label" x="520" y="165">Extrême-</text>
+    <text class="label" x="520" y="200">Nord</text>
+
+    <text class="label" x="510" y="355">Nord</text>
+
+    <text class="label small" x="500" y="575">Adamaoua</text>
+
+    <text class="label" x="675" y="860">Est</text>
+
+    <text class="label small" x="290" y="525">Nord-</text>
+    <text class="label small" x="290" y="555">Ouest</text>
+
+    <text class="label" x="300" y="705">Ouest</text>
+
+    <text class="label" x="455" y="830">Centre</text>
+
+    <text class="label small" x="225" y="850">Littoral</text>
+
+    <text class="label small" x="215" y="985">Sud-</text>
+    <text class="label small" x="215" y="1015">Ouest</text>
+
+    <text class="label" x="405" y="1145">Sud</text>
+  </g>
+</svg>

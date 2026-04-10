@@ -1,0 +1,119 @@
+import { motion } from "motion/react";
+import { Users, BookOpen, Award, Globe } from "lucide-react";
+import { AfricanPatternBg } from "./african-pattern-bg";
+
+const stats = [
+  {
+    icon: Users,
+    value: "5,000+",
+    label: "Apprenants actifs pour l'année 1",
+    description: "À travers l'Afrique",
+  },
+  {
+    icon: BookOpen,
+    value: "10+",
+    label: "Langues à venir",
+    description: "Avec de nouvelles langues chaque mois",
+  },
+  {
+    icon: Award,
+    value: "15,000+",
+    label: "Leçons complétées pour l'année 1",
+    description: "Des milliers d'heures d'apprentissage",
+  },
+  {
+    icon: Globe,
+    value: "25+",
+    label: "Pays représentés",
+    description: "Une communauté mondiale",
+  },
+];
+
+export function StatsSection() {
+  return (
+    <section className="py-16 md:py-24 relative overflow-hidden bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5">
+      <AfricanPatternBg variant="mixed" opacity={0.08} />
+      
+      <div className="container mx-auto px-4 relative z-10">
+        {/* En-tête */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
+          <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-4">
+            <span className="text-primary font-medium">Notre impact</span>
+          </div>
+          <h2 
+            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6"
+            style={{ fontFamily: 'var(--font-heading)' }}
+          >
+            Ensemble, nous faisons
+            <span className="block text-primary mt-2">la différence</span>
+          </h2>
+        </motion.div>
+
+        {/* Grille de statistiques */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto">
+          {stats.map((stat, index) => {
+            const Icon = stat.icon;
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-card rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 border border-border text-center group"
+              >
+                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform">
+                  <Icon size={32} className="text-primary" />
+                </div>
+                <div 
+                  className="text-4xl md:text-5xl font-bold text-primary mb-2"
+                  style={{ fontFamily: 'var(--font-heading)' }}
+                >
+                  {stat.value}
+                </div>
+                <div className="text-lg font-bold mb-2" style={{ fontFamily: 'var(--font-heading)' }}>
+                  {stat.label}
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  {stat.description}
+                </p>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Citation inspirante */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-16 max-w-4xl mx-auto"
+        >
+          <div className="bg-card/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-border">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-4xl">💬</span>
+              </div>
+              <blockquote 
+                className="text-xl md:text-2xl font-medium mb-4 text-foreground"
+                style={{ fontFamily: 'var(--font-heading)' }}
+              >
+                "Une langue qui meurt, c'est une vision du monde qui disparaît."
+              </blockquote>
+              <p className="text-muted-foreground italic">
+                — Proverbe africain
+              </p>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
