@@ -97,10 +97,10 @@ export function ContactPage() {
                     <div>
                       <h3 className="font-semibold mb-1">Email</h3>
                       <a 
-                        href="mailto:contact@ovuma.cm"
+                        href="mailto:contact@ovuma.org"
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
-                        contact@ovuma.cm
+                        contact@ovuma.org
                       </a>
                       <p className="text-sm text-muted-foreground mt-1">
                         Pour toute question générale
@@ -133,10 +133,10 @@ export function ContactPage() {
                     <div>
                       <h3 className="font-semibold mb-1">Adresse</h3>
                       <p className="text-muted-foreground">
-                        Yaoundé, Cameroun
+                        Douala rue Eto'o
                       </p>
                       <p className="text-sm text-muted-foreground mt-1">
-                        Quartier Bastos
+                        Bonamoussadi, Cameroun.
                       </p>
                     </div>
                   </div>

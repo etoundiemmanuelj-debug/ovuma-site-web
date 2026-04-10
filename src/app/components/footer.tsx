@@ -166,13 +166,13 @@ export function Footer() {
               <li className="flex items-start gap-2">
                 <MapPin size={18} className="text-primary flex-shrink-0 mt-1" />
                 <span className="text-background/80">
-                  Yaoundé, Cameroun
+                  Douala rue Eto'o, Bonamoussadi, Cameroun.
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <Mail size={18} className="text-primary flex-shrink-0 mt-1" />
-                <a href="mailto:contact@ovuma.cm" className="text-background/80 hover:text-primary transition-colors">
-                  contact@ovuma.cm
+                <a href="mailto:contact@ovuma.org" className="text-background/80 hover:text-primary transition-colors">
+                  contact@ovuma.org
                 </a>
               </li>
               <li className="flex items-start gap-2">
