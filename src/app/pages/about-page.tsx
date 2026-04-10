@@ -1,9 +1,9 @@
+import { Heart, Users, Globe, Target, Award, Zap, BookOpen } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { motion } from "motion/react";
 import { Header } from "../components/header";
 import { Footer } from "../components/footer";
 import { ScrollToTop } from "../components/scroll-to-top";
-import { ImageWithFallback } from "../components/figma/ImageWithFallback";
-import { Heart, Users, Globe, Target, Award, Zap, BookOpen } from "lucide-react";
 import logo from "figma:asset/189dbb7d9fefdb250ffd1b5b14a8ba3709ee199d.png";
 import founderImage from "figma:asset/6850c23ad10a139a5e9a54a59e397bfad2fbcd1e.png";
 import founderPhoto from "figma:asset/581adecacb510194b718426d60054c54309cd477.png";
@@ -11,33 +11,33 @@ import founderPhoto from "figma:asset/581adecacb510194b718426d60054c54309cd477.p
 const values = [
   {
     icon: Heart,
-    title: "Passion culturelle",
-    description: "Nous croyons profondément en la richesse de nos langues et cultures camerounaises."
+    titleKey: "about.values_items.passion.title",
+    descriptionKey: "about_page.values_desc.passion",
   },
   {
     icon: Users,
-    title: "Communauté",
-    description: "Nous construisons une communauté d'apprenants unis par l'amour de nos racines."
+    titleKey: "about.values_items.community.title",
+    descriptionKey: "about_page.values_desc.community",
   },
   {
     icon: Globe,
-    title: "Accessibilité",
-    description: "Rendre l'apprentissage des langues africaines accessible à tous, partout."
+    titleKey: "about.values_items.access.title",
+    descriptionKey: "about_page.values_desc.access",
   },
   {
     icon: Target,
-    title: "Excellence",
-    description: "Des contenus de qualité validés par des locuteurs natifs et linguistes experts."
+    titleKey: "about_page.values_items.excellence.title",
+    descriptionKey: "about_page.values_desc.excellence",
   },
   {
     icon: Award,
-    title: "Innovation",
-    description: "Utiliser la technologie pour préserver et transmettre notre patrimoine linguistique."
+    titleKey: "about_page.values_items.innovation.title",
+    descriptionKey: "about_page.values_desc.innovation",
   },
   {
     icon: Zap,
-    title: "Impact",
-    description: "Contribuer activement à la préservation des langues africaines pour les générations futures."
+    titleKey: "about_page.values_items.impact.title",
+    descriptionKey: "about_page.values_desc.impact",
   }
 ];
 
@@ -45,39 +45,40 @@ const stats = [
   { 
     icon: "users",
     value: "5 000+",
-    label: "Apprenants actifs pour l'année 1",
-    sub: "À travers l'Afrique"
+    labelKey: "stats.items.learners.label",
+    subKey: "stats.items.learners.desc"
   },
   { 
     icon: "book",
     value: "10+",
-    label: "Langues à venir",
-    sub: "Avec de nouvelles langues chaque mois"
+    labelKey: "stats.items.languages.label",
+    subKey: "stats.items.languages.desc"
   },
   { 
     icon: "award",
     value: "15 000+",
-    label: "Leçons complétées pour l'année 1",
-    sub: "Des milliers d'heures d'apprentissage"
+    labelKey: "stats.items.lessons.label",
+    subKey: "stats.items.lessons.desc"
   },
   { 
     icon: "globe",
     value: "25+",
-    label: "Pays représentés",
-    sub: "Une communauté mondiale"
+    labelKey: "stats.items.countries.label",
+    subKey: "stats.items.countries.desc"
   }
 ];
 
 const team = [
   {
     name: "Etoundi Emmanuel",
-    role: "Fondateur & CEO",
+    roleKey: "about_page.team.members.emmanuel.role",
     image: founderPhoto,
-    bio: "Professionnel du digital passionné par la valorisation des cultures et usages locaux. Initiateur d'Ovúmá, projet à la croisée de la technologie, de la pédagogie et de l'identité culturelle africaine."
+    bioKey: "about_page.team.members.emmanuel.bio"
   }
 ];
 
 export function AboutPage() {
+  const { t } = useTranslation();
   return (
     <>
       <ScrollToTop />
@@ -101,14 +102,12 @@ export function AboutPage() {
                 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
                 style={{ fontFamily: 'var(--font-heading)' }}
               >
-                Préserver notre héritage,
-                <span className="block text-primary mt-2">un mot à la fois</span>
+                {t('about_page.hero.title1')}
+                <span className="block text-primary mt-2">{t('about_page.hero.title2')}</span>
               </h1>
               
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                Ovúmá est née d'une passion profonde pour les langues africaines et d'une vision : 
-                utiliser la technologie pour préserver et transmettre notre riche patrimoine linguistique 
-                aux générations futures.
+                {t('about_page.hero.description')}
               </p>
             </motion.div>
           </div>
@@ -130,24 +129,14 @@ export function AboutPage() {
                     className="text-3xl md:text-4xl font-bold mb-6"
                     style={{ fontFamily: 'var(--font-heading)' }}
                   >
-                    Notre histoire
+                    {t('about_page.history.title')}
                   </h2>
                   <div className="space-y-4 text-muted-foreground leading-relaxed">
-                    <p>
-                      Tout a commencé par une conviction forte : celle que la richesse linguistique de l'Afrique ne doit pas disparaître, mais être réinventée.
-                    </p>
-                    <p>
-                      En tant que professionnel du digital, engagé dans la valorisation des cultures et des usages locaux, j'ai été confronté à une réalité préoccupante : une génération entière, notamment dans la diaspora, se déconnecte progressivement de ses langues maternelles.
-                    </p>
-                    <p>
-                      Face à ce constat, j'ai initié Ovúmá, un projet à la croisée de la technologie, de la pédagogie et de l'identité culturelle. Linguistes et locuteurs natif doublé de talents tech, j'ai conçu une solution innovante : une application mobile qui rend l'apprentissage des langues africaines accessible, moderne et engageant.
-                    </p>
-                    <p>
-                      Pensée comme une véritable expérience utilisateur, Ovúmá combine contenus structurés, immersion culturelle et approche intuitive, dans la continuité de mon engagement pour des produits digitaux utiles, impactants et bien conçus.
-                    </p>
-                    <p>
-                      Aujourd'hui, Ovúmá s'inscrit comme une plateforme en croissance, portée par une vision claire : reconnecter les africains à leurs racines et valoriser, à grande échelle, le patrimoine linguistique de l'afrique.
-                    </p>
+                    <p>{t('about_page.history.p1')}</p>
+                    <p>{t('about_page.history.p2')}</p>
+                    <p>{t('about_page.history.p3')}</p>
+                    <p>{t('about_page.history.p4')}</p>
+                    <p>{t('about_page.history.p5')}</p>
                   </div>
                 </div>
                 <div className="relative">
@@ -188,8 +177,8 @@ export function AboutPage() {
                     >
                       {stat.value}
                     </div>
-                    <div className="font-medium text-foreground text-sm mb-1">{stat.label}</div>
-                    <div className="text-xs text-muted-foreground">{stat.sub}</div>
+                    <div className="font-medium text-foreground text-sm mb-1">{t(stat.labelKey)}</div>
+                    <div className="text-xs text-muted-foreground">{t(stat.subKey)}</div>
                   </div>
                 </motion.div>
               ))}
@@ -211,10 +200,10 @@ export function AboutPage() {
                 className="text-3xl md:text-4xl font-bold mb-4"
                 style={{ fontFamily: 'var(--font-heading)' }}
               >
-                Nos valeurs
+                {t('about_page.values.title')}
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Les principes qui guident notre mission au quotidien
+                {t('about_page.values.subtitle')}
               </p>
             </motion.div>
 
@@ -235,10 +224,10 @@ export function AboutPage() {
                     className="text-xl font-bold mb-3"
                     style={{ fontFamily: 'var(--font-heading)' }}
                   >
-                    {value.title}
+                    {t(value.titleKey)}
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    {value.description}
+                    {t(value.descriptionKey)}
                   </p>
                 </motion.div>
               ))}
@@ -260,10 +249,10 @@ export function AboutPage() {
                 className="text-3xl md:text-4xl font-bold mb-4"
                 style={{ fontFamily: 'var(--font-heading)' }}
               >
-                Notre équipe
+                {t('about_page.team.title')}
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Des passionnés au service des langues et des cultures africaines
+                {t('about_page.team.subtitle')}
               </p>
             </motion.div>
 
@@ -291,9 +280,9 @@ export function AboutPage() {
                     >
                       {member.name}
                     </h3>
-                    <p className="text-primary font-medium mb-3">{member.role}</p>
+                    <p className="text-primary font-medium mb-3">{t(member.roleKey)}</p>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      {member.bio}
+                      {t(member.bioKey)}
                     </p>
                   </div>
                 </motion.div>
@@ -316,24 +305,23 @@ export function AboutPage() {
                 className="text-3xl md:text-4xl font-bold mb-6"
                 style={{ fontFamily: 'var(--font-heading)' }}
               >
-                Rejoignez notre mission
+                {t('about_page.cta.title')}
               </h2>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Ensemble, préservons et transmettons la richesse de nos langues africaines. 
-                Téléchargez Ovúmá et commencez votre voyage linguistique dès aujourd'hui.
+                {t('about_page.cta.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
                   href="#"
                   className="inline-block px-8 py-4 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all hover:scale-105 shadow-lg"
                 >
-                  Télécharger l'application
+                  {t('about_page.cta.button_download')}
                 </a>
                 <a 
                   href="/contact"
                   className="inline-block px-8 py-4 bg-background text-foreground border-2 border-primary rounded-full hover:bg-muted transition-all hover:scale-105"
                 >
-                  Nous contacter
+                  {t('about_page.cta.button_contact')}
                 </a>
               </div>
             </motion.div>

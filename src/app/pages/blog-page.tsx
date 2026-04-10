@@ -6,25 +6,36 @@ import { Calendar, Clock, ArrowRight, User } from "lucide-react";
 import { ScrollToTop } from "../components/scroll-to-top";
 import { useState } from "react";
 import { Link } from "react-router";
+import { useTranslation } from "react-i18next";
 
 const contentFiles = import.meta.glob("../../content/blog/*.json", { eager: true });
-const blogPostsRaw = Object.values(contentFiles).map((file: any) => file.default || file);
-const blogPosts = blogPostsRaw.map((post: any) => ({
-  id: post.id,
-  title: post.title,
-  excerpt: post.excerpt,
-  image: post.image,
-  author: post.author,
-  date: post.date,
-  readTime: "5 min", // Estimé par défaut
-  category: post.category ? post.category.charAt(0).toUpperCase() + post.category.slice(1) : "Autre",
-})).sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
-
-const categories = ["Tous", "Culture", "Apprentissage", "Linguistique"];
-
 export function BlogPage() {
+  const { t, i18n } = useTranslation();
+  const blogPostsRaw = Object.values(contentFiles).map((file: any) => file.default || file);
+
+  const blogPosts = blogPostsRaw.map((post: any) => {
+    const postKey = `post-${post.id}`;
+    return {
+      id: post.id,
+      title: t(`blog.posts_data.${postKey}.title`) || post.title,
+      excerpt: t(`blog.posts_data.${postKey}.excerpt`) || post.excerpt,
+      image: post.image,
+      author: post.author,
+      date: post.date,
+      readTime: "5 min",
+      category: post.category ? post.category.charAt(0).toUpperCase() + post.category.slice(1) : "Autre",
+    };
+  }).sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
   const [email, setEmail] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("Tous");
+
+  const categories = [
+    { id: "Tous", label: t('blog.categories.all') },
+    { id: "Culture", label: t('blog.categories.culture') },
+    { id: "Apprentissage", label: t('blog.categories.learning') },
+    { id: "Linguistique", label: t('blog.categories.linguistics') }
+  ];
 
   const filteredPosts = selectedCategory === "Tous" 
     ? blogPosts 
@@ -33,7 +44,7 @@ export function BlogPage() {
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
-      alert("Merci pour votre inscription à la newsletter !");
+      alert(t('blog.newsletter.success'));
       setEmail("");
     }
   };
@@ -54,20 +65,19 @@ export function BlogPage() {
               className="max-w-3xl mx-auto text-center"
             >
               <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-6">
-                <span className="text-primary font-medium">📚 Blog Ovúmá</span>
+                <span className="text-primary font-medium">{t('blog.hero.badge')}</span>
               </div>
               
               <h1 
                 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
                 style={{ fontFamily: 'var(--font-heading)' }}
               >
-                Explorez notre
-                <span className="block text-primary mt-2">univers linguistique</span>
+                {t('blog.hero.title1')}
+                <span className="block text-primary mt-2">{t('blog.hero.title2')}</span>
               </h1>
               
               <p className="text-lg md:text-xl text-muted-foreground">
-                Découvrez des articles, guides et témoignages sur les langues africaines, 
-                la culture et l'apprentissage.
+                {t('blog.hero.description')}
               </p>
             </motion.div>
           </div>
@@ -77,17 +87,17 @@ export function BlogPage() {
         <section className="py-8 border-b border-border bg-background sticky top-16 z-40">
           <div className="container mx-auto px-4">
             <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
-              {categories.map((category) => (
+              {categories.map((cat) => (
                 <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
+                  key={cat.id}
+                  onClick={() => setSelectedCategory(cat.id)}
                   className={`px-5 py-2 rounded-full whitespace-nowrap transition-all ${
-                    selectedCategory === category
+                    selectedCategory === cat.id
                       ? "bg-primary text-primary-foreground"
                       : "bg-muted hover:bg-muted/80 text-foreground"
                   }`}
                 >
-                  {category}
+                  {cat.label}
                 </button>
               ))}
             </div>
@@ -132,7 +142,7 @@ export function BlogPage() {
                         </div>
                         <div className="flex items-center gap-1">
                           <Clock size={14} />
-                          <span>{post.readTime}</span>
+                          <span>{t('blog.post.read_time', { time: 5 })}</span>
                         </div>
                       </div>
 
@@ -156,7 +166,7 @@ export function BlogPage() {
                           <span>{post.date}</span>
                         </div>
                         <div className="flex items-center gap-1 text-primary font-medium group-hover:gap-2 transition-all">
-                          <span>Lire</span>
+                          <span>{t('blog.post.read_more')}</span>
                           <ArrowRight size={16} />
                         </div>
                       </div>
@@ -198,26 +208,26 @@ export function BlogPage() {
                 className="text-3xl md:text-4xl font-bold mb-4"
                 style={{ fontFamily: 'var(--font-heading)' }}
               >
-                Restez informé
+                {t('blog.newsletter.title')}
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Recevez nos derniers articles et actualités directement dans votre boîte mail.
+                {t('blog.newsletter.description')}
               </p>
               <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Votre adresse email"
+                  placeholder={t('blog.newsletter.placeholder')}
                   required
                   className="flex-1 px-6 py-3 rounded-full border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                 />
                 <button type="submit" className="px-8 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all hover:scale-105 shadow-lg whitespace-nowrap">
-                  S'abonner
+                  {t('blog.newsletter.button')}
                 </button>
               </form>
               <p className="text-xs text-muted-foreground mt-4">
-                Pas de spam. Désinscription à tout moment.
+                {t('blog.newsletter.spam_notice')}
               </p>
             </motion.div>
           </div>

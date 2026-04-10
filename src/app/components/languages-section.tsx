@@ -1,52 +1,54 @@
 import { motion } from "motion/react";
 import { CheckCircle2 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const languages = [
   {
     name: "Ewondo",
-    region: "Centre, Cameroun",
-    level: "Débutant à Avancé",
+    regionKey: "languages.items.ewondo.region",
+    levelKey: "languages.items.ewondo.level",
     popular: true,
     available: true,
   },
   {
     name: "Duala",
-    region: "Littoral, Cameroun",
-    level: "Débutant à Avancé",
+    regionKey: "languages.items.duala.region",
+    levelKey: "languages.items.duala.level",
     popular: true,
     available: false,
   },
   {
     name: "Bassa",
-    region: "Centre & Littoral, Cameroun",
-    level: "Débutant à Intermédiaire",
+    regionKey: "languages.items.bassa.region",
+    levelKey: "languages.items.bassa.level",
     popular: false,
     available: false,
   },
   {
     name: "Fe'e fe'",
-    region: "Ouest, Cameroun",
-    level: "Débutant à Intermédiaire",
+    regionKey: "languages.items.feefe.region",
+    levelKey: "languages.items.feefe.level",
     popular: false,
     available: false,
   },
   {
     name: "Fulfulde",
-    region: "Nord, Cameroun",
-    level: "Débutant",
+    regionKey: "languages.items.fulfulde.region",
+    levelKey: "languages.items.fulfulde.level",
     popular: false,
     available: false,
   },
   {
     name: "Búlu",
-    region: "Centre & Sud, Cameroun",
-    level: "Débutant à Intermédiaire",
+    regionKey: "languages.items.bulu.region",
+    levelKey: "languages.items.bulu.level",
     popular: false,
     available: false,
   },
 ];
 
 export function LanguagesSection() {
+  const { t } = useTranslation();
   return (
     <section className="py-16 md:py-24 relative overflow-hidden">
       {/* Fond avec motifs */}
@@ -62,17 +64,17 @@ export function LanguagesSection() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <div className="inline-block px-4 py-2 bg-accent/10 rounded-full mb-4">
-            <span className="text-accent-foreground font-medium">Nos langues</span>
+            <span className="text-accent-foreground font-medium">{t('languages.badge')}</span>
           </div>
           <h2 
             className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            Découvrez la richesse
-            <span className="block text-primary mt-2">linguistique de l'Afrique</span>
+            {t('languages.title1')}
+            <span className="block text-primary mt-2">{t('languages.title2')}</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Plus de 10 langues disponibles, avec de nouveaux cours ajoutés régulièrement.
+            {t('languages.description')}
           </p>
         </motion.div>
 
@@ -90,14 +92,14 @@ export function LanguagesSection() {
               {/* Badge populaire */}
               {language.popular && (
                 <div className="absolute -top-3 -right-3 bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                  ⭐ Populaire
+                  ⭐ {t('languages.popular_badge')}
                 </div>
               )}
 
               {/* Badge à venir */}
               {!language.available && (
                 <div className="absolute -top-3 -right-3 bg-muted text-muted-foreground px-3 py-1 rounded-full text-xs font-bold shadow-lg border border-border">
-                  À venir
+                  {t('languages.coming_soon_badge')}
                 </div>
               )}
 
@@ -113,11 +115,11 @@ export function LanguagesSection() {
               <div className="space-y-2 mb-4">
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <span className="text-base">🗺️</span>
-                  <span>Région : {language.region}</span>
+                  <span>{t('languages.region_label')} {t(language.regionKey)}</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <span className="text-base">📚</span>
-                  <span>{language.level}</span>
+                  <span>{t(language.levelKey)}</span>
                 </div>
               </div>
 
@@ -126,7 +128,7 @@ export function LanguagesSection() {
                 <div className="flex items-start gap-2 text-sm">
                   <CheckCircle2 size={16} className="text-accent flex-shrink-0 mt-0.5" />
                   <span className="text-muted-foreground">
-                    Cours audio, exercices interactifs, culture & traditions
+                    {t('languages.included_features')}
                   </span>
                 </div>
               </div>
@@ -143,13 +145,13 @@ export function LanguagesSection() {
           className="text-center mt-12"
         >
           <p className="text-muted-foreground mb-6 text-lg">
-            ... et plus encore !
+            {t('languages.bottom_text')}
           </p>
           <a 
             href="#"
             className="inline-block px-8 py-4 bg-accent text-accent-foreground rounded-full hover:bg-accent/90 transition-all hover:scale-105 font-semibold shadow-lg"
           >
-            📱 Télécharger l'app
+            📱 {t('languages.download_button')}
           </a>
         </motion.div>
       </div>

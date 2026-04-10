@@ -1,9 +1,10 @@
+import { Plus, Minus } from "lucide-react";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { motion } from "motion/react";
 import { Header } from "../components/header";
 import { Footer } from "../components/footer";
 import { ScrollToTop } from "../components/scroll-to-top";
-import { Plus, Minus } from "lucide-react";
-import { useState } from "react";
 
 const faqData = [
   {
@@ -168,7 +169,10 @@ function FAQItem({ question, answer, isOpen, onToggle }: { question: string; ans
 }
 
 export function FAQPage() {
+  const { t } = useTranslation();
   const [openQuestions, setOpenQuestions] = useState<string[]>([]);
+
+  const faqCategories = t('faq.categories', { returnObjects: true }) as any[];
 
   const toggleQuestion = (id: string) => {
     setOpenQuestions(prev =>
@@ -194,20 +198,19 @@ export function FAQPage() {
               className="max-w-3xl mx-auto text-center"
             >
               <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-6">
-                <span className="text-primary font-medium">❓ Questions fréquentes</span>
+                <span className="text-primary font-medium">{t('faq.hero.badge')}</span>
               </div>
               
               <h1 
                 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
                 style={{ fontFamily: 'var(--font-heading)' }}
               >
-                Comment pouvons-nous
-                <span className="block text-primary mt-2">vous aider ?</span>
+                {t('faq.hero.title1')}
+                <span className="block text-primary mt-2">{t('faq.hero.title2')}</span>
               </h1>
               
               <p className="text-lg md:text-xl text-muted-foreground">
-                Trouvez rapidement des réponses à vos questions sur Ovúmá, 
-                l'apprentissage des langues africaines et notre application.
+                {t('faq.hero.description')}
               </p>
             </motion.div>
           </div>
@@ -217,9 +220,9 @@ export function FAQPage() {
         <section className="py-16 md:py-24">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto space-y-12">
-              {faqData.map((category, categoryIndex) => (
+              {faqCategories.map((category, categoryIndex) => (
                 <motion.div
-                  key={category.category}
+                  key={category.title}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -229,11 +232,11 @@ export function FAQPage() {
                     className="text-2xl md:text-3xl font-bold mb-6"
                     style={{ fontFamily: 'var(--font-heading)' }}
                   >
-                    {category.category}
+                    {category.title}
                   </h2>
                   
                   <div className="space-y-4">
-                    {category.questions.map((item) => (
+                    {category.questions.map((item: any) => (
                       <FAQItem
                         key={item.id}
                         question={item.question}
@@ -263,16 +266,16 @@ export function FAQPage() {
                 className="text-3xl md:text-4xl font-bold mb-4"
                 style={{ fontFamily: 'var(--font-heading)' }}
               >
-                Vous ne trouvez pas votre réponse ?
+                {t('faq.cta.title')}
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Notre équipe est là pour vous aider. Contactez-nous et nous vous répondrons dans les plus brefs délais.
+                {t('faq.cta.description')}
               </p>
               <a 
                 href="/contact"
                 className="inline-block px-8 py-4 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all hover:scale-105 shadow-lg"
               >
-                Nous contacter
+                {t('faq.cta.button')}
               </a>
             </motion.div>
           </div>

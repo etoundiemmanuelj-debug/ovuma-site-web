@@ -1,9 +1,11 @@
 import { Instagram, Youtube, Mail, MapPin, Phone, Apple, Linkedin } from "lucide-react";
 import { Link } from "react-router";
 import logo from "figma:asset/189dbb7d9fefdb250ffd1b5b14a8ba3709ee199d.png";
+import { useTranslation } from "react-i18next";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const { t } = useTranslation();
 
   return (
     <footer className="bg-foreground text-background py-12 md:py-16">
@@ -13,10 +15,10 @@ export function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
               <h3 className="text-xl md:text-2xl font-bold mb-2" style={{ fontFamily: 'var(--font-heading)' }}>
-                Téléchargez l'application Ovúmá
+                {t('footer.download_title')}
               </h3>
               <p className="text-background/80">
-                Disponible gratuitement sur iOS et Android
+                {t('footer.download_subtitle')}
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
@@ -57,8 +59,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-background/80 mb-4 leading-relaxed">
-              La première plateforme d'apprentissage des langues africaines. 
-              Reconnectez-vous à vos racines.
+              {t('footer.about_text')}
             </p>
             <div className="flex gap-3 flex-wrap">
               <a
@@ -112,27 +113,27 @@ export function Footer() {
           {/* Navigation */}
           <div>
             <h3 className="text-lg font-bold mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
-              Navigation
+              {t('footer.navigation')}
             </h3>
             <ul className="space-y-2">
               <li>
                 <Link to="/" className="text-background/80 hover:text-primary transition-colors">
-                  Accueil
+                  {t('footer.home')}
                 </Link>
               </li>
               <li>
                 <Link to="/a-propos" className="text-background/80 hover:text-primary transition-colors">
-                  À propos
+                  {t('footer.about')}
                 </Link>
               </li>
               <li>
                 <Link to="/blog" className="text-background/80 hover:text-primary transition-colors">
-                  Blog
+                  {t('footer.blog')}
                 </Link>
               </li>
               <li>
                 <Link to="/faq" className="text-background/80 hover:text-primary transition-colors">
-                  FAQ
+                  {t('footer.faq')}
                 </Link>
               </li>
             </ul>
@@ -141,17 +142,17 @@ export function Footer() {
           {/* Ressources */}
           <div>
             <h3 className="text-lg font-bold mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
-              Ressources
+              {t('footer.resources')}
             </h3>
             <ul className="space-y-2">
               <li>
                 <Link to="/cgu" className="text-background/80 hover:text-primary transition-colors">
-                  CGU
+                  {t('footer.cgu')}
                 </Link>
               </li>
               <li>
                 <Link to="/politique-de-confidentialite" className="text-background/80 hover:text-primary transition-colors">
-                  Politique de confidentialité
+                  {t('footer.privacy')}
                 </Link>
               </li>
             </ul>
@@ -160,13 +161,13 @@ export function Footer() {
           {/* Contact */}
           <div>
             <h3 className="text-lg font-bold mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
-              Contact
+              {t('footer.contact')}
             </h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
                 <MapPin size={18} className="text-primary flex-shrink-0 mt-1" />
                 <span className="text-background/80">
-                  Douala rue Eto'o, Bonamoussadi, Cameroun.
+                  Douala rue Eto'o, Bonamoussadi, {t('footer.country')}.
                 </span>
               </li>
               <li className="flex items-start gap-2">
@@ -189,17 +190,17 @@ export function Footer() {
         <div className="border-t border-background/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-background/70 text-sm text-center md:text-left">
-              © {currentYear} Ovúmá. Tous droits réservés. Fait avec ❤️ au Cameroun.
+              {t('footer.rights', { year: currentYear, country: t('footer.country') })}
             </p>
             <div className="flex gap-6 text-sm">
               <Link to="/cgu" className="text-background/70 hover:text-primary transition-colors">
-                Conditions d'utilisation
+                {t('footer.cgu')}
               </Link>
               <Link to="/politique-de-confidentialite" className="text-background/70 hover:text-primary transition-colors">
-                Politique de confidentialité
+                {t('footer.privacy')}
               </Link>
               <a href="#" className="text-background/70 hover:text-primary transition-colors">
-                Mentions légales
+                {t('footer.legal_mentions')}
               </a>
             </div>
           </div>

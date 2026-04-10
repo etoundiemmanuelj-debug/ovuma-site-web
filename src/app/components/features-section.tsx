@@ -1,46 +1,48 @@
 import { motion } from "motion/react";
 import { Book, Volume2, BookText, Sparkles, Globe, Trophy } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const features = [
   {
     icon: Book,
-    title: "Dictionnaire illustré",
-    description: "Des milliers de mots avec illustrations visuelles et prononciations authentiques par des locuteurs natifs.",
+    titleKey: "features.items.dict.title",
+    descKey: "features.items.dict.desc",
     color: "bg-primary/10 text-primary",
   },
   {
     icon: Volume2,
-    title: "Prononciation authentique",
-    description: "Écoutez et pratiquez avec des enregistrements de locuteurs natifs pour perfectionner votre accent.",
+    titleKey: "features.items.pronunciation.title",
+    descKey: "features.items.pronunciation.desc",
     color: "bg-accent/10 text-accent",
   },
   {
     icon: Sparkles,
-    title: "Parcours d'apprentissage",
-    description: "Des leçons structurées et progressives adaptées à votre niveau, du débutant à l'avancé.",
+    titleKey: "features.items.path.title",
+    descKey: "features.items.path.desc",
     color: "bg-secondary/10 text-secondary-foreground",
   },
   {
     icon: BookText,
-    title: "Proverbes & sagesse",
-    description: "Découvrez les proverbes traditionnels qui transmettent la sagesse ancestrale de nos cultures.",
+    titleKey: "features.items.proverbs.title",
+    descKey: "features.items.proverbs.desc",
     color: "bg-primary/10 text-primary",
   },
   {
     icon: Globe,
-    title: "Contes traditionnels",
-    description: "Plongez dans les histoires et contes qui font la richesse de notre patrimoine oral.",
+    titleKey: "features.items.tales.title",
+    descKey: "features.items.tales.desc",
     color: "bg-accent/10 text-accent",
   },
   {
     icon: Trophy,
-    title: "Apprentissage ludique",
-    description: "Progressez en jouant ! Collectez des points, débloquez des badges et relevez des défis.",
+    titleKey: "features.items.fun.title",
+    descKey: "features.items.fun.desc",
     color: "bg-secondary/10 text-secondary-foreground",
   },
 ];
 
 export function FeaturesSection() {
+  const { t } = useTranslation();
   return (
     <section id="fonctionnalites" className="py-16 md:py-24 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -53,17 +55,17 @@ export function FeaturesSection() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-4">
-            <span className="text-primary font-medium">Fonctionnalités</span>
+            <span className="text-primary font-medium">{t('features.badge')}</span>
           </div>
           <h2 
             className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            Tout ce dont vous avez besoin
-            <span className="block text-primary mt-2">pour réussir</span>
+            {t('features.title1')}
+            <span className="block text-primary mt-2">{t('features.title2')}</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Une plateforme complète pensée pour rendre l'apprentissage des langues africaines accessible et passionnant.
+            {t('features.description')}
           </p>
         </motion.div>
 
@@ -84,10 +86,10 @@ export function FeaturesSection() {
                   <Icon size={28} />
                 </div>
                 <h3 className="text-xl font-bold mb-3" style={{ fontFamily: 'var(--font-heading)' }}>
-                  {feature.title}
+                  {t(feature.titleKey)}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  {feature.description}
+                  {t(feature.descKey)}
                 </p>
               </motion.div>
             );

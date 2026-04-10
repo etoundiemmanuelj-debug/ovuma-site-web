@@ -1,35 +1,37 @@
 import { motion } from "motion/react";
 import { Star, Quote } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { useTranslation } from "react-i18next";
 
 const testimonials = [
   {
     name: "Amina Ndiaye",
-    role: "Étudiante en sociologie",
+    roleKey: "testimonials.items.1.role",
     location: "Yaoundé",
     image: "https://images.unsplash.com/photo-1513904989243-829fd07f1725?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYW1lcm9vbiUyMHlvdW5nJTIwcGVvcGxlJTIwaGFwcHl8ZW58MXx8fHwxNzc1NjY3NDY5fDA&ixlib=rb-4.1.0&q=80&w=1080",
-    content: "Ovúmá m'a permis de renouer avec mes racines béti. Les leçons sont captivantes et la communauté est incroyablement bienveillante. Je peux enfin parler avec ma grand-mère dans sa langue maternelle !",
+    contentKey: "testimonials.items.1.content",
     rating: 5,
   },
   {
     name: "Jean-Paul Mbida",
-    role: "Entrepreneur",
+    roleKey: "testimonials.items.2.role",
     location: "Douala",
     image: "https://images.unsplash.com/photo-1770843093640-c44ae557928b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwY2hpbGRyZW4lMjBjbGFzc3Jvb218ZW58MXx8fHwxNzc1NjY3NDcwfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    content: "En tant que chef d'entreprise, je comprends l'importance de nos langues locales. Ovúmá est l'outil parfait pour les transmettre à mes enfants tout en s'amusant.",
+    contentKey: "testimonials.items.2.content",
     rating: 5,
   },
   {
     name: "Marie Foko",
-    role: "Professeure de français",
+    roleKey: "testimonials.items.3.role",
     location: "Bamenda",
     image: "https://images.unsplash.com/photo-1633455153917-7651231ad61b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwd29tYW4lMjBzbWFydHBob25lJTIwbGVhcm5pbmd8ZW58MXx8fHwxNzc1NjY3NDY4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-    content: "L'approche pédagogique d'Ovúmá est remarquable. Mes élèves adorent apprendre le duala et l'ewondo grâce aux exercices interactifs et aux histoires culturelles.",
+    contentKey: "testimonials.items.3.content",
     rating: 5,
   },
 ];
 
 export function TestimonialsSection() {
+  const { t } = useTranslation();
   return (
     <section id="temoignages" className="py-16 md:py-24 bg-muted/30 relative overflow-hidden">
       {/* Motif décoratif */}
@@ -54,17 +56,17 @@ export function TestimonialsSection() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-4">
-            <span className="text-primary font-medium">Témoignages</span>
+            <span className="text-primary font-medium">{t('testimonials.badge')}</span>
           </div>
           <h2 
             className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            Ils ont transformé
-            <span className="block text-primary mt-2">leur vie avec Ovúmá</span>
+            {t('testimonials.title1')}
+            <span className="block text-primary mt-2">{t('testimonials.title2')}</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Rejoignez des milliers d'Africains qui redécouvrent et préservent leur héritage linguistique.
+            {t('testimonials.description')}
           </p>
         </motion.div>
 
@@ -93,7 +95,7 @@ export function TestimonialsSection() {
 
               {/* Contenu */}
               <p className="text-muted-foreground leading-relaxed mb-6">
-                "{testimonial.content}"
+                "{t(testimonial.contentKey)}"
               </p>
 
               {/* Profil */}
@@ -110,7 +112,7 @@ export function TestimonialsSection() {
                     {testimonial.name}
                   </div>
                   <div className="text-sm text-muted-foreground truncate">
-                    {testimonial.role}
+                    {t(testimonial.roleKey)}
                   </div>
                   <div className="text-xs text-muted-foreground">
                     📍 {testimonial.location}

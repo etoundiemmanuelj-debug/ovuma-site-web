@@ -2,8 +2,11 @@ import { motion } from "motion/react";
 import { Smartphone, Apple } from "lucide-react";
 import heroMockup from "figma:asset/c41a0fb54b9770faeb99fe21753bf67eb0dbfedd.png";
 import heroMockup2 from "figma:asset/4b96ede67dc3e538af5080f5fc15659af77cea85.png";
+import { useTranslation } from "react-i18next";
 
 export function HeroSection() {
+  const { t } = useTranslation();
+
   return (
     <section className="relative min-h-[90vh] md:min-h-[85vh] flex items-center justify-center overflow-hidden pt-24 pb-16 md:pt-32 md:pb-20">
       {/* Motif africain en arrière-plan */}
@@ -32,7 +35,7 @@ export function HeroSection() {
           >
             <div className="inline-block px-4 py-2 bg-secondary/20 rounded-full mb-6">
               <span className="text-secondary-foreground font-medium text-sm md:text-base">
-                Apprenez une langue africaine aujourd'hui
+                {t('hero.badge')}
               </span>
             </div>
             
@@ -40,15 +43,14 @@ export function HeroSection() {
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
               style={{ fontFamily: 'var(--font-heading)' }}
             >
-              (Re)connectez-vous
+              {t('hero.title1')}
               <span className="block text-primary mt-2">
-                à vos racines
+                {t('hero.title2')}
               </span>
             </h1>
             
             <p className="text-base md:text-lg lg:text-xl text-muted-foreground mb-8 max-w-xl mx-auto md:mx-0">
-              Découvrez l'ewondo, le bassa, le duala et plus encore. 
-              Une méthode ludique et interactive pour préserver notre héritage culturel.
+              {t('hero.description')}
             </p>
 
             {/* Boutons de téléchargement */}
@@ -59,7 +61,7 @@ export function HeroSection() {
               >
                 <Apple size={24} className="flex-shrink-0" />
                 <div className="text-left">
-                  <div className="text-xs opacity-90">Télécharger sur</div>
+                  <div className="text-xs opacity-90">{t('hero.download_on')}</div>
                   <div className="text-sm font-semibold -mt-0.5">App Store</div>
                 </div>
               </a>
@@ -72,14 +74,14 @@ export function HeroSection() {
                   <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
                 </svg>
                 <div className="text-left">
-                  <div className="text-xs opacity-90">Disponible sur</div>
+                  <div className="text-xs opacity-90">{t('hero.available_on')}</div>
                   <div className="text-sm font-semibold -mt-0.5">Google Play</div>
                 </div>
               </a>
             </div>
             
             <p className="text-sm text-muted-foreground mb-8 text-center md:text-left">
-              Gratuit • iOS 13+ & Android 8+
+              {t('hero.compatibility')}
             </p>
 
             {/* Stats */}
@@ -88,19 +90,19 @@ export function HeroSection() {
                 <div className="text-2xl md:text-3xl font-bold text-primary" style={{ fontFamily: 'var(--font-heading)' }}>
                   10+
                 </div>
-                <div className="text-xs md:text-sm text-muted-foreground mt-1">À venir</div>
+                <div className="text-xs md:text-sm text-muted-foreground mt-1">{t('hero.stats1')}</div>
               </div>
               <div className="text-center md:text-left">
                 <div className="text-2xl md:text-3xl font-bold text-primary" style={{ fontFamily: 'var(--font-heading)' }}>
                   50k+
                 </div>
-                <div className="text-xs md:text-sm text-muted-foreground mt-1">Apprenants attendus</div>
+                <div className="text-xs md:text-sm text-muted-foreground mt-1">{t('hero.stats2')}</div>
               </div>
               <div className="text-center md:text-left">
                 <div className="text-2xl md:text-3xl font-bold text-primary" style={{ fontFamily: 'var(--font-heading)' }}>
                   4.8/5
                 </div>
-                <div className="text-xs md:text-sm text-muted-foreground mt-1">Satisfaction visée</div>
+                <div className="text-xs md:text-sm text-muted-foreground mt-1">{t('hero.stats3')}</div>
               </div>
             </div>
           </motion.div>

@@ -1,8 +1,9 @@
+import { ShoppingCart, Clock, Star, TrendingUp } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { motion } from "motion/react";
 import { Header } from "../components/header";
 import { Footer } from "../components/footer";
 import { ScrollToTop } from "../components/scroll-to-top";
-import { ShoppingCart, Clock, Star, TrendingUp } from "lucide-react";
 
 interface Product {
   id: string;
@@ -78,6 +79,69 @@ const products: Product[] = [
 ];
 
 export function BoutiquePage() {
+  const { t } = useTranslation();
+
+  const products: Product[] = [
+    {
+      id: "tshirt-ovuma",
+      name: t('shop.products_data.tshirt.name'),
+      category: "Vêtement",
+      price: "8 500 FCFA",
+      image: "https://images.unsplash.com/photo-1615406092575-109dab98bd9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwcHJpbnQlMjB0LXNoaXJ0JTIwbW9ja3VwfGVufDF8fHx8MTc3NTc0MjA3OHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      description: t('shop.products_data.tshirt.desc'),
+      colors: [t('shop.products_data.colors.black'), t('shop.products_data.colors.green'), t('shop.products_data.colors.white'), t('shop.products_data.colors.gold')],
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      badge: t('shop.badges.popular')
+    },
+    {
+      id: "sweatshirt-ovuma",
+      name: t('shop.products_data.sweatshirt.name'),
+      category: "Vêtement",
+      price: "15 000 FCFA",
+      image: "https://images.unsplash.com/photo-1661181402854-8c9408409e9f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxibGFjayUyMHN3ZWF0c2hpcnQlMjBtb2NrdXB8ZW58MXx8fHwxNzc1NzQyMDc4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      description: t('shop.products_data.sweatshirt.desc'),
+      colors: [t('shop.products_data.colors.black'), t('shop.products_data.colors.dark_green'), t('shop.products_data.colors.grey')],
+      sizes: ["S", "M", "L", "XL", "XXL"]
+    },
+    {
+      id: "polo-ovuma",
+      name: t('shop.products_data.polo.name'),
+      category: "Vêtement",
+      price: "12 000 FCFA",
+      image: "https://images.unsplash.com/photo-1744702590394-5dc0dfe3776b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwb2xvJTIwc2hpcnQlMjBncmVlbiUyMG1vY2t1cHxlbnwxfHx8fDE3NzU3NDIwNzl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      description: t('shop.products_data.polo.desc'),
+      colors: [t('shop.products_data.colors.green'), t('shop.products_data.colors.white'), t('shop.products_data.colors.black')],
+      sizes: ["S", "M", "L", "XL", "XXL"]
+    },
+    {
+      id: "casquette-ovuma",
+      name: t('shop.products_data.casquette.name'),
+      category: "Vêtement",
+      price: "5 500 FCFA",
+      image: "https://images.unsplash.com/photo-1691256676359-20e5c6d4bc92?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYXNlYmFsbCUyMGNhcCUyMG1vY2t1cCUyMGJsYWNrfGVufDF8fHx8MTc3NTc0MjA3OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      description: t('shop.products_data.casquette.desc'),
+      colors: [t('shop.products_data.colors.black'), t('shop.products_data.colors.green'), t('shop.products_data.colors.beige')],
+      badge: t('shop.badges.new')
+    },
+    {
+      id: "livre-ewondo",
+      name: t('shop.products_data.livre_ewondo.name'),
+      category: "Livre",
+      price: "7 500 FCFA",
+      image: "https://images.unsplash.com/photo-1556713300-38f9ab6dce30?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwbGFuZ3VhZ2UlMjBib29rfGVufDF8fHx8MTc3NTc0MjA3OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      description: t('shop.products_data.livre_ewondo.desc'),
+      badge: t('shop.badges.popular')
+    },
+    {
+      id: "livre-proverbes",
+      name: t('shop.products_data.livre_proverbes.name'),
+      category: "Livre",
+      price: "6 000 FCFA",
+      image: "https://images.unsplash.com/photo-1622555063306-9930f396f051?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdWx0dXJhbCUyMGVkdWNhdGlvbiUyMGJvb2t8ZW58MXx8fHwxNzc1NzQyMDc5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      description: t('shop.products_data.livre_proverbes.desc')
+    }
+  ];
+
   return (
     <>
       <ScrollToTop />
@@ -94,34 +158,33 @@ export function BoutiquePage() {
               className="max-w-4xl mx-auto text-center"
             >
               <div className="inline-block px-4 py-2 bg-accent/10 rounded-full mb-6">
-                <span className="text-accent-foreground font-medium">🛍️ Boutique Ovúmá</span>
+                <span className="text-accent-foreground font-medium">{t('shop.hero.badge')}</span>
               </div>
               
               <h1 
                 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
                 style={{ fontFamily: 'var(--font-heading)' }}
               >
-                Portez vos racines
-                <span className="block text-primary mt-2">avec fierté</span>
+                {t('shop.hero.title1')}
+                <span className="block text-primary mt-2">{t('shop.hero.title2')}</span>
               </h1>
               
               <p className="text-lg md:text-xl text-muted-foreground mb-8">
-                Découvrez notre collection exclusive de vêtements et livres Ovúmá. 
-                Tous les produits sont en précommande avec livraison prévue sous 3-4 semaines.
+                {t('shop.hero.description')}
               </p>
 
               <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
                 <div className="flex items-center gap-2">
                   <Clock className="text-primary" size={20} />
-                  <span>Précommande ouverte</span>
+                  <span>{t('shop.hero.features.preorder')}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <TrendingUp className="text-primary" size={20} />
-                  <span>Livraison 3-4 semaines</span>
+                  <span>{t('shop.hero.features.delivery')}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Star className="text-primary" size={20} />
-                  <span>Qualité premium</span>
+                  <span>{t('shop.hero.features.quality')}</span>
                 </div>
               </div>
             </motion.div>
@@ -132,7 +195,7 @@ export function BoutiquePage() {
         <section className="py-6 bg-accent text-accent-foreground">
           <div className="container mx-auto px-4">
             <p className="text-center text-sm md:text-base font-medium">
-              🎉 <strong>Précommande spéciale :</strong> Commandez maintenant et bénéficiez de la livraison gratuite pour toute commande supérieure à 20 000 FCFA
+              {t('shop.banner')}
             </p>
           </div>
         </section>
@@ -151,10 +214,10 @@ export function BoutiquePage() {
                 className="text-3xl md:text-4xl font-bold mb-4 text-center"
                 style={{ fontFamily: 'var(--font-heading)' }}
               >
-                Vêtements & Accessoires
+                {t('shop.sections.clothing.title')}
               </h2>
               <p className="text-center text-muted-foreground">
-                Exprimez votre attachement aux cultures africaines
+                {t('shop.sections.clothing.subtitle')}
               </p>
             </motion.div>
 
@@ -179,7 +242,7 @@ export function BoutiquePage() {
                     {/* Badge Précommande */}
                     <div className="absolute top-4 left-4 z-10 px-3 py-1 bg-primary text-primary-foreground rounded-full text-xs font-bold shadow-lg flex items-center gap-1">
                       <Clock size={12} />
-                      Précommande
+                      {t('shop.product.preorder_badge')}
                     </div>
 
                     {/* Image */}
@@ -207,7 +270,7 @@ export function BoutiquePage() {
                       {/* Couleurs */}
                       {product.colors && (
                         <div className="mb-3">
-                          <p className="text-xs text-muted-foreground mb-2">Couleurs disponibles :</p>
+                          <p className="text-xs text-muted-foreground mb-2">{t('shop.product.colors_label')}</p>
                           <div className="flex flex-wrap gap-2">
                             {product.colors.map((color, idx) => (
                               <span key={idx} className="text-xs px-2 py-1 bg-muted rounded-full">
@@ -221,7 +284,7 @@ export function BoutiquePage() {
                       {/* Tailles */}
                       {product.sizes && (
                         <div className="mb-4">
-                          <p className="text-xs text-muted-foreground mb-2">Tailles :</p>
+                          <p className="text-xs text-muted-foreground mb-2">{t('shop.product.sizes_label')}</p>
                           <div className="flex flex-wrap gap-2">
                             {product.sizes.map((size, idx) => (
                               <span key={idx} className="text-xs px-2 py-1 bg-muted rounded-full">
@@ -262,10 +325,10 @@ export function BoutiquePage() {
                 className="text-3xl md:text-4xl font-bold mb-4 text-center"
                 style={{ fontFamily: 'var(--font-heading)' }}
               >
-                Livres & Publications
+                {t('shop.sections.books.title')}
               </h2>
               <p className="text-center text-muted-foreground">
-                Approfondissez vos connaissances linguistiques et culturelles
+                {t('shop.sections.books.subtitle')}
               </p>
             </motion.div>
 
@@ -290,7 +353,7 @@ export function BoutiquePage() {
                     {/* Badge Précommande */}
                     <div className="absolute top-4 left-4 z-10 px-3 py-1 bg-primary text-primary-foreground rounded-full text-xs font-bold shadow-lg flex items-center gap-1">
                       <Clock size={12} />
-                      Précommande
+                      {t('shop.product.preorder_badge')}
                     </div>
 
                     {/* Image */}
@@ -359,23 +422,23 @@ export function BoutiquePage() {
                   className="text-3xl md:text-4xl font-bold mb-4"
                   style={{ fontFamily: 'var(--font-heading)' }}
                 >
-                  Des questions sur votre commande ?
+                  {t('shop.cta.title')}
                 </h2>
                 <p className="text-muted-foreground mb-8 text-lg">
-                  Notre équipe est là pour vous accompagner. Contactez-nous pour toute question sur les produits, les tailles ou la livraison.
+                  {t('shop.cta.description')}
                 </p>
                 <div className="flex flex-wrap gap-4 justify-center">
                   <a 
                     href="/contact"
                     className="px-8 py-4 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all hover:scale-105 font-semibold shadow-lg"
                   >
-                    Nous contacter
+                    {t('shop.cta.contact')}
                   </a>
                   <a 
                     href="#"
                     className="px-8 py-4 bg-secondary text-secondary-foreground rounded-full hover:bg-secondary/90 transition-all hover:scale-105 font-semibold shadow-lg"
                   >
-                    Guide des tailles
+                    {t('shop.cta.size_guide')}
                   </a>
                 </div>
               </div>
@@ -397,9 +460,9 @@ export function BoutiquePage() {
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Clock className="text-primary" size={28} />
                 </div>
-                <h3 className="font-bold mb-2">Précommande</h3>
+                <h3 className="font-bold mb-2">{t('shop.info.preorder.title')}</h3>
                 <p className="text-sm text-muted-foreground">
-                  Commandez maintenant, recevez sous 3-4 semaines
+                  {t('shop.info.preorder.desc')}
                 </p>
               </motion.div>
 
@@ -413,9 +476,9 @@ export function BoutiquePage() {
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Star className="text-primary" size={28} />
                 </div>
-                <h3 className="font-bold mb-2">Qualité garantie</h3>
+                <h3 className="font-bold mb-2">{t('shop.info.quality.title')}</h3>
                 <p className="text-sm text-muted-foreground">
-                  Matériaux premium et finitions soignées
+                  {t('shop.info.quality.desc')}
                 </p>
               </motion.div>
 
@@ -429,9 +492,9 @@ export function BoutiquePage() {
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <TrendingUp className="text-primary" size={28} />
                 </div>
-                <h3 className="font-bold mb-2">Livraison suivie</h3>
+                <h3 className="font-bold mb-2">{t('shop.info.delivery.title')}</h3>
                 <p className="text-sm text-muted-foreground">
-                  Tracking de votre commande en temps réel
+                  {t('shop.info.delivery.desc')}
                 </p>
               </motion.div>
             </div>

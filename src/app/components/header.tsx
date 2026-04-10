@@ -2,11 +2,13 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router";
 import logo from "figma:asset/189dbb7d9fefdb250ffd1b5b14a8ba3709ee199d.png";
+import { useTranslation } from "react-i18next";
+import { LanguageSwitcher } from "./language-switcher";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const isHomePage = location.pathname === "/";
+  const { t } = useTranslation();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
@@ -25,19 +27,19 @@ export function Header() {
             to="/" 
             className={`transition-colors text-sm lg:text-base ${location.pathname === '/' ? 'text-primary font-medium' : 'text-foreground hover:text-primary'}`}
           >
-            Accueil
+            {t('header.home')}
           </Link>
           <Link 
             to="/a-propos" 
             className={`transition-colors text-sm lg:text-base ${location.pathname === '/a-propos' ? 'text-primary font-medium' : 'text-foreground hover:text-primary'}`}
           >
-            À propos
+            {t('header.about')}
           </Link>
           <Link 
             to="/blog"
             className={`transition-colors text-sm lg:text-base ${location.pathname === '/blog' ? 'text-primary font-medium' : 'text-foreground hover:text-primary'}`}
           >
-            Blog
+            {t('header.blog')}
           </Link>
 
           <Link 
@@ -50,18 +52,23 @@ export function Header() {
             to="/contact"
             className={`transition-colors text-sm lg:text-base ${location.pathname === '/contact' ? 'text-primary font-medium' : 'text-foreground hover:text-primary'}`}
           >
-            Contact
+            {t('header.contact')}
           </Link>
+
+          <LanguageSwitcher />
         </div>
 
         {/* Mobile Menu Button */}
-        <button
-          className="md:hidden p-2 hover:bg-muted rounded-lg transition-colors"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex md:hidden items-center gap-4">
+          <LanguageSwitcher />
+          <button
+            className="p-2 hover:bg-muted rounded-lg transition-colors"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Menu */}
@@ -73,21 +80,21 @@ export function Header() {
               className={`transition-colors py-2.5 px-3 rounded-lg ${location.pathname === '/' ? 'text-primary bg-primary/10 font-medium' : 'text-foreground hover:text-primary hover:bg-muted'}`}
               onClick={() => setMobileMenuOpen(false)}
             >
-              Accueil
+              {t('header.home')}
             </Link>
             <Link
               to="/a-propos"
               className={`transition-colors py-2.5 px-3 rounded-lg ${location.pathname === '/a-propos' ? 'text-primary bg-primary/10 font-medium' : 'text-foreground hover:text-primary hover:bg-muted'}`}
               onClick={() => setMobileMenuOpen(false)}
             >
-              À propos
+              {t('header.about')}
             </Link>
             <Link
               to="/blog"
               className={`transition-colors py-2.5 px-3 rounded-lg ${location.pathname === '/blog' ? 'text-primary bg-primary/10 font-medium' : 'text-foreground hover:text-primary hover:bg-muted'}`}
               onClick={() => setMobileMenuOpen(false)}
             >
-              Blog
+              {t('header.blog')}
             </Link>
 
             <Link
@@ -102,7 +109,7 @@ export function Header() {
               className={`transition-colors py-2.5 px-3 rounded-lg ${location.pathname === '/contact' ? 'text-primary bg-primary/10 font-medium' : 'text-foreground hover:text-primary hover:bg-muted'}`}
               onClick={() => setMobileMenuOpen(false)}
             >
-              Contact
+              {t('header.contact')}
             </Link>
           </div>
         </div>

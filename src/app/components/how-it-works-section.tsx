@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { useTranslation } from "react-i18next";
 import mockup1 from "figma:asset/99d51b7d4bc296e70828c5bf2f36defb1dfaeaa9.png";
 import mockup2 from "figma:asset/694f48c740150aaa8d55f69ddd1c258fac779de3.png";
 import mockup3 from "figma:asset/2ccc8976f1a18f0ec5a6ebb45085f3fdd30a715e.png";
@@ -8,30 +9,31 @@ const steps = [
   {
     image: mockup1,
     number: "01",
-    title: "Choisissez votre langue",
-    description: "Sélectionnez la langue africaine que vous souhaitez apprendre parmi nos langues disponibles : ewondo, duala, bassa, bamiléké et plus encore.",
+    titleKey: "how_it_works.steps.1.title",
+    descKey: "how_it_works.steps.1.desc",
   },
   {
     image: mockup2,
     number: "02",
-    title: "Suivez votre parcours",
-    description: "Progressez étape par étape avec nos parcours d'apprentissage structurés. Chaque leçon vous rapproche de la maîtrise de la langue.",
+    titleKey: "how_it_works.steps.2.title",
+    descKey: "how_it_works.steps.2.desc",
   },
   {
     image: mockup3,
     number: "03",
-    title: "Explorez le dictionnaire",
-    description: "Accédez à des milliers de mots avec illustrations, prononciations authentiques, exemples d'usage et expressions idiomatiques.",
+    titleKey: "how_it_works.steps.3.title",
+    descKey: "how_it_works.steps.3.desc",
   },
   {
     image: mockup4,
     number: "04",
-    title: "Apprenez en contexte",
-    description: "Découvrez chaque mot avec un contexte visuel, sa prononciation, sa traduction et des exemples d'usage dans la vie quotidienne.",
+    titleKey: "how_it_works.steps.4.title",
+    descKey: "how_it_works.steps.4.desc",
   },
 ];
 
 export function HowItWorksSection() {
+  const { t } = useTranslation();
   return (
     <section id="comment-ca-marche" className="py-16 md:py-24 relative overflow-hidden">
       {/* Fond décoratif */}
@@ -50,17 +52,17 @@ export function HowItWorksSection() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <div className="inline-block px-4 py-2 bg-accent/10 rounded-full mb-4">
-            <span className="text-accent-foreground font-medium">Comment ça marche</span>
+            <span className="text-accent-foreground font-medium">{t('how_it_works.badge')}</span>
           </div>
           <h2 
             className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            Commencez votre voyage
-            <span className="block text-primary mt-2">en 4 étapes simples</span>
+            {t('how_it_works.title1')}
+            <span className="block text-primary mt-2">{t('how_it_works.title2')}</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            De l'inscription à la maîtrise, nous vous accompagnons à chaque étape de votre apprentissage.
+            {t('how_it_works.description')}
           </p>
         </motion.div>
 
@@ -90,7 +92,7 @@ export function HowItWorksSection() {
                     >
                       <img 
                         src={step.image} 
-                        alt={step.title}
+                        alt={t(step.titleKey)}
                         className="w-full max-w-[240px] mx-auto drop-shadow-2xl"
                       />
                       {/* Badge numéro */}
@@ -110,10 +112,10 @@ export function HowItWorksSection() {
                         className="text-3xl md:text-4xl font-bold"
                         style={{ fontFamily: 'var(--font-heading)' }}
                       >
-                        {step.title}
+                        {t(step.titleKey)}
                       </h3>
                       <p className="text-muted-foreground text-lg leading-relaxed">
-                        {step.description}
+                        {t(step.descKey)}
                       </p>
                     </div>
                   </div>
@@ -136,8 +138,8 @@ export function HowItWorksSection() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-center mt-16"
         >
-          <button className="px-10 py-4 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all hover:scale-105 shadow-lg text-lg">
-            Commencer maintenant
+          <button className="px-10 py-4 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all hover:scale-105 shadow-lg text-lg font-medium">
+            {t('how_it_works.cta_button')}
           </button>
         </motion.div>
       </div>

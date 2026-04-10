@@ -6,30 +6,33 @@ const stats = [
   {
     icon: Users,
     value: "5,000+",
-    label: "Apprenants actifs pour l'année 1",
-    description: "À travers l'Afrique",
+    labelKey: "stats.items.learners.label",
+    descriptionKey: "stats.items.learners.desc",
   },
   {
     icon: BookOpen,
     value: "10+",
-    label: "Langues à venir",
-    description: "Avec de nouvelles langues chaque mois",
+    labelKey: "stats.items.languages.label",
+    descriptionKey: "stats.items.languages.desc",
   },
   {
     icon: Award,
     value: "15,000+",
-    label: "Leçons complétées pour l'année 1",
-    description: "Des milliers d'heures d'apprentissage",
+    labelKey: "stats.items.lessons.label",
+    descriptionKey: "stats.items.lessons.desc",
   },
   {
     icon: Globe,
     value: "25+",
-    label: "Pays représentés",
-    description: "Une communauté mondiale",
+    labelKey: "stats.items.countries.label",
+    descriptionKey: "stats.items.countries.desc",
   },
 ];
 
+import { useTranslation } from "react-i18next";
+
 export function StatsSection() {
+  const { t } = useTranslation();
   return (
     <section className="py-16 md:py-24 relative overflow-hidden bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5">
       <AfricanPatternBg variant="mixed" opacity={0.08} />
@@ -44,14 +47,14 @@ export function StatsSection() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-4">
-            <span className="text-primary font-medium">Notre impact</span>
+            <span className="text-primary font-medium">{t('stats.badge')}</span>
           </div>
           <h2 
             className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            Ensemble, nous faisons
-            <span className="block text-primary mt-2">la différence</span>
+            {t('stats.title1')}
+            <span className="block text-primary mt-2">{t('stats.title2')}</span>
           </h2>
         </motion.div>
 
@@ -78,10 +81,10 @@ export function StatsSection() {
                   {stat.value}
                 </div>
                 <div className="text-lg font-bold mb-2" style={{ fontFamily: 'var(--font-heading)' }}>
-                  {stat.label}
+                  {t(stat.labelKey)}
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  {stat.description}
+                  {t(stat.descriptionKey)}
                 </p>
               </motion.div>
             );
@@ -105,10 +108,10 @@ export function StatsSection() {
                 className="text-xl md:text-2xl font-medium mb-4 text-foreground"
                 style={{ fontFamily: 'var(--font-heading)' }}
               >
-                "Une langue qui meurt, c'est une vision du monde qui disparaît."
+                {t('stats.quote')}
               </blockquote>
               <p className="text-muted-foreground italic">
-                — Proverbe africain
+                — {t('stats.quote_author')}
               </p>
             </div>
           </div>

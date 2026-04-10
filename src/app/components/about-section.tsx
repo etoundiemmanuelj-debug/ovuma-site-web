@@ -6,27 +6,30 @@ import mockupDictionary from "figma:asset/8b2261b930b5ae15e1af60a65d1fdd309a02da
 const values = [
   {
     icon: Heart,
-    title: "Passion culturelle",
-    description: "Nous croyons que chaque langue est un trésor à préserver pour les générations futures.",
+    titleKey: "about.values_items.passion.title",
+    descriptionKey: "about.values_items.passion.desc",
   },
   {
     icon: Globe,
-    title: "Accessibilité",
-    description: "Rendre l'apprentissage des langues africaines accessible à tous, partout dans le monde.",
+    titleKey: "about.values_items.access.title",
+    descriptionKey: "about.values_items.access.desc",
   },
   {
     icon: Users,
-    title: "Communauté",
-    description: "Créer un espace d'échange et d'entraide entre apprenants et locuteurs natifs.",
+    titleKey: "about.values_items.community.title",
+    descriptionKey: "about.values_items.community.desc",
   },
   {
     icon: Target,
-    title: "Excellence pédagogique",
-    description: "Des méthodes d'enseignement innovantes basées sur les recherches en linguistique.",
+    titleKey: "about.values_items.excellence.title",
+    descriptionKey: "about.values_items.excellence.desc",
   },
 ];
 
+import { useTranslation } from "react-i18next";
+
 export function AboutSection() {
+  const { t } = useTranslation();
   return (
     <section id="a-propos" className="py-16 md:py-24 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto px-4">
@@ -39,19 +42,17 @@ export function AboutSection() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-4">
-            <span className="text-primary font-medium">À propos</span>
+            <span className="text-primary font-medium">{t('about.badge')}</span>
           </div>
           <h2 
             className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            Notre mission :
-            <span className="block text-primary mt-2">préserver notre héritage</span>
+            {t('about.title1')}
+            <span className="block text-primary mt-2">{t('about.title2')}</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Ovúmá est né d'une conviction : nos langues maternelles ne doivent pas disparaître. 
-            Chaque jour, nous travaillons pour que les Africains puissent transmettre leur langue 
-            et leur culture à leurs enfants, où qu'ils soient dans le monde.
+            {t('about.description')}
           </p>
         </motion.div>
 
@@ -82,16 +83,13 @@ export function AboutSection() {
               className="text-2xl md:text-3xl font-bold mb-4"
               style={{ fontFamily: 'var(--font-heading)' }}
             >
-              Un dictionnaire vivant et illustré
+              {t('about.dictionary_title')}
             </h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Explorez des milliers de mots avec des illustrations visuelles, des prononciations 
-              authentiques par des locuteurs natifs et des exemples d'usage concrets. Chaque mot 
-              est une porte ouverte sur notre culture.
+              {t('about.dictionary_desc1')}
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Notre dictionnaire grandit chaque jour grâce à la contribution de notre communauté 
-              de locuteurs natifs et d'experts linguistes.
+              {t('about.dictionary_desc2')}
             </p>
           </motion.div>
         </div>
@@ -108,15 +106,13 @@ export function AboutSection() {
               className="text-2xl md:text-3xl font-bold mb-4"
               style={{ fontFamily: 'var(--font-heading)' }}
             >
-              Apprenez en vous amusant
+              {t('about.fun_title')}
             </h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Défiez vos amis, gagnez des points et montez dans le classement ! 
-              Notre approche ludique rend l'apprentissage addictif et motivant.
+              {t('about.fun_desc1')}
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Rejoignez une communauté de plus de 50 000 apprenants passionnés 
-              qui progressent ensemble chaque jour.
+              {t('about.fun_desc2')}
             </p>
           </motion.div>
 
@@ -146,7 +142,7 @@ export function AboutSection() {
             className="text-2xl md:text-3xl font-bold text-center mb-12"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            Nos valeurs
+            {t('about.values_title')}
           </h3>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -168,10 +164,10 @@ export function AboutSection() {
                     className="text-lg font-bold mb-2"
                     style={{ fontFamily: 'var(--font-heading)' }}
                   >
-                    {value.title}
+                    {t(value.titleKey)}
                   </h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    {value.description}
+                    {t(value.descriptionKey)}
                   </p>
                 </motion.div>
               );

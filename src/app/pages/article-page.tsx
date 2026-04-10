@@ -6,31 +6,34 @@ import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { Calendar, Clock, User, Share2, Twitter, Facebook, Linkedin, ArrowLeft } from "lucide-react";
 import { Link, useParams } from "react-router";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 // On importe les fichiers générés par le CMS (les JSON)
 const contentFiles = import.meta.glob("../../content/blog/*.json", { eager: true });
 const articlesArray = Object.values(contentFiles).map((file: any) => file.default || file);
 
-const articlesData = articlesArray.reduce((acc: any, post: any) => {
-  acc[post.id.toString()] = {
-    title: post.title,
-    excerpt: post.excerpt,
-    image: post.image,
-    author: post.author,
-    authorRole: post.authorRole || "Contributeur(trice)",
-    // Image par défaut si non spécifiée
-    authorImage: "https://images.unsplash.com/photo-1531123897727-8f129e1bf98c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080", 
-    date: post.date,
-    readTime: "5 min",
-    category: post.category ? post.category.charAt(0).toUpperCase() + post.category.slice(1) : "Autre",
-    content: post.body,
-    authorBio: post.authorBio || "Membre de l'équipe Ovúmá."
-  };
-  return acc;
-}, {} as Record<string, any>);
-
 export function ArticlePage() {
   const { id } = useParams();
+  const { t } = useTranslation();
+
+  const articlesData = articlesArray.reduce((acc: any, post: any) => {
+    const postKey = `post-${post.id}`;
+    acc[post.id.toString()] = {
+      title: t(`blog.posts_data.${postKey}.title`) || post.title,
+      excerpt: t(`blog.posts_data.${postKey}.excerpt`) || post.excerpt,
+      image: post.image,
+      author: post.author,
+      authorRole: post.authorRole || t('article.author_role_default'),
+      authorImage: "https://images.unsplash.com/photo-1531123897727-8f129e1bf98c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080", 
+      date: post.date,
+      readTime: t('article.read_time', { time: 5 }),
+      category: post.category ? post.category.charAt(0).toUpperCase() + post.category.slice(1) : "Autre",
+      content: t(`blog.posts_data.${postKey}.body`) || post.body,
+      authorBio: post.authorBio || t('article.author_bio_default')
+    };
+    return acc;
+  }, {} as Record<string, any>);
+
   const articleId = id && Object.keys(articlesData).includes(id) ? id : "1";
   const article = articlesData[articleId as keyof typeof articlesData];
   const [email, setEmail] = useState("");
@@ -38,7 +41,7 @@ export function ArticlePage() {
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
-      alert("Merci pour votre inscription !");
+      alert(t('article.newsletter.success'));
       setEmail("");
     }
   };
@@ -54,7 +57,7 @@ export function ArticlePage() {
         <section className="pt-12 pb-8">
           <div className="container mx-auto px-4 max-w-4xl text-center">
             <Link to="/blog" className="inline-flex items-center gap-2 text-primary hover:underline mb-8 text-sm font-medium">
-              <ArrowLeft size={16} /> Retour au blog
+              <ArrowLeft size={16} /> {t('article.back_to_blog')}
             </Link>
             
             <div className="mb-6 flex items-center justify-center gap-3">
@@ -62,7 +65,7 @@ export function ArticlePage() {
                 {article.category}
               </span>
               <span className="text-muted-foreground flex items-center gap-1 text-sm bg-muted px-3 py-1 rounded-full">
-                <Clock size={14} /> {article.readTime} de lecture
+                <Clock size={14} /> {article.readTime}
               </span>
             </div>
 
@@ -95,7 +98,7 @@ export function ArticlePage() {
                 
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <Calendar size={18} />
-                  <span>Publié le {article.date}</span>
+                  <span>{t('article.published_on', { date: article.date })}</span>
                 </div>
               </div>
             </div>
@@ -125,7 +128,7 @@ export function ArticlePage() {
             {/* Colonne latérale de partage (sticky) */}
             <div className="lg:col-span-2 hidden lg:block">
               <div className="sticky top-32 flex flex-col items-center gap-4 border border-border p-6 rounded-3xl bg-card shadow-sm">
-                <span className="text-sm font-semibold text-muted-foreground mb-2">Partager</span>
+                <span className="text-sm font-semibold text-muted-foreground mb-2">{t('article.share')}</span>
                 <button className="w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all">
                   <Twitter size={18} />
                 </button>
@@ -150,7 +153,7 @@ export function ArticlePage() {
               
               {/* Partage Mobile */}
               <div className="lg:hidden flex items-center gap-4 mt-12 py-6 border-y border-border">
-                <span className="font-semibold">Partager cet article :</span>
+                <span className="font-semibold">{t('article.share_article')}</span>
                 <div className="flex gap-2">
                   <button className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center"><Twitter size={18}/></button>
                   <button className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center"><Facebook size={18}/></button>
@@ -166,9 +169,9 @@ export function ArticlePage() {
                     className="w-24 h-24 rounded-full object-cover border-4 border-background shadow-lg"
                  />
                  <div>
-                   <h3 className="text-xl font-bold mb-2">À propos de {article.author}</h3>
+                   <h3 className="text-xl font-bold mb-2">{t('article.about_author', { name: article.author })}</h3>
                    <p className="text-muted-foreground leading-relaxed mb-4">{article.authorBio}</p>
-                   <button className="text-sm font-semibold text-accent hover:underline">Voir tous ses articles &rarr;</button>
+                   <button className="text-sm font-semibold text-accent hover:underline">{t('article.view_all_articles')} &rarr;</button>
                  </div>
               </div>
 
@@ -187,11 +190,11 @@ export function ArticlePage() {
                </svg>
              </div>
              <div className="relative z-10 max-w-2xl mx-auto">
-               <h2 className="text-3xl font-bold mb-4" style={{ fontFamily: 'var(--font-heading)' }}>Poursuivons la discussion</h2>
-               <p className="text-background/80 mb-8 text-lg">Inscrivez-vous pour recevoir un nouvel article inédit chaque semaine sur l'étude des langues africaines.</p>
+               <h2 className="text-3xl font-bold mb-4" style={{ fontFamily: 'var(--font-heading)' }}>{t('article.newsletter.title')}</h2>
+               <p className="text-background/80 mb-8 text-lg">{t('article.newsletter.description')}</p>
                <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
-                 <input type="email" value={email} onChange={e => setEmail(e.target.value)} required placeholder="Votre adresse email" className="flex-1 px-6 py-4 rounded-full text-foreground focus:outline-none focus:ring-2 focus:ring-primary" />
-                 <button type="submit" className="px-8 py-4 bg-primary text-primary-foreground rounded-full font-bold hover:scale-105 transition-all">M'abonner</button>
+                 <input type="email" value={email} onChange={e => setEmail(e.target.value)} required placeholder={t('article.newsletter.placeholder')} className="flex-1 px-6 py-4 rounded-full text-foreground focus:outline-none focus:ring-2 focus:ring-primary" />
+                 <button type="submit" className="px-8 py-4 bg-primary text-primary-foreground rounded-full font-bold hover:scale-105 transition-all">{t('article.newsletter.button')}</button>
                </form>
              </div>
           </div>

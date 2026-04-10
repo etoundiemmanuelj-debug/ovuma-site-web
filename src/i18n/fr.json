@@ -1,0 +1,523 @@
+{
+  "header": {
+    "home": "Accueil",
+    "about": "À propos",
+    "blog": "Blog",
+    "contact": "Nous joindre",
+    "download": "Télécharger l'app"
+  },
+  "footer": {
+    "download_title": "Téléchargez l'application Ovúmá",
+    "download_subtitle": "Disponible gratuitement sur iOS et Android",
+    "about_text": "La première plateforme d'apprentissage des langues africaines. Reconnectez-vous à vos racines.",
+    "navigation": "Navigation",
+    "home": "Accueil",
+    "about": "À propos",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "resources": "Ressources",
+    "cgu": "CGU",
+    "privacy": "Politique de confidentialité",
+    "contact": "Contact",
+    "country": "Cameroun",
+    "rights": "© {{year}} Ovúmá. Tous droits réservés. Fait avec ❤️ au {{country}}.",
+    "legal_mentions": "Mentions légales"
+  },
+  "hero": {
+    "badge": "Apprenez une langue africaine aujourd'hui",
+    "title1": "(Re)connectez-vous",
+    "title2": "à vos racines",
+    "description": "Découvrez l'ewondo, le bassa, le duala et plus encore. Une méthode ludique et interactive pour préserver notre héritage culturel.",
+    "download_on": "Télécharger sur",
+    "available_on": "Disponible sur",
+    "compatibility": "Gratuit • iOS 13+ & Android 8+",
+    "stats1": "À venir",
+    "stats2": "Apprenants attendus",
+    "stats3": "Satisfaction visée"
+  },
+  "features": {
+    "badge": "Fonctionnalités",
+    "title1": "Tout ce dont vous avez besoin",
+    "title2": "pour réussir",
+    "description": "Une plateforme complète pensée pour rendre l'apprentissage des langues africaines accessible et passionnant.",
+    "items": {
+      "dict": {
+        "title": "Dictionnaire illustré",
+        "desc": "Des milliers de mots avec illustrations visuelles et prononciations authentiques par des locuteurs natifs."
+      },
+      "pronunciation": {
+        "title": "Prononciation authentique",
+        "desc": "Écoutez et pratiquez avec des enregistrements de locuteurs natifs pour perfectionner votre accent."
+      },
+      "path": {
+        "title": "Parcours d'apprentissage",
+        "desc": "Des lecons structurées et progressives adaptées à votre niveau, du débutant à l'avancé."
+      },
+      "proverbs": {
+        "title": "Proverbes & sagesse",
+        "desc": "Découvrez les proverbes traditionnels qui transmettent la sagesse ancestrale de nos cultures."
+      },
+      "tales": {
+        "title": "Contes traditionnels",
+        "desc": "Plongez dans les histoires et contes qui font la richesse de notre patrimoine oral."
+      },
+      "fun": {
+        "title": "Apprentissage ludique",
+        "desc": "Progressez en jouant ! Collectez des points, débloquez des badges et relevez des défis."
+      }
+    }
+  },
+  "languages": {
+    "badge": "Nos langues",
+    "title1": "Découvrez la richesse",
+    "title2": "linguistique de l'Afrique",
+    "description": "Plus de 10 langues disponibles, avec de nouveaux cours ajoutés régulièrement.",
+    "popular_badge": "Populaire",
+    "coming_soon_badge": "À venir",
+    "region_label": "Région :",
+    "included_features": "Cours audio, exercices interactifs, culture & traditions",
+    "bottom_text": "... et plus encore !",
+    "download_button": "Télécharger l'app",
+    "items": {
+      "ewondo": {
+        "region": "Centre, Cameroun",
+        "level": "Débutant à Avancé"
+      },
+      "duala": {
+        "region": "Littoral, Cameroun",
+        "level": "Débutant à Avancé"
+      },
+      "bassa": {
+        "region": "Centre & Littoral, Cameroun",
+        "level": "Débutant à Intermédiaire"
+      },
+      "feefe": {
+        "region": "Ouest, Cameroun",
+        "level": "Débutant à Intermédiaire"
+      },
+      "fulfulde": {
+        "region": "Nord, Cameroun",
+        "level": "Débutant"
+      },
+      "bulu": {
+        "region": "Centre & Sud, Cameroun",
+        "level": "Débutant à Intermédiaire"
+      }
+    }
+  },
+  "how_it_works": {
+    "badge": "Comment ça marche",
+    "title1": "Commencez votre voyage",
+    "title2": "en 4 étapes simples",
+    "description": "De l'inscription à la maîtrise, nous vous accompagnons à chaque étape de votre apprentissage.",
+    "cta_button": "Commencer maintenant",
+    "steps": {
+      "1": {
+        "title": "Choisissez votre langue",
+        "desc": "Sélectionnez la langue africaine que vous souhaitez apprendre parmi nos langues disponibles : ewondo, duala, bassa, bamiléké et plus encore."
+      },
+      "2": {
+        "title": "Suivez votre parcours",
+        "desc": "Progressez étape par étape avec nos parcours d'apprentissage structurés. Chaque leçon vous rapproche de la maîtrise de la langue."
+      },
+      "3": {
+        "title": "Explorez le dictionnaire",
+        "desc": "Accédez à des milliers de mots avec illustrations, prononciations authentiques, exemples d'usage et expressions idiomatiques."
+      },
+      "4": {
+        "title": "Apprenez en contexte",
+        "desc": "Découvrez chaque mot avec un contexte visuel, sa prononciation, sa traduction et des exemples d'usage dans la vie quotidienne."
+      }
+    }
+  },
+  "testimonials": {
+    "badge": "Témoignages",
+    "title1": "Ils ont transformé",
+    "title2": "leur vie avec Ovúmá",
+    "description": "Rejoignez des milliers d'Africains qui redécouvrent et préservent leur héritage linguistique.",
+    "items": {
+      "1": {
+        "role": "Étudiante en sociologie",
+        "content": "Ovúmá m'a permis de renouer avec mes racines béti. Les leçons sont captivantes et la communauté est incroyablement bienveillante. Je peux enfin parler avec ma grand-mère dans sa langue maternelle !"
+      },
+      "2": {
+        "role": "Entrepreneur",
+        "content": "En tant que chef d'entreprise, je comprends l'importance de nos langues locales. Ovúmá est l'outil parfait pour les transmettre à mes enfants tout en s'amusant."
+      },
+      "3": {
+        "role": "Professeure de français",
+        "content": "L'approche pédagogique d'Ovúmá est remarquable. Mes élèves adorent apprendre le duala et l'ewondo grâce aux exercices interactifs et aux histoires culturelles."
+      }
+    }
+  },
+  "about": {
+    "badge": "À propos",
+    "title1": "Notre mission :",
+    "title2": "préserver notre héritage",
+    "description": "Ovúmá est né d'une conviction : nos langues maternelles ne doivent pas disparaître. Chaque jour, nous travaillons pour que les Africains puissent transmettre leur langue et leur culture à leurs enfants, où qu'ils soient dans le monde.",
+    "dictionary_title": "Un dictionnaire vivant et illustré",
+    "dictionary_desc1": "Explorez des milliers de mots avec des illustrations visuelles, des prononciations authentiques par des locuteurs natifs et des exemples d'usage concrets. Chaque mot est une porte ouverte sur notre culture.",
+    "dictionary_desc2": "Notre dictionnaire grandit chaque jour grâce à la contribution de notre communauté de locuteurs natifs et d'experts linguistes.",
+    "fun_title": "Apprenez en vous amusant",
+    "fun_desc1": "Défiez vos amis, gagnez des points et montez dans le classement ! Notre approche ludique rend l'apprentissage addictif et motivant.",
+    "fun_desc2": "Rejoignez une communauté de plus de 50 000 apprenants passionnés qui progressent ensemble chaque jour.",
+    "values_title": "Nos valeurs",
+    "values_items": {
+      "passion": {
+        "title": "Passion culturelle",
+        "desc": "Nous croyons que chaque langue est un trésor à préserver pour les générations futures."
+      },
+      "access": {
+        "title": "Accessibilité",
+        "desc": "Rendre l'apprentissage des langues africaines accessible à tous, partout dans le monde."
+      },
+      "community": {
+        "title": "Communauté",
+        "desc": "Créer un espace d'échange et d'entraide entre apprenants et locuteurs natifs."
+      },
+      "excellence": {
+        "title": "Excellence pédagogique",
+        "desc": "Des méthodes d'enseignement innovantes basées sur les recherches en linguistique."
+      }
+    }
+  },
+  "stats": {
+    "badge": "Notre impact",
+    "title1": "Ensemble, nous faisons",
+    "title2": "la différence",
+    "quote": "\"Une langue qui meurt, c'est une vision du monde qui disparaît.\"",
+    "quote_author": "Proverbe africain",
+    "items": {
+      "learners": {
+        "label": "Apprenants actifs pour l'année 1",
+        "desc": "À travers l'Afrique"
+      },
+      "languages": {
+        "label": "Langues à venir",
+        "desc": "Avec de nouvelles langues chaque mois"
+      },
+      "lessons": {
+        "label": "Leçons complétées pour l'année 1",
+        "desc": "Des milliers d'heures d'apprentissage"
+      },
+      "countries": {
+        "label": "Pays représentés",
+        "desc": "Une communauté mondiale"
+      }
+    }
+  },
+  "cta": {
+    "badge": "Téléchargez maintenant",
+    "title1": "Commencez votre apprentissage",
+    "title2": "dès aujourd'hui",
+    "description": "Téléchargez l'application gratuitement et accédez à toutes nos fonctionnalités. Disponible sur iOS et Android.",
+    "benefits": [
+      "Installation rapide et gratuite",
+      "Accès hors ligne aux leçons",
+      "Synchronisation multi-appareils",
+      "Mises à jour régulières avec de nouvelles langues"
+    ],
+    "stats": "Plus de 5 000 téléchargements • Note moyenne 4.9/5 ⭐"
+  },
+  "about_page": {
+    "hero": {
+      "title1": "Préserver notre héritage,",
+      "title2": "un mot à la fois",
+      "description": "Ovúmá est née d'une passion profonde pour les langues africaines et d'une vision : utiliser la technologie pour préserver et transmettre notre riche patrimoine linguistique aux générations futures."
+    },
+    "history": {
+      "title": "Notre histoire",
+      "p1": "Tout a commencé par une conviction forte : celle que la richesse linguistique de l'Afrique ne doit pas disparaître, mais être réinventée.",
+      "p2": "En tant que professionnel du digital, engagé dans la valorisation des cultures et des usages locaux, j'ai été confronté à une réalité préoccupante : une génération entière, notamment dans la diaspora, se déconnecte progressivement de ses langues maternelles.",
+      "p3": "Face à ce constat, j'ai initié Ovúmá, un projet à la croisée de la technologie, de la pédagogie et de l'identité culturelle. Linguistes et locuteurs natif doublé de talents tech, j'ai conçu une solution innovante : une application mobile qui rend l'apprentissage des langues africaines accessible, moderne et engageant.",
+      "p4": "Pensée comme une véritable expérience utilisateur, Ovúmá combine contenus structurés, immersion culturelle et approche intuitive, dans la continuité de mon engagement pour des produits digitaux utiles, impactants et bien conçus.",
+      "p5": "Aujourd'hui, Ovúmá s'inscrit comme une plateforme en croissance, portée par une vision claire : reconnecter les africains à leurs racines et valoriser, à grande échelle, le patrimoine linguistique de l'afrique."
+    },
+    "team": {
+      "title": "Notre équipe",
+      "subtitle": "Des passionnés au service des langues et des cultures africaines",
+      "members": {
+        "emmanuel": {
+          "role": "Fondateur & CEO",
+          "bio": "Professionnel du digital passionné par la valorisation des cultures et usages locaux. Initiateur d'Ovúmá, projet à la croisée de la technologie, de la pédagogie et de l'identité culturelle africaine."
+        }
+      }
+    },
+    "cta": {
+      "title": "Rejoignez notre mission",
+      "description": "Ensemble, préservons et transmettons la richesse de nos langues africaines. Téléchargez Ovúmá et commencez votre voyage linguistique dès aujourd'hui.",
+      "button_download": "Télécharger l'application",
+      "button_contact": "Nous contacter"
+    }
+  },
+  "contact_page": {
+    "hero": {
+      "badge": "✉️ Contactez-nous",
+      "title1": "Nous sommes là",
+      "title2": "pour vous aider",
+      "description": "Une question ? Une suggestion ? Notre équipe est à votre écoute et vous répond dans les 24 heures."
+    },
+    "info": {
+      "title": "Nos coordonnées",
+      "description": "N'hésitez pas à nous contacter par le moyen qui vous convient le mieux. Nous sommes ravis d'échanger avec vous !",
+      "email_subtitle": "Pour toute question générale",
+      "phone_subtitle": "Lun-Ven, 9h-18h (GMT+1)",
+      "hours": {
+        "title": "Horaires",
+        "week": "Lundi - Vendredi : 9h - 18h",
+        "sat": "Samedi : 10h - 14h",
+        "sun": "Fermé le dimanche"
+      },
+      "urgent": {
+        "title": "Besoin d'aide urgente ?",
+        "text": "Pour un support technique urgent, consultez notre FAQ ou contactez-nous directement via l'application."
+      }
+    },
+    "form": {
+      "title": "Envoyez-nous un message",
+      "name_label": "Nom complet *",
+      "name_placeholder": "Votre nom",
+      "email_label": "Email *",
+      "email_placeholder": "votre@email.com",
+      "subject_label": "Sujet *",
+      "subject_placeholder": "Sélectionnez un sujet",
+      "subjects": {
+        "support": "Support technique",
+        "subscription": "Question sur l'abonnement",
+        "content": "Suggestion de contenu",
+        "partnership": "Partenariat",
+        "other": "Autre"
+      },
+      "message_label": "Message *",
+      "message_placeholder": "Décrivez votre demande en détail...",
+      "submit": "Envoyer le message",
+      "privacy_notice": "En soumettant ce formulaire, vous acceptez notre politique de confidentialité.",
+      "success_alert": "Merci pour votre message ! Nous vous répondrons dans les plus brefs délais."
+    },
+    "faq_cta": {
+      "title": "Vous cherchez une réponse rapide ?",
+      "description": "Consultez notre FAQ pour trouver rapidement des réponses aux questions les plus courantes.",
+      "button": "Voir la FAQ"
+    }
+  },
+  "faq": {
+    "hero": {
+      "badge": "❓ Questions fréquentes",
+      "title1": "Comment pouvons-nous",
+      "title2": "vous aider ?",
+      "description": "Trouvez rapidement des réponses à vos questions sur Ovúmá, l'apprentissage des langues africaines et notre application."
+    },
+    "cta": {
+      "title": "Vous ne trouvez pas votre réponse ?",
+      "description": "Notre équipe est là pour vous aider. Contactez-nous et nous vous répondrons dans les plus brefs délais.",
+      "button": "Nous contacter"
+    },
+    "categories": [
+      {
+        "title": "Général",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Qu'est-ce qu'Ovúmá ?",
+            "answer": "Ovúmá est la première plateforme mobile d'apprentissage des langues africaines. Notre mission est de préserver et promouvoir les langues locales comme l'ewondo, le duala, le bassa, le bamiléké et bien d'autres, en rendant leur apprentissage accessible, ludique et efficace."
+          },
+          {
+            "id": "q2",
+            "question": "Quelles langues puis-je apprendre avec Ovúmá ?",
+            "answer": "Actuellement, Ovúmá propose l'apprentissage de plusieurs langues africaines majeures : ewondo, duala, bassa, bamiléké (variantes fe'fe', ghomala', medumba), fulfulde, beti, et basaa. Nous ajoutons régulièrement de nouvelles langues basées sur la demande de notre communauté."
+          },
+          {
+            "id": "q3",
+            "question": "L'application est-elle disponible sur iOS et Android ?",
+            "answer": "Oui ! Ovúmá est disponible gratuitement sur l'App Store (iOS) et Google Play (Android). Vous pouvez télécharger l'application et commencer à apprendre immédiatement."
+          },
+          {
+            "id": "q4",
+            "question": "Dois-je avoir des connaissances préalables pour commencer ?",
+            "answer": "Absolument pas ! Ovúmá est conçu pour tous les niveaux, du débutant complet au niveau avancé. Notre système adapte les leçons à votre niveau et à votre rythme d'apprentissage."
+          }
+        ]
+      },
+      {
+        "title": "Fonctionnalités",
+        "questions": [
+          {
+            "id": "q5",
+            "question": "Comment fonctionne l'apprentissage sur Ovúmá ?",
+            "answer": "Notre méthode combine plusieurs approches pédagogiques : leçons interactives avec audio natif, exercices de prononciation avec reconnaissance vocale, quiz ludiques, conversations simulées, et révisions espacées pour mémoriser durablement."
+          },
+          {
+            "id": "q6",
+            "question": "Puis-je apprendre plusieurs langues en même temps ?",
+            "answer": "Oui ! Avec un abonnement Premium, vous pouvez apprendre autant de langues africaines que vous le souhaitez simultanément."
+          },
+          {
+            "id": "q7",
+            "question": "L'application fonctionne-t-elle hors ligne ?",
+            "answer": "Oui, une fois que vous avez téléchargé les leçons, vous pouvez apprendre hors ligne. Vos progrès seront synchronisés automatiquement dès que vous vous reconnecterez à Internet."
+          }
+        ]
+      }
+    ]
+  },
+  "shop": {
+    "hero": {
+      "badge": "🛍️ Boutique Ovúmá",
+      "title1": "Portez vos racines",
+      "title2": "avec fierté",
+      "description": "Découvrez notre collection exclusive de vêtements et livres Ovúmá. Tous les produits sont en précommande avec livraison prévue sous 3-4 semaines.",
+      "features": {
+        "preorder": "Précommande ouverte",
+        "delivery": "Livraison 3-4 semaines",
+        "quality": "Qualité premium"
+      }
+    },
+    "banner": "🎉 Précommande spéciale : Commandez maintenant et bénéficiez de la livraison gratuite pour toute commande supérieure à 20 000 FCFA",
+    "sections": {
+      "clothing": {
+        "title": "Vêtements & Accessoires",
+        "subtitle": "Exprimez votre attachement aux cultures africaines"
+      },
+      "books": {
+        "title": "Livres & Publications",
+        "subtitle": "Approfondissez vos connaissances linguistiques et culturelles"
+      }
+    },
+    "product": {
+      "preorder_badge": "Précommande",
+      "colors_label": "Couleurs disponibles :",
+      "sizes_label": "Tailles :",
+      "add_to_cart": "Ajouter au panier"
+    },
+    "cta": {
+      "title": "Des questions sur votre commande ?",
+      "description": "Notre équipe est là pour vous accompagner. Contactez-nous pour toute question sur les produits, les tailles ou la livraison.",
+      "contact": "Nous contacter",
+      "size_guide": "Guide des tailles"
+    },
+    "info": {
+      "preorder": {
+        "title": "Précommande",
+        "desc": "Commandez maintenant, recevez sous 3-4 semaines"
+      },
+      "quality": {
+        "title": "Qualité garantie",
+        "desc": "Matériaux premium et finitions soignées"
+      },
+      "delivery": {
+        "title": "Livraison suivie",
+        "desc": "Tracking de votre commande en temps réel"
+      }
+    },
+    "badges": {
+      "popular": "Populaire",
+      "new": "Nouveau"
+    },
+    "products_data": {
+      "tshirt": {
+        "name": "T-shirt Ovúmá Heritage",
+        "desc": "T-shirt en coton premium avec motifs africains et logo Ovúmá"
+      },
+      "sweatshirt": {
+        "name": "Sweatshirt Ovúmá Classic",
+        "desc": "Sweatshirt confortable avec broderie Ovúmá, parfait pour toutes saisons"
+      },
+      "polo": {
+        "name": "Polo Ovúmá Premium",
+        "desc": "Polo élégant aux couleurs Ovúmá avec col brodé"
+      },
+      "casquette": {
+        "name": "Casquette Ovúmá Explorer",
+        "desc": "Casquette ajustable avec logo Ovúmá brodé"
+      },
+      "livre_ewondo": {
+        "name": "Guide d'apprentissage Ewondo",
+        "desc": "Manuel complet pour apprendre l'Ewondo avec exercices et audio"
+      },
+      "livre_proverbes": {
+        "name": "Recueil de Proverbes Camerounais",
+        "desc": "Collection illustrée de proverbes des 10 régions du Cameroun"
+      },
+      "colors": {
+        "black": "Noir",
+        "green": "Vert",
+        "white": "Blanc",
+        "gold": "Or",
+        "dark_green": "Vert foncé",
+        "grey": "Gris",
+        "beige": "Beige"
+      }
+    }
+  },
+  "blog": {
+    "hero": {
+      "badge": "📚 Blog Ovúmá",
+      "title1": "Explorez notre",
+      "title2": "univers linguistique",
+      "description": "Découvrez des articles, guides et témoignages sur les langues africaines, la culture et l'apprentissage."
+    },
+    "categories": {
+      "all": "Tous",
+      "culture": "Culture",
+      "learning": "Apprentissage",
+      "linguistics": "Linguistique"
+    },
+    "post": {
+      "read_more": "Lire",
+      "read_time": "{{time}} min",
+      "author": "Par {{name}}"
+    },
+    "newsletter": {
+      "title": "Restez informé",
+      "description": "Recevez nos derniers articles et actualités directement dans votre boîte mail.",
+      "placeholder": "Votre adresse email",
+      "button": "S'abonner",
+      "success": "Merci pour votre inscription à la newsletter !",
+      "spam_notice": "Pas de spam. Désinscription à tout moment."
+    },
+    "posts_data": {
+      "post-1": {
+        "title": "La méthode révolutionnaire pour apprendre",
+        "excerpt": "Découvrez comment l'apprentissage espacé peut accélérer votre maîtrise des langues nationales."
+      },
+      "post-2": {
+        "title": "5 astuces pour pratiquer au quotidien",
+        "excerpt": "Comment intégrer une langue africaine dans votre routine sans effort."
+      },
+      "post-3": {
+        "title": "Les trésors de la linguistique Bassa",
+        "excerpt": "Une exploration profonde de la richesse sémantique de la langue Bassa."
+      }
+    }
+  },
+  "article": {
+    "back_to_blog": "Retour au blog",
+    "read_time": "{{time}} de lecture",
+    "share": "Partager",
+    "share_article": "Partager cet article :",
+    "author_role_default": "Contributeur(trice)",
+    "author_bio_default": "Membre de l'équipe Ovúmá.",
+    "about_author": "À propos de {{name}}",
+    "view_all_articles": "Voir tous ses articles",
+    "published_on": "Publié le {{date}}",
+    "newsletter": {
+      "title": "Poursuivons la discussion",
+      "description": "Inscrivez-vous pour recevoir un nouvel article inédit chaque semaine sur l'étude des langues africaines.",
+      "placeholder": "Votre adresse email",
+      "button": "M'abonner",
+      "success": "Merci pour votre inscription !"
+    }
+  },
+  "legal": {
+    "cgu": {
+      "title": "Conditions Générales d'Utilisation",
+      "last_update": "Dernière mise à jour : 9 avril 2026",
+      "content": "<p><strong>Ovúmá — Application mobile d'apprentissage des langues africaines</strong></p>\n<p>Date d'entrée en vigueur : 8 avril 2026<br />Dernière mise à jour : 8 avril 2026</p>\n<h2 style=\"font-family: var(--font-heading)\">1. Préambule</h2>\n<p>Les présentes Conditions Générales d'Utilisation (ci-après « CGU ») régissent l'accès et l'utilisation de l'application mobile Ovúmá et du site web associé (ci-après collectivement désignés comme « les Services »), édités par Ovúmá (ci-après « nous », « notre », « nos »).</p>\n<p>Ovúmá est une plateforme EdTech dédiée à la préservation, à la valorisation et à l'enseignement des langues africaines, à travers des contenus pédagogiques, des enregistrements audio authentiques et des outils interactifs d'apprentissage.</p>\n<p>L'utilisation de nos Services implique l'acceptation pleine et entière des présentes CGU. Si vous n'acceptez pas tout ou partie de ces conditions, nous vous invitons à ne pas utiliser nos Services.</p>"
+    },
+    "privacy": {
+      "title": "Politique de Confidentialité",
+      "last_update": "Dernière mise à jour : 8 avril 2026",
+      "content": "<p><strong>Ovúmá — Respect de votre vie privée</strong></p>\n<p>Chez Ovúmá, nous accordons une importance capitale à la protection de vos données personnelles...</p>"
+    }
+  }
+}
