@@ -33,8 +33,10 @@ export function Footer() {
                 </div>
               </a>
               
-              <a 
-                href="#" 
+              <a
+                href="https://expo.dev/accounts/etoundi/projects/ovuma/builds/0e978de3-1fc9-433d-a155-947ae4c00190"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2.5 bg-background text-foreground rounded-lg hover:bg-background/90 transition-all hover:scale-105 shadow-md"
               >
                 <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">

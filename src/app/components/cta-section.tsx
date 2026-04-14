@@ -80,8 +80,10 @@ export function CTASection() {
                     </div>
                   </a>
                   
-                  <a 
-                    href="#" 
+                  <a
+                    href="https://expo.dev/accounts/etoundi/projects/ovuma/builds/0e978de3-1fc9-433d-a155-947ae4c00190"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-3 px-5 py-3 bg-foreground text-background rounded-xl hover:bg-foreground/90 transition-all hover:scale-105 shadow-lg"
                   >
                     <svg className="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
