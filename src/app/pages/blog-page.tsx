@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { SEOHead } from "../components/seo-head";
 import { Header } from "../components/header";
 import { Footer } from "../components/footer";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
@@ -52,6 +53,12 @@ export function BlogPage() {
   return (
     <>
       <ScrollToTop />
+      <SEOHead
+        title="Blog — Culture Beti, Ekang et langues africaines du Cameroun"
+        description="Articles, guides et ressources sur la culture Beti et Ekang, les langues africaines (Ewondo, Bassa, Duala), les proverbes traditionnels et le patrimoine linguistique du Cameroun."
+        keywords="blog langues africaines, culture beti cameroun, proverbes ewondo, apprendre ewondo en ligne, culture ekang, histoire langue bantoue, linguistique cameroun, conte africain"
+        canonical="/blog"
+      />
       <Header />
       
       <main className="min-h-screen pt-20">

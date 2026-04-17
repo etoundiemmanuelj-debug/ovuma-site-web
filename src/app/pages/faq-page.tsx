@@ -2,6 +2,7 @@ import { Plus, Minus } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "motion/react";
+import { SEOHead } from "../components/seo-head";
 import { Header } from "../components/header";
 import { Footer } from "../components/footer";
 import { ScrollToTop } from "../components/scroll-to-top";
@@ -185,6 +186,12 @@ export function FAQPage() {
   return (
     <>
       <ScrollToTop />
+      <SEOHead
+        title="FAQ — Questions sur l'apprentissage des langues Beti & Ekang"
+        description="Toutes vos questions sur Ovúmá : comment apprendre l'Ewondo, le Bassa, le Duala ? L'application est-elle gratuite ? Fonctionne-t-elle hors ligne ? Trouvez vos réponses ici."
+        keywords="faq ovuma, questions ewondo, apprendre langue beti, aide application langues africaines, ewondo débutant, bassa duala tutoriel"
+        canonical="/faq"
+      />
       <Header />
       
       <main className="min-h-screen pt-20">

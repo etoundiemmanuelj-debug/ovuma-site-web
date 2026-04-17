@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
 import { motion } from "motion/react";
+import { SEOHead } from "../components/seo-head";
 import { Header } from "../components/header";
 import { Footer } from "../components/footer";
 import { ScrollToTop } from "../components/scroll-to-top";
@@ -13,27 +14,59 @@ export function ContactPage() {
     name: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
+    botField: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const encode = (data: Record<string, string>) =>
+    Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Logique d'envoi du formulaire (à implémenter avec backend)
-    console.log("Form submitted:", formData);
-    alert(t('contact_page.form.success_alert'));
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    if (formData.botField) return;
+
+    setIsSubmitting(true);
+    setError("");
+
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": "contact",
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      });
+      setIsSuccess(true);
+      setFormData({ name: "", email: "", subject: "", message: "", botField: "" });
+    } catch {
+      setError("Une erreur est survenue. Veuillez réessayer.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
     <>
       <ScrollToTop />
+      <SEOHead
+        title="Contact — Rejoignez la communauté des langues africaines"
+        description="Contactez l'équipe Ovúmá pour toute question sur l'apprentissage de l'Ewondo, du Bassa, du Duala ou sur la culture Beti et Ekang du Cameroun. Nous répondons sous 24h."
+        keywords="contact ovuma, support langues africaines, contact cameroun, aide ewondo, communauté beti"
+        canonical="/contact"
+      />
       <Header />
       
       <main className="min-h-screen pt-20">
@@ -171,7 +204,41 @@ export function ContactPage() {
                     {t('contact_page.form.title')}
                   </h2>
 
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  {isSuccess ? (
+                    <div className="flex flex-col items-center justify-center py-12 text-center gap-4">
+                      <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                        <Send size={28} className="text-primary" />
+                      </div>
+                      <h3 className="text-xl font-bold">{t('contact_page.form.success_alert')}</h3>
+                      <p className="text-muted-foreground">Nous vous répondrons dans les 24 heures.</p>
+                      <button
+                        onClick={() => setIsSuccess(false)}
+                        className="mt-4 px-6 py-2 border border-border rounded-full hover:bg-muted transition-colors text-sm"
+                      >
+                        Envoyer un autre message
+                      </button>
+                    </div>
+                  ) : (
+                  <form
+                    onSubmit={handleSubmit}
+                    name="contact"
+                    data-netlify="true"
+                    data-netlify-honeypot="bot-field"
+                    className="space-y-6"
+                  >
+                    <input type="hidden" name="form-name" value="contact" />
+
+                    {/* Honeypot anti-spam — invisible aux humains */}
+                    <div style={{ display: "none" }}>
+                      <input
+                        name="bot-field"
+                        value={formData.botField}
+                        onChange={handleChange}
+                        tabIndex={-1}
+                        autoComplete="off"
+                      />
+                    </div>
+
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium mb-2">
                         {t('contact_page.form.name_label')}
@@ -241,18 +308,24 @@ export function ContactPage() {
                       />
                     </div>
 
+                    {error && (
+                      <p className="text-sm text-red-500 text-center">{error}</p>
+                    )}
+
                     <button
                       type="submit"
-                      className="w-full px-8 py-4 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all hover:scale-105 shadow-lg font-medium flex items-center justify-center gap-2"
+                      disabled={isSubmitting}
+                      className="w-full px-8 py-4 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all hover:scale-105 shadow-lg font-medium flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
                     >
                       <Send size={20} />
-                      {t('contact_page.form.submit')}
+                      {isSubmitting ? "Envoi en cours..." : t('contact_page.form.submit')}
                     </button>
 
                     <p className="text-xs text-muted-foreground text-center">
                       {t('contact_page.form.privacy_notice')}
                     </p>
                   </form>
+                  )}
                 </div>
               </motion.div>
             </div>

@@ -1,6 +1,7 @@
 import { Heart, Users, Globe, Target, Award, Zap, BookOpen } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { motion } from "motion/react";
+import { SEOHead } from "../components/seo-head";
 import { Header } from "../components/header";
 import { Footer } from "../components/footer";
 import { ScrollToTop } from "../components/scroll-to-top";
@@ -82,6 +83,12 @@ export function AboutPage() {
   return (
     <>
       <ScrollToTop />
+      <SEOHead
+        title="À propos — Notre mission pour la culture Beti et Ekang"
+        description="Découvrez l'histoire d'Ovúmá, née d'une passion pour les langues Beti et Ekang du Cameroun. Notre mission : préserver l'Ewondo, le Bassa, le Duala et transmettre la culture africaine aux générations futures."
+        keywords="à propos ovuma, mission langues africaines, culture beti cameroun, culture ekang, préservation ewondo, fondateur ovuma, patrimoine linguistique africain"
+        canonical="/a-propos"
+      />
       <Header />
       
       <main className="min-h-screen pt-20">

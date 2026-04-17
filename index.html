@@ -4,7 +4,98 @@
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Ovúmá — Apprenez les langues africaines</title>
+
+      <!-- SEO principal -->
+      <title>Ovúmá — Apprenez l'Ewondo, le Bassa, le Duala | Langues Beti & Ekang</title>
+      <meta name="description" content="Ovúmá est la première application mobile d'apprentissage des langues africaines : Ewondo, Bassa, Duala, Bulu, Fe'efe'. Reconnectez-vous à la culture Beti, Ekang et au patrimoine linguistique du Cameroun." />
+      <meta name="keywords" content="apprendre ewondo, langue beti, culture ekang, dictionnaire ewondo, apprendre langue africaine, beti cameroun, ewondo français, langue bantoue cameroun, apprendre bassa, apprendre duala, proverbes ewondo, culture camerounaise, patrimoine linguistique africain, langue maternelle africaine, ovuma app, bulu, fefe, fulfulde" />
+      <meta name="author" content="Ovúmá" />
+      <meta name="robots" content="index, follow" />
+      <link rel="canonical" href="https://ovuma.org/" />
+
+      <!-- Langue et région -->
+      <link rel="alternate" hreflang="fr" href="https://ovuma.org/" />
+      <link rel="alternate" hreflang="en" href="https://ovuma.org/" />
+      <link rel="alternate" hreflang="es" href="https://ovuma.org/" />
+      <link rel="alternate" hreflang="x-default" href="https://ovuma.org/" />
+
+      <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Ovúmá" />
+      <meta property="og:title" content="Ovúmá — Apprenez l'Ewondo, le Bassa, le Duala | Langues Beti & Ekang" />
+      <meta property="og:description" content="La première app mobile pour apprendre les langues africaines : Ewondo, Bassa, Duala et plus. Préservez la culture Beti et Ekang du Cameroun." />
+      <meta property="og:image" content="https://ovuma.org/og-image.png" />
+      <meta property="og:url" content="https://ovuma.org/" />
+      <meta property="og:locale" content="fr_CM" />
+
+      <!-- Twitter Card -->
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Ovúmá — Apprenez l'Ewondo, le Bassa, le Duala" />
+      <meta name="twitter:description" content="La première app mobile pour apprendre les langues africaines et préserver la culture Beti & Ekang du Cameroun." />
+      <meta name="twitter:image" content="https://ovuma.org/og-image.png" />
+
+      <!-- App mobile -->
+      <meta name="mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-title" content="Ovúmá" />
+      <meta name="theme-color" content="#6B3F2A" />
+
+      <!-- JSON-LD : Organisation + Application mobile -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://ovuma.org/#organization",
+            "name": "Ovúmá",
+            "url": "https://ovuma.org",
+            "logo": "https://ovuma.org/favicon.png",
+            "description": "Plateforme d'apprentissage des langues africaines : Ewondo, Bassa, Duala, Bulu. Préservation de la culture Beti et Ekang du Cameroun.",
+            "foundingLocation": {
+              "@type": "Place",
+              "name": "Douala, Cameroun"
+            },
+            "sameAs": [
+              "https://www.instagram.com/ovuma_app/",
+              "https://www.tiktok.com/@ovuma237",
+              "https://www.linkedin.com/company/ovuma-app/",
+              "https://web.facebook.com/profile.php?id=61574311975034"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "email": "contact@ovuma.org",
+              "telephone": "+237697765352",
+              "contactType": "customer support"
+            }
+          },
+          {
+            "@type": "MobileApplication",
+            "name": "Ovúmá",
+            "description": "Apprenez l'Ewondo, le Bassa, le Duala et d'autres langues Beti & Ekang du Cameroun. Dictionnaire illustré, prononciation native, proverbes et contes traditionnels.",
+            "operatingSystem": "Android, iOS",
+            "applicationCategory": "EducationApplication",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "XAF"
+            },
+            "publisher": { "@id": "https://ovuma.org/#organization" },
+            "inLanguage": ["fr", "en", "es"],
+            "keywords": "ewondo, beti, ekang, bassa, duala, langue africaine, cameroun, culture beti"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://ovuma.org/#website",
+            "url": "https://ovuma.org",
+            "name": "Ovúmá",
+            "publisher": { "@id": "https://ovuma.org/#organization" },
+            "inLanguage": ["fr", "en", "es"]
+          }
+        ]
+      }
+      </script>
+
       <link rel="icon" type="image/png" href="/favicon.png" />
       <link rel="apple-touch-icon" href="/favicon.png" />
       <style>html, body { height: 100%; margin: 0; } #root { height: 100%; }</style>
@@ -21,6 +112,15 @@
     </head>
 
     <body>
+      <!-- Formulaire statique pour détection Netlify Forms (ne pas supprimer) -->
+      <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <select name="subject"></select>
+        <textarea name="message"></textarea>
+        <input type="text" name="bot-field" />
+      </form>
+
       <div id="root"></div>
       <script type="module" src="/src/main.tsx"></script>
       <!-- Redirige vers /admin/ après connexion via lien d'invitation -->
