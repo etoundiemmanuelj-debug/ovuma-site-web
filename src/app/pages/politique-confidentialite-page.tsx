@@ -1,3 +1,4 @@
+import DOMPurify from "dompurify";
 import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
 import { Header } from "../components/header";
@@ -47,7 +48,7 @@ export function PolitiqueConfidentialitePage() {
             >
               <div 
                 className="text-foreground"
-                dangerouslySetInnerHTML={{ __html: t('legal.privacy.content') }}
+                dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(t('legal.privacy.content')) }}
               />
             </motion.div>
           </div>

@@ -1,3 +1,4 @@
+import DOMPurify from "dompurify";
 import { motion } from "motion/react";
 import { Header } from "../components/header";
 import { Footer } from "../components/footer";
@@ -148,7 +149,7 @@ export function ArticlePage() {
             <div className="lg:col-span-8 pr-0 lg:pr-8">
               <div 
                 className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-bold prose-headings:font-['var(--font-heading)'] prose-a:text-primary prose-img:rounded-xl prose-blockquote:border-l-primary prose-blockquote:bg-primary/5 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-xl prose-blockquote:italic prose-blockquote:text-lg prose-p:leading-relaxed prose-p:text-muted-foreground"
-                dangerouslySetInnerHTML={{ __html: article.content }}
+                dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(article.content) }}
               />
               
               {/* Partage Mobile */}

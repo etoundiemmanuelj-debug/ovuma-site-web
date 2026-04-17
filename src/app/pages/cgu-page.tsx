@@ -1,3 +1,4 @@
+import DOMPurify from "dompurify";
 import { Header } from "../components/header";
 import { Footer } from "../components/footer";
 import { ScrollToTop } from "../components/scroll-to-top";
@@ -48,7 +49,7 @@ export function CGUPage() {
             >
               <div 
                 className="text-foreground"
-                dangerouslySetInnerHTML={{ __html: t('legal.cgu.content') }}
+                dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(t('legal.cgu.content')) }}
               />
             </motion.div>
           </div>
