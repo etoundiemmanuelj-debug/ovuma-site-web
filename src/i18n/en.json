@@ -248,6 +248,23 @@
       "description": "Together, let's preserve and pass on the richness of our African languages. Download Ovúmá and start your linguistic journey today.",
       "button_download": "Download the app",
       "button_contact": "Contact us"
+    },
+    "values": {
+      "title": "Our values",
+      "subtitle": "The principles that guide each of our decisions"
+    },
+    "values_items": {
+      "excellence": { "title": "Pedagogical Excellence" },
+      "innovation": { "title": "Innovation" },
+      "impact": { "title": "Social Impact" }
+    },
+    "values_desc": {
+      "passion": "We believe every language is a living treasure to be preserved and passed on to future generations.",
+      "community": "Creating a space for exchange and mutual support among learners, native speakers, and African culture enthusiasts.",
+      "access": "Making African language learning accessible to everyone, everywhere in the world, for free.",
+      "excellence": "Innovative teaching methods based on linguistic research and cognitive sciences.",
+      "innovation": "Leveraging the latest technologies to deliver a modern and engaging learning experience.",
+      "impact": "Contributing to the preservation of African linguistic heritage and strengthening cultural identities."
     }
   },
   "contact_page": {
