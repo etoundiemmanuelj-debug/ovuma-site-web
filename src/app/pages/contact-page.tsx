@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone, Clock, Send } from "lucide-react";
+import { Mail, Clock, Phone, Send } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
@@ -161,7 +161,7 @@ export function ContactPage() {
 
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="text-primary" size={20} />
+                      <Clock className="text-primary" size={20} />
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">{t('contact_page.info.hours.title')}</h3>
