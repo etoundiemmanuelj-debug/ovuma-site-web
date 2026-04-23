@@ -8,6 +8,7 @@ import { ContactPage } from "./pages/contact-page";
 import { CGUPage } from "./pages/cgu-page";
 import { PolitiqueConfidentialitePage } from "./pages/politique-confidentialite-page";
 import { MentionsLegalesPage } from "./pages/mentions-legales-page";
+import { SupprimerComptePage } from "./pages/supprimer-compte-page";
 import { ArticlePage } from "./pages/article-page";
 
 export const router = createBrowserRouter([
@@ -50,5 +51,9 @@ export const router = createBrowserRouter([
   {
     path: "/mentions-legales",
     Component: MentionsLegalesPage,
+  },
+  {
+    path: "/supprimer-compte",
+    Component: SupprimerComptePage,
   },
 ]);

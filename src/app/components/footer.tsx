@@ -157,6 +157,11 @@ export function Footer() {
                   {t('footer.privacy')}
                 </Link>
               </li>
+              <li>
+                <Link to="/supprimer-compte" className="text-background/80 hover:text-primary transition-colors">
+                  {t('footer.delete_account')}
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -203,6 +208,9 @@ export function Footer() {
               </Link>
               <Link to="/mentions-legales" className="text-background/70 hover:text-primary transition-colors">
                 {t('footer.legal_mentions')}
+              </Link>
+              <Link to="/supprimer-compte" className="text-background/70 hover:text-primary transition-colors">
+                {t('footer.delete_account')}
               </Link>
             </div>
           </div>
