@@ -201,9 +201,9 @@ export function Footer() {
               <Link to="/politique-de-confidentialite" className="text-background/70 hover:text-primary transition-colors">
                 {t('footer.privacy')}
               </Link>
-              <a href="#" className="text-background/70 hover:text-primary transition-colors">
+              <Link to="/mentions-legales" className="text-background/70 hover:text-primary transition-colors">
                 {t('footer.legal_mentions')}
-              </a>
+              </Link>
             </div>
           </div>
         </div>
