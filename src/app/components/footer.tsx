@@ -34,7 +34,7 @@ export function Footer() {
               </a>
               
               <a
-                href="https://expo.dev/accounts/etoundi/projects/ovuma/builds/0e978de3-1fc9-433d-a155-947ae4c00190"
+                href="https://expo.dev/accounts/etoundi/projects/ovuma/builds/9588ea80-6c02-4f38-bf45-d5a0b945ef4a"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2.5 bg-background text-foreground rounded-lg hover:bg-background/90 transition-all hover:scale-105 shadow-md"

@@ -67,7 +67,7 @@ export function HeroSection() {
               </a>
               
               <a
-                href="https://expo.dev/accounts/etoundi/projects/ovuma/builds/0e978de3-1fc9-433d-a155-947ae4c00190"
+                href="https://expo.dev/accounts/etoundi/projects/ovuma/builds/9588ea80-6c02-4f38-bf45-d5a0b945ef4a"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 px-5 py-3 bg-foreground text-background rounded-xl hover:bg-foreground/90 transition-all hover:scale-105 shadow-lg group"

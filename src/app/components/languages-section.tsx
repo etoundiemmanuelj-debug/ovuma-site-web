@@ -148,7 +148,7 @@ export function LanguagesSection() {
             {t('languages.bottom_text')}
           </p>
           <a
-            href="https://expo.dev/accounts/etoundi/projects/ovuma/builds/0e978de3-1fc9-433d-a155-947ae4c00190"
+            href="https://expo.dev/accounts/etoundi/projects/ovuma/builds/9588ea80-6c02-4f38-bf45-d5a0b945ef4a"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-8 py-4 bg-accent text-accent-foreground rounded-full hover:bg-accent/90 transition-all hover:scale-105 font-semibold shadow-lg"
