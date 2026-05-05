@@ -112,12 +112,18 @@
     </head>
 
     <body>
-      <!-- Formulaire statique pour détection Netlify Forms (ne pas supprimer) -->
+      <!-- Formulaires statiques pour détection Netlify Forms (ne pas supprimer) -->
       <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
         <input type="text" name="name" />
         <input type="email" name="email" />
         <select name="subject"></select>
         <textarea name="message"></textarea>
+        <input type="text" name="bot-field" />
+      </form>
+      <form name="beta-signup" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+        <input type="text" name="firstname" />
+        <input type="email" name="email" />
+        <input type="text" name="system" />
         <input type="text" name="bot-field" />
       </form>
 

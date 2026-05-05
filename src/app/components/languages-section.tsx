@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { CheckCircle2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { BetaSignupModal } from "./beta-signup-modal";
 
 const languages = [
   {
@@ -147,14 +148,11 @@ export function LanguagesSection() {
           <p className="text-muted-foreground mb-6 text-lg">
             {t('languages.bottom_text')}
           </p>
-          <a
-            href="https://expo.dev/accounts/etoundi/projects/ovuma/builds/9588ea80-6c02-4f38-bf45-d5a0b945ef4a"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-8 py-4 bg-accent text-accent-foreground rounded-full hover:bg-accent/90 transition-all hover:scale-105 font-semibold shadow-lg"
-          >
-            📱 {t('languages.download_button')}
-          </a>
+          <BetaSignupModal>
+            <button className="inline-block px-8 py-4 bg-accent text-accent-foreground rounded-full hover:bg-accent/90 transition-all hover:scale-105 font-semibold shadow-lg">
+              📱 {t('languages.download_button')}
+            </button>
+          </BetaSignupModal>
         </motion.div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import { Heart, Users, Globe, Target, Award, Zap, BookOpen } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { BetaSignupModal } from "../components/beta-signup-modal";
 import { motion } from "motion/react";
 import { SEOHead } from "../components/seo-head";
 import { Header } from "../components/header";
@@ -318,14 +319,11 @@ export function AboutPage() {
                 {t('about_page.cta.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="https://expo.dev/accounts/etoundi/projects/ovuma/builds/9588ea80-6c02-4f38-bf45-d5a0b945ef4a"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-8 py-4 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all hover:scale-105 shadow-lg"
-                >
-                  {t('about_page.cta.button_download')}
-                </a>
+                <BetaSignupModal>
+                  <button className="inline-block px-8 py-4 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all hover:scale-105 shadow-lg">
+                    {t('about_page.cta.button_download')}
+                  </button>
+                </BetaSignupModal>
                 <a 
                   href="/contact"
                   className="inline-block px-8 py-4 bg-background text-foreground border-2 border-primary rounded-full hover:bg-muted transition-all hover:scale-105"

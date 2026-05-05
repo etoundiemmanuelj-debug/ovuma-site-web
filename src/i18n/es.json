@@ -6,6 +6,20 @@
     "contact": "Contáctanos",
     "download": "Descarga la app"
   },
+  "beta": {
+    "title": "Únete a los testers de Ovúmá",
+    "subtitle": "Sé de los primeros en probar la aplicación. Te enviaremos tu invitación en cuanto tu plaza esté confirmada.",
+    "firstname": "Nombre",
+    "firstname_placeholder": "Tu nombre",
+    "email": "Correo electrónico",
+    "email_placeholder": "tu@email.com",
+    "system": "Tu dispositivo",
+    "submit": "Unirse a la beta",
+    "privacy_note": "Tus datos nunca serán compartidos. Utilizados únicamente para la invitación.",
+    "success_title": "¡Estás en la lista!",
+    "success_message": "¡Gracias! Te contactaremos en cuanto tu invitación esté lista. Revisa tu bandeja de entrada.",
+    "success_close": "Cerrar"
+  },
   "footer": {
     "download_title": "Descarga la aplicación Ovúmá",
     "download_subtitle": "Disponible gratis en iOS y Android",
