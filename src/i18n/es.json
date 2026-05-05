@@ -18,7 +18,8 @@
     "privacy_note": "Tus datos nunca serán compartidos. Utilizados únicamente para la invitación.",
     "success_title": "¡Estás en la lista!",
     "success_message": "¡Gracias! Te contactaremos en cuanto tu invitación esté lista. Revisa tu bandeja de entrada.",
-    "success_close": "Cerrar"
+    "success_close": "Cerrar",
+    "popup_teaser": "¿Probar la app antes del lanzamiento?"
   },
   "footer": {
     "download_title": "Descarga la aplicación Ovúmá",
