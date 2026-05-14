@@ -1,6 +1,5 @@
 import { motion } from "motion/react";
-import { Smartphone, Apple, Download } from "lucide-react";
-import { BetaSignupModal } from "./beta-signup-modal";
+import { Smartphone, Download } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { useTranslation } from "react-i18next";
 
@@ -68,29 +67,22 @@ export function CTASection() {
                   ))}
                 </div>
 
-                {/* Boutons de téléchargement */}
+                {/* Bouton de téléchargement */}
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <BetaSignupModal>
-                    <button className="inline-flex items-center gap-3 px-5 py-3 bg-foreground text-background rounded-xl hover:bg-foreground/90 transition-all hover:scale-105 shadow-lg">
-                      <Apple size={24} className="flex-shrink-0" />
-                      <div className="text-left">
-                        <div className="text-xs opacity-90">{t('hero.download_on')}</div>
-                        <div className="text-sm font-semibold -mt-0.5">App Store</div>
-                      </div>
-                    </button>
-                  </BetaSignupModal>
-
-                  <BetaSignupModal>
-                    <button className="inline-flex items-center gap-3 px-5 py-3 bg-foreground text-background rounded-xl hover:bg-foreground/90 transition-all hover:scale-105 shadow-lg">
-                      <svg className="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
-                      </svg>
-                      <div className="text-left">
-                        <div className="text-xs opacity-90">{t('hero.available_on')}</div>
-                        <div className="text-sm font-semibold -mt-0.5">Google Play</div>
-                      </div>
-                    </button>
-                  </BetaSignupModal>
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.etoundi.ovuma"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 px-5 py-3 bg-foreground text-background rounded-xl hover:bg-foreground/90 transition-all hover:scale-105 shadow-lg"
+                  >
+                    <svg className="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+                    </svg>
+                    <div className="text-left">
+                      <div className="text-xs opacity-90">{t('hero.available_on')}</div>
+                      <div className="text-sm font-semibold -mt-0.5">Google Play</div>
+                    </div>
+                  </a>
                 </div>
 
                 <p className="text-xs text-muted-foreground mt-4">
