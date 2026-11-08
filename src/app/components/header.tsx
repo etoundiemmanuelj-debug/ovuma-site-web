@@ -1,7 +1,7 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router";
-import logo from "figma:asset/189dbb7d9fefdb250ffd1b5b14a8ba3709ee199d.png";
+import logo from "figma:asset/189dbb7d9fefdb250ffd1b5b14a8ba3709ee199d.webp";
 import { useTranslation } from "react-i18next";
 import { LanguageSwitcher } from "./language-switcher";
 

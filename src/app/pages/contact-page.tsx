@@ -34,7 +34,7 @@ export function ContactPage() {
     setError("");
 
     try {
-      await fetch("/", {
+      const res = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({
@@ -45,10 +45,11 @@ export function ContactPage() {
           message: formData.message,
         }),
       });
+      if (!res.ok) throw new Error(`contact ${res.status}`);
       setIsSuccess(true);
       setFormData({ name: "", email: "", subject: "", message: "", botField: "" });
     } catch {
-      setError("Une erreur est survenue. Veuillez réessayer.");
+      setError(t("common.send_err"));
     } finally {
       setIsSubmitting(false);
     }
@@ -62,7 +63,7 @@ export function ContactPage() {
     <>
       <ScrollToTop />
       <SEOHead
-        title="Contact — Rejoignez la communauté des langues africaines"
+        title="Contact - Rejoignez la communauté des langues africaines"
         description="Contactez l'équipe Ovúmá pour toute question sur l'apprentissage de l'Ewondo, du Bassa, du Duala ou sur la culture Beti et Ekang du Cameroun. Nous répondons sous 24h."
         keywords="contact ovuma, support langues africaines, contact cameroun, aide ewondo, communauté beti"
         canonical="/contact"
@@ -71,7 +72,7 @@ export function ContactPage() {
       
       <main className="min-h-screen pt-20">
         {/* Hero Section */}
-        <section className="py-16 md:py-24 bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5">
+        <section className="ovm-page-hero ovm-bg-savane">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -79,7 +80,7 @@ export function ContactPage() {
               transition={{ duration: 0.6 }}
               className="max-w-3xl mx-auto text-center"
             >
-              <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-6">
+              <div className="ovm-kicker mb-6">
                 <span className="text-primary font-medium">{t('contact_page.hero.badge')}</span>
               </div>
               
@@ -228,7 +229,7 @@ export function ContactPage() {
                   >
                     <input type="hidden" name="form-name" value="contact" />
 
-                    {/* Honeypot anti-spam — invisible aux humains */}
+                    {/* Honeypot anti-spam - invisible aux humains */}
                     <div style={{ display: "none" }}>
                       <input
                         name="bot-field"
@@ -315,7 +316,7 @@ export function ContactPage() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full px-8 py-4 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all hover:scale-105 shadow-lg font-medium flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
+                      className="w-full px-8 py-4 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all  shadow-lg font-medium flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
                     >
                       <Send size={20} />
                       {isSubmitting ? "Envoi en cours..." : t('contact_page.form.submit')}
@@ -353,7 +354,7 @@ export function ContactPage() {
               </p>
               <Link 
                 to="/faq"
-                className="inline-block px-8 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all hover:scale-105"
+                className="inline-block px-8 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all "
               >
                 {t('contact_page.faq_cta.button')}
               </Link>

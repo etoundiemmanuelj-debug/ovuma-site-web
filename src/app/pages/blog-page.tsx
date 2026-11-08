@@ -8,45 +8,51 @@ import { ScrollToTop } from "../components/scroll-to-top";
 import { useState } from "react";
 import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
+import { rawPosts, tr, capitalize, byNewest } from "../lib/blog";
+import { subscribeNewsletter } from "../lib/newsletter";
 
-const contentFiles = import.meta.glob("../../content/blog/*.json", { eager: true });
 export function BlogPage() {
   const { t, i18n } = useTranslation();
-  const blogPostsRaw = Object.values(contentFiles).map((file: any) => file.default || file);
 
-  const blogPosts = blogPostsRaw.map((post: any) => {
-    const postKey = `post-${post.id}`;
+  const blogPosts = [...rawPosts].sort(byNewest).map((post: any) => {
+    const key = `blog.posts_data.post-${post.id}`;
     return {
       id: post.id,
-      title: t(`blog.posts_data.${postKey}.title`) || post.title,
-      excerpt: t(`blog.posts_data.${postKey}.excerpt`) || post.excerpt,
+      title: tr(t, i18n, `${key}.title`, post.title),
+      excerpt: tr(t, i18n, `${key}.excerpt`, post.excerpt),
       image: post.image,
       author: post.author,
       date: post.date,
-      readTime: "5 min",
-      category: post.category ? post.category.charAt(0).toUpperCase() + post.category.slice(1) : "Autre",
+      readTime: `${Math.max(2, Math.round(String(post.body ?? "").split(/\s+/).length / 200))} min`,
+      category: capitalize(post.category) || "Culture",
     };
-  }).sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  });
 
   const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "ok" | "error">("idle");
   const [selectedCategory, setSelectedCategory] = useState("Tous");
 
+  // Catégories réellement utilisées (alignées sur le CMS : culture, technologie, apprentissage)
+  const labelFor: Record<string, string> = {
+    Culture: t("blog.categories.culture"),
+    Apprentissage: t("blog.categories.learning"),
+  };
   const categories = [
-    { id: "Tous", label: t('blog.categories.all') },
-    { id: "Culture", label: t('blog.categories.culture') },
-    { id: "Apprentissage", label: t('blog.categories.learning') },
-    { id: "Linguistique", label: t('blog.categories.linguistics') }
+    { id: "Tous", label: t("blog.categories.all") },
+    ...Array.from(new Set(blogPosts.map((p) => p.category))).map((c) => ({ id: c, label: labelFor[c] ?? c })),
   ];
 
-  const filteredPosts = selectedCategory === "Tous" 
-    ? blogPosts 
-    : blogPosts.filter(post => post.category === selectedCategory);
+  const filteredPosts = selectedCategory === "Tous" ? blogPosts : blogPosts.filter((post) => post.category === selectedCategory);
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      alert(t('blog.newsletter.success'));
+    if (!email) return;
+    try {
+      await subscribeNewsletter(email, "blog");
+      setStatus("ok");
       setEmail("");
+    } catch {
+      setStatus("error");
     }
   };
 
@@ -54,7 +60,7 @@ export function BlogPage() {
     <>
       <ScrollToTop />
       <SEOHead
-        title="Blog — Culture Beti, Ekang et langues africaines du Cameroun"
+        title="Blog - Culture Beti, Ekang et langues africaines du Cameroun"
         description="Articles, guides et ressources sur la culture Beti et Ekang, les langues africaines (Ewondo, Bassa, Duala), les proverbes traditionnels et le patrimoine linguistique du Cameroun."
         keywords="blog langues africaines, culture beti cameroun, proverbes ewondo, apprendre ewondo en ligne, culture ekang, histoire langue bantoue, linguistique cameroun, conte africain"
         canonical="/blog"
@@ -63,7 +69,7 @@ export function BlogPage() {
       
       <main className="min-h-screen pt-20">
         {/* Hero Section */}
-        <section className="py-16 md:py-24 bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5">
+        <section className="ovm-page-hero ovm-bg-feuillage">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -71,7 +77,7 @@ export function BlogPage() {
               transition={{ duration: 0.6 }}
               className="max-w-3xl mx-auto text-center"
             >
-              <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-6">
+              <div className="ovm-kicker mb-6">
                 <span className="text-primary font-medium">{t('blog.hero.badge')}</span>
               </div>
               
@@ -130,7 +136,7 @@ export function BlogPage() {
                       <ImageWithFallback
                         src={post.image}
                         alt={post.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        className="w-full h-full object-cover group- transition-transform duration-300"
                       />
                       <div className="absolute top-4 left-4">
                         <span className="px-3 py-1 bg-primary text-primary-foreground text-sm rounded-full">
@@ -220,7 +226,7 @@ export function BlogPage() {
               <p className="text-lg text-muted-foreground mb-8">
                 {t('blog.newsletter.description')}
               </p>
-              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+              <form name="newsletter" onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
                 <input
                   type="email"
                   value={email}
@@ -229,10 +235,13 @@ export function BlogPage() {
                   required
                   className="flex-1 px-6 py-3 rounded-full border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                 />
-                <button type="submit" className="px-8 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all hover:scale-105 shadow-lg whitespace-nowrap">
+                <button type="submit" className="px-8 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all  shadow-lg whitespace-nowrap">
                   {t('blog.newsletter.button')}
                 </button>
               </form>
+              {status !== "idle" && (
+                <p role="status" className="mt-4 text-sm">{status === "ok" ? t("common.nl_ok") : t("common.nl_err")}</p>
+              )}
               <p className="text-xs text-muted-foreground mt-4">
                 {t('blog.newsletter.spam_notice')}
               </p>

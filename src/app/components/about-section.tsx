@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { Heart, Globe, Users, Target } from "lucide-react";
-import mockupLeaderboard from "figma:asset/d522d6e93858b2b31043668e01abde4dfe40dfdc.png";
-import mockupDictionary from "figma:asset/8b2261b930b5ae15e1af60a65d1fdd309a02da8e.png";
+import mockupLeaderboard from "figma:asset/d522d6e93858b2b31043668e01abde4dfe40dfdc.webp";
+import mockupDictionary from "figma:asset/8b2261b930b5ae15e1af60a65d1fdd309a02da8e.webp";
 
 const values = [
   {
@@ -41,7 +41,7 @@ export function AboutSection() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-4">
+          <div className="ovm-kicker mb-4">
             <span className="text-primary font-medium">{t('about.badge')}</span>
           </div>
           <h2 

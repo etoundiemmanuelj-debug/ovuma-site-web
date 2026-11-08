@@ -4,72 +4,26 @@ interface AfricanPatternBgProps {
   className?: string;
 }
 
-export function AfricanPatternBg({ 
-  variant = "mixed", 
-  opacity = 0.05,
-  className = "" 
-}: AfricanPatternBgProps) {
-  const patternId = `african-pattern-${variant}`;
-  
+/**
+ * Motif discret inspiré des gravures végétales du visuel Ovúmá :
+ * un treillis de losanges (motif béti) traversé de tiges feuillues.
+ */
+export function AfricanPatternBg({ variant = "mixed", opacity = 0.05, className = "" }: AfricanPatternBgProps) {
+  const patternId = `ovm-pattern-${variant}`;
+  const tone = variant === "secondary" ? "text-secondary" : variant === "accent" ? "text-accent" : "text-primary";
+
   return (
-    <div className={`absolute inset-0 pointer-events-none ${className}`} style={{ opacity }}>
+    <div className={`absolute inset-0 pointer-events-none ${tone} ${className}`} style={{ opacity }} aria-hidden="true">
       <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <pattern id={patternId} x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
-            {/* Triangles - motif béti */}
-            <path 
-              d="M20,10 L30,30 L10,30 Z" 
-              fill="currentColor" 
-              className={variant === "primary" || variant === "mixed" ? "text-primary" : "text-accent"} 
-            />
-            <path 
-              d="M70,10 L80,30 L60,30 Z" 
-              fill="currentColor" 
-              className={variant === "secondary" || variant === "mixed" ? "text-secondary" : "text-primary"} 
-            />
-            <path 
-              d="M45,60 L55,80 L35,80 Z" 
-              fill="currentColor" 
-              className={variant === "accent" || variant === "mixed" ? "text-accent" : "text-secondary"} 
-            />
-            
-            {/* Losanges */}
-            <path 
-              d="M100,20 L110,30 L100,40 L90,30 Z" 
-              fill="currentColor" 
-              className="text-primary" 
-              opacity="0.3"
-            />
-            <path 
-              d="M15,70 L25,80 L15,90 L5,80 Z" 
-              fill="currentColor" 
-              className="text-accent" 
-              opacity="0.3"
-            />
-            
-            {/* Cercles */}
-            <circle cx="50" cy="20" r="3" fill="currentColor" className="text-secondary" />
-            <circle cx="25" cy="70" r="3" fill="currentColor" className="text-primary" />
-            <circle cx="75" cy="70" r="3" fill="currentColor" className="text-accent" />
-            <circle cx="100" cy="100" r="2" fill="currentColor" className="text-secondary" />
-            
-            {/* Lignes ondulées - motif de pagne */}
-            <path 
-              d="M0,50 Q10,45 20,50 T40,50 T60,50 T80,50 T100,50 T120,50" 
-              stroke="currentColor" 
-              strokeWidth="1" 
-              fill="none" 
-              className="text-primary" 
-              opacity="0.2"
-            />
-            <path 
-              d="M0,110 Q10,105 20,110 T40,110 T60,110 T80,110 T100,110 T120,110" 
-              stroke="currentColor" 
-              strokeWidth="1" 
-              fill="none" 
-              className="text-accent" 
-              opacity="0.2"
-            />
+          <pattern id={patternId} x="0" y="0" width="96" height="96" patternUnits="userSpaceOnUse">
+            <path d="M48 4 L92 48 L48 92 L4 48 Z" fill="none" stroke="currentColor" strokeWidth="1" />
+            <path d="M48 26 L70 48 L48 70 L26 48 Z" fill="none" stroke="currentColor" strokeWidth="0.75" />
+            <path d="M48 70 C48 58 44 52 36 48 M48 58 C52 54 56 52 62 52" fill="none" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" />
+            <ellipse cx="35" cy="46" rx="3.5" ry="1.8" transform="rotate(-30 35 46)" fill="currentColor" />
+            <ellipse cx="62" cy="51" rx="3.5" ry="1.8" transform="rotate(20 62 51)" fill="currentColor" />
+            <circle cx="0" cy="0" r="1.5" fill="currentColor" />
+            <circle cx="96" cy="96" r="1.5" fill="currentColor" />
           </pattern>
         </defs>
         <rect width="100%" height="100%" fill={`url(#${patternId})`} />

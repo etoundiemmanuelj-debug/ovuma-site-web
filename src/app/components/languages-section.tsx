@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, MapPin, BookOpen } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { StoreButtons } from "./store-buttons";
 
 const languages = [
   {
@@ -63,7 +64,7 @@ export function LanguagesSection() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <div className="inline-block px-4 py-2 bg-accent/10 rounded-full mb-4">
+          <div className="ovm-kicker mb-4">
             <span className="text-accent-foreground font-medium">{t('languages.badge')}</span>
           </div>
           <h2 
@@ -87,18 +88,18 @@ export function LanguagesSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="relative bg-card rounded-2xl p-6 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 border border-border group"
+              className="relative bg-card rounded-2xl p-6 transition-colors hover:border-primary/40 border border-border group"
             >
               {/* Badge populaire */}
               {language.popular && (
-                <div className="absolute -top-3 -right-3 bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                  ⭐ {t('languages.popular_badge')}
+                <div className="absolute -top-3 -right-3 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-semibold">
+                  {t('languages.popular_badge')}
                 </div>
               )}
 
               {/* Badge à venir */}
               {!language.available && (
-                <div className="absolute -top-3 -right-3 bg-muted text-muted-foreground px-3 py-1 rounded-full text-xs font-bold shadow-lg border border-border">
+                <div className="absolute -top-3 -right-3 bg-background text-muted-foreground px-3 py-1 rounded-full text-xs font-semibold border border-border">
                   {t('languages.coming_soon_badge')}
                 </div>
               )}
@@ -114,11 +115,11 @@ export function LanguagesSection() {
               {/* Détails */}
               <div className="space-y-2 mb-4">
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <span className="text-base">🗺️</span>
+                  <MapPin size={15} className="text-accent" aria-hidden="true" />
                   <span>{t('languages.region_label')} {t(language.regionKey)}</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <span className="text-base">📚</span>
+                  <BookOpen size={15} className="text-accent" aria-hidden="true" />
                   <span>{t(language.levelKey)}</span>
                 </div>
               </div>
@@ -147,14 +148,7 @@ export function LanguagesSection() {
           <p className="text-muted-foreground mb-6 text-lg">
             {t('languages.bottom_text')}
           </p>
-          <a
-            href="https://play.google.com/store/apps/details?id=com.etoundi.ovuma"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-8 py-4 bg-accent text-accent-foreground rounded-full hover:bg-accent/90 transition-all hover:scale-105 font-semibold shadow-lg"
-          >
-            📱 {t('languages.download_button')}
-          </a>
+          <StoreButtons className="justify-center" />
         </motion.div>
       </div>
     </section>

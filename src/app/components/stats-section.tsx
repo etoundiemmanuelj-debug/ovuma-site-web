@@ -1,29 +1,29 @@
 import { motion } from "motion/react";
-import { Users, BookOpen, Award, Globe } from "lucide-react";
+import { Languages, Smartphone, MessageSquareText, MapPin } from "lucide-react";
 import { AfricanPatternBg } from "./african-pattern-bg";
 
 const stats = [
   {
-    icon: Users,
-    value: "5,000+",
+    icon: Languages,
+    value: "6",
     labelKey: "stats.items.learners.label",
     descriptionKey: "stats.items.learners.desc",
   },
   {
-    icon: BookOpen,
-    value: "10+",
+    icon: Smartphone,
+    value: "0 FCFA",
     labelKey: "stats.items.languages.label",
     descriptionKey: "stats.items.languages.desc",
   },
   {
-    icon: Award,
-    value: "15,000+",
+    icon: MessageSquareText,
+    value: "2",
     labelKey: "stats.items.lessons.label",
     descriptionKey: "stats.items.lessons.desc",
   },
   {
-    icon: Globe,
-    value: "25+",
+    icon: MapPin,
+    value: "+237",
     labelKey: "stats.items.countries.label",
     descriptionKey: "stats.items.countries.desc",
   },
@@ -46,7 +46,7 @@ export function StatsSection() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-4">
+          <div className="ovm-kicker mb-4">
             <span className="text-primary font-medium">{t('stats.badge')}</span>
           </div>
           <h2 
@@ -71,7 +71,7 @@ export function StatsSection() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-card rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 border border-border text-center group"
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform">
+                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-5 group- transition-transform">
                   <Icon size={32} className="text-primary" />
                 </div>
                 <div 
@@ -111,7 +111,7 @@ export function StatsSection() {
                 {t('stats.quote')}
               </blockquote>
               <p className="text-muted-foreground italic">
-                — {t('stats.quote_author')}
+                - {t('stats.quote_author')}
               </p>
             </div>
           </div>

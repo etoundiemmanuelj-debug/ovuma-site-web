@@ -1,5 +1,6 @@
 import { ShoppingCart, Clock, Star, TrendingUp } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router";
 import { motion } from "motion/react";
 import { Header } from "../components/header";
 import { Footer } from "../components/footer";
@@ -157,7 +158,7 @@ export function BoutiquePage() {
               transition={{ duration: 0.6 }}
               className="max-w-4xl mx-auto text-center"
             >
-              <div className="inline-block px-4 py-2 bg-accent/10 rounded-full mb-6">
+              <div className="ovm-kicker mb-6">
                 <span className="text-accent-foreground font-medium">{t('shop.hero.badge')}</span>
               </div>
               
@@ -250,7 +251,7 @@ export function BoutiquePage() {
                       <img
                         src={product.image}
                         alt={product.name}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        className="w-full h-full object-cover group- transition-transform duration-500"
                       />
                     </div>
 
@@ -299,7 +300,7 @@ export function BoutiquePage() {
                         <p className="text-2xl font-bold text-primary">
                           {product.price}
                         </p>
-                        <button className="p-3 bg-accent text-accent-foreground rounded-full hover:bg-accent/90 transition-all hover:scale-110 shadow-lg">
+                        <button className="p-3 bg-accent text-accent-foreground rounded-full hover:bg-accent/90 transition-all  shadow-lg">
                           <ShoppingCart size={20} />
                         </button>
                       </div>
@@ -361,7 +362,7 @@ export function BoutiquePage() {
                       <img
                         src={product.image}
                         alt={product.name}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        className="w-full h-full object-cover group- transition-transform duration-500"
                       />
                     </div>
 
@@ -382,7 +383,7 @@ export function BoutiquePage() {
                         <p className="text-2xl font-bold text-primary">
                           {product.price}
                         </p>
-                        <button className="p-3 bg-accent text-accent-foreground rounded-full hover:bg-accent/90 transition-all hover:scale-110 shadow-lg">
+                        <button className="p-3 bg-accent text-accent-foreground rounded-full hover:bg-accent/90 transition-all  shadow-lg">
                           <ShoppingCart size={20} />
                         </button>
                       </div>
@@ -428,18 +429,12 @@ export function BoutiquePage() {
                   {t('shop.cta.description')}
                 </p>
                 <div className="flex flex-wrap gap-4 justify-center">
-                  <a 
-                    href="/contact"
-                    className="px-8 py-4 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all hover:scale-105 font-semibold shadow-lg"
+                  <Link 
+                    to="/contact"
+                    className="px-8 py-4 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all  font-semibold shadow-lg"
                   >
                     {t('shop.cta.contact')}
-                  </a>
-                  <a 
-                    href="#"
-                    className="px-8 py-4 bg-secondary text-secondary-foreground rounded-full hover:bg-secondary/90 transition-all hover:scale-105 font-semibold shadow-lg"
-                  >
-                    {t('shop.cta.size_guide')}
-                  </a>
+                  </Link>
                 </div>
               </div>
             </motion.div>

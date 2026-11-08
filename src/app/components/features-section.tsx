@@ -54,7 +54,7 @@ export function FeaturesSection() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-4">
+          <div className="ovm-kicker mb-4">
             <span className="text-primary font-medium">{t('features.badge')}</span>
           </div>
           <h2 
@@ -80,7 +80,7 @@ export function FeaturesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-card rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-lg transition-all hover:-translate-y-1 border border-border"
+                className="bg-card rounded-2xl p-6 md:p-8 transition-colors hover:border-primary/40 border border-border"
               >
                 <div className={`w-14 h-14 ${feature.color} rounded-2xl flex items-center justify-center mb-5`}>
                   <Icon size={28} />
@@ -94,19 +94,6 @@ export function FeaturesSection() {
               </motion.div>
             );
           })}
-        </div>
-
-        {/* Motif décoratif */}
-        <div className="mt-16 flex justify-center">
-          <div className="flex gap-2">
-            {[...Array(5)].map((_, i) => (
-              <div
-                key={i}
-                className="w-2 h-2 rounded-full bg-primary/40"
-                style={{ animationDelay: `${i * 0.1}s` }}
-              />
-            ))}
-          </div>
         </div>
       </div>
     </section>

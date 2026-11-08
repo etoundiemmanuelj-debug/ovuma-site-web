@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
       <!-- SEO principal -->
-      <title>Ovúmá — Apprenez l'Ewondo, le Bassa, le Duala | Langues Beti & Ekang</title>
+      <title>Ovúmá - Apprenez l'Ewondo, le Bassa, le Duala | Langues Beti & Ekang</title>
       <meta name="description" content="Ovúmá est la première application mobile d'apprentissage des langues africaines : Ewondo, Bassa, Duala, Bulu, Fe'efe'. Reconnectez-vous à la culture Beti, Ekang et au patrimoine linguistique du Cameroun." />
       <meta name="keywords" content="apprendre ewondo, langue beti, culture ekang, dictionnaire ewondo, apprendre langue africaine, beti cameroun, ewondo français, langue bantoue cameroun, apprendre bassa, apprendre duala, proverbes ewondo, culture camerounaise, patrimoine linguistique africain, langue maternelle africaine, ovuma app, bulu, fefe, fulfulde" />
       <meta name="author" content="Ovúmá" />
@@ -22,23 +22,25 @@
       <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Ovúmá" />
-      <meta property="og:title" content="Ovúmá — Apprenez l'Ewondo, le Bassa, le Duala | Langues Beti & Ekang" />
+      <meta property="og:title" content="Ovúmá - Apprenez l'Ewondo, le Bassa, le Duala | Langues Beti & Ekang" />
       <meta property="og:description" content="La première app mobile pour apprendre les langues africaines : Ewondo, Bassa, Duala et plus. Préservez la culture Beti et Ekang du Cameroun." />
-      <meta property="og:image" content="https://ovuma.org/og-image.png" />
+      <meta property="og:image" content="https://ovuma.org/og-image.jpg" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:url" content="https://ovuma.org/" />
       <meta property="og:locale" content="fr_CM" />
 
       <!-- Twitter Card -->
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Ovúmá — Apprenez l'Ewondo, le Bassa, le Duala" />
+      <meta name="twitter:title" content="Ovúmá - Apprenez l'Ewondo, le Bassa, le Duala" />
       <meta name="twitter:description" content="La première app mobile pour apprendre les langues africaines et préserver la culture Beti & Ekang du Cameroun." />
-      <meta name="twitter:image" content="https://ovuma.org/og-image.png" />
+      <meta name="twitter:image" content="https://ovuma.org/og-image.jpg" />
 
       <!-- App mobile -->
       <meta name="mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-title" content="Ovúmá" />
-      <meta name="theme-color" content="#6B3F2A" />
+      <meta name="theme-color" content="#1E6B45" />
 
       <!-- JSON-LD : Organisation + Application mobile -->
       <script type="application/ld+json">
@@ -74,6 +76,7 @@
             "name": "Ovúmá",
             "description": "Apprenez l'Ewondo, le Bassa, le Duala et d'autres langues Beti & Ekang du Cameroun. Dictionnaire illustré, prononciation native, proverbes et contes traditionnels.",
             "operatingSystem": "Android, iOS",
+            "downloadUrl": ["https://play.google.com/store/apps/details?id=com.etoundi.ovuma", "https://apps.apple.com/fr/app/ov%C3%BAm%C3%A1/id6818912260"],
             "applicationCategory": "EducationApplication",
             "offers": {
               "@type": "Offer",
@@ -81,7 +84,7 @@
               "priceCurrency": "XAF"
             },
             "publisher": { "@id": "https://ovuma.org/#organization" },
-            "inLanguage": ["fr", "en", "es"],
+            "inLanguage": ["fr", "en"],
             "keywords": "ewondo, beti, ekang, bassa, duala, langue africaine, cameroun, culture beti"
           },
           {
@@ -104,6 +107,13 @@
       <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
+        // Consentement : rien n'est mesuré tant que le visiteur n'a pas accepté (bandeau cookies)
+        var ovumaConsent = null;
+        try { ovumaConsent = localStorage.getItem('ovuma-consent'); } catch (e) {}
+        gtag('consent', 'default', {
+          analytics_storage: ovumaConsent === 'granted' ? 'granted' : 'denied',
+          ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'
+        });
         gtag('js', new Date());
         gtag('config', 'G-YYMXR4X2JX');
       </script>
@@ -124,6 +134,12 @@
         <input type="text" name="firstname" />
         <input type="email" name="email" />
         <input type="text" name="system" />
+        <input type="text" name="bot-field" />
+      </form>
+
+      <form name="newsletter" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+        <input type="email" name="email" />
+        <input type="text" name="source" />
         <input type="text" name="bot-field" />
       </form>
 

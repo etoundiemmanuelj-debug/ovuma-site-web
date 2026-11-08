@@ -1,9 +1,10 @@
 import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
-import mockup1 from "figma:asset/99d51b7d4bc296e70828c5bf2f36defb1dfaeaa9.png";
-import mockup2 from "figma:asset/694f48c740150aaa8d55f69ddd1c258fac779de3.png";
-import mockup3 from "figma:asset/2ccc8976f1a18f0ec5a6ebb45085f3fdd30a715e.png";
-import mockup4 from "figma:asset/20259e995fd4ef772d7c2bd3088e446eb24edef7.png";
+import { PLAY_STORE_URL } from "./store-buttons";
+import mockup1 from "figma:asset/99d51b7d4bc296e70828c5bf2f36defb1dfaeaa9.webp";
+import mockup2 from "figma:asset/694f48c740150aaa8d55f69ddd1c258fac779de3.webp";
+import mockup3 from "figma:asset/2ccc8976f1a18f0ec5a6ebb45085f3fdd30a715e.webp";
+import mockup4 from "figma:asset/20259e995fd4ef772d7c2bd3088e446eb24edef7.webp";
 
 const steps = [
   {
@@ -38,8 +39,7 @@ export function HowItWorksSection() {
     <section id="comment-ca-marche" className="py-16 md:py-24 relative overflow-hidden">
       {/* Fond décoratif */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 left-1/4 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
+        
       </div>
 
       <div className="container mx-auto px-4">
@@ -51,7 +51,7 @@ export function HowItWorksSection() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <div className="inline-block px-4 py-2 bg-accent/10 rounded-full mb-4">
+          <div className="ovm-kicker mb-4">
             <span className="text-accent-foreground font-medium">{t('how_it_works.badge')}</span>
           </div>
           <h2 
@@ -123,7 +123,7 @@ export function HowItWorksSection() {
 
                 {/* Ligne de connexion (sauf pour le dernier) */}
                 {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute left-1/2 -bottom-12 w-0.5 h-12 bg-gradient-to-b from-primary to-accent -translate-x-1/2"></div>
+                  <div className="hidden md:block absolute left-1/2 -bottom-12 w-0.5 h-12 bg-accent/40 -translate-x-1/2"></div>
                 )}
               </motion.div>
             );
@@ -138,9 +138,9 @@ export function HowItWorksSection() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-center mt-16"
         >
-          <button className="px-10 py-4 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all hover:scale-105 shadow-lg text-lg font-medium">
+          <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="inline-block px-10 py-4 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors text-lg font-medium">
             {t('how_it_works.cta_button')}
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>

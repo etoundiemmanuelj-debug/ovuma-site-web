@@ -46,7 +46,7 @@
     "description": "Discover Ewondo, Bassa, Duala and more. A fun and interactive way to preserve our cultural heritage.",
     "download_on": "Download on the",
     "available_on": "Get it on",
-    "compatibility": "Free • iOS 13+ & Android 8+",
+    "compatibility": "Free • iOS 15.1+ & Android",
     "stats1": "Coming soon",
     "stats2": "Expected learners",
     "stats3": "Target satisfaction"
@@ -87,7 +87,7 @@
     "badge": "Our Languages",
     "title1": "Discover the linguistic",
     "title2": "richness of Africa",
-    "description": "Over 10 languages available, with new courses added regularly.",
+    "description": "We are starting with Ewondo. Duala, Bassa and other Cameroonian languages will follow, one by one, with the same care.",
     "popular_badge": "Popular",
     "coming_soon_badge": "Coming soon",
     "region_label": "Region:",
@@ -150,7 +150,7 @@
     "badge": "Testimonials",
     "title1": "They transformed",
     "title2": "their lives with Ovúmá",
-    "description": "Join thousands of Africans rediscovering and preserving their linguistic heritage.",
+    "description": "First feedback from people learning with Ovúmá.",
     "items": {
       "1": {
         "role": "Sociology Student",
@@ -176,7 +176,7 @@
     "dictionary_desc2": "Our dictionary grows every day thanks to the contribution of our community of native speakers and linguistic experts.",
     "fun_title": "Learn while having fun",
     "fun_desc1": "Challenge your friends, earn points, and climb the leaderboard! Our playful approach makes learning addictive and motivating.",
-    "fun_desc2": "Join a community of over 50,000 passionate learners progressing together every day.",
+    "fun_desc2": "Join a community that grows lesson by lesson, in Cameroon and across the diaspora.",
     "values_title": "Our values",
     "values_items": {
       "passion": {
@@ -198,27 +198,27 @@
     }
   },
   "stats": {
-    "badge": "Our impact",
-    "title1": "Together, we make",
-    "title2": "the difference",
+    "badge": "Where we stand",
+    "title1": "A project born in Cameroon,",
+    "title2": "built to last",
     "quote": "\"A language that dies is a vision of the world that disappears.\"",
     "quote_author": "African proverb",
     "items": {
       "learners": {
-        "label": "Active learners for Year 1",
-        "desc": "Across Africa"
+        "label": "Cameroonian languages on the roadmap",
+        "desc": "Ewondo first, then Duala, Bassa, Bulu, Fe'efe' and Fulfulde"
       },
       "languages": {
-        "label": "Upcoming languages",
-        "desc": "With new languages every month"
+        "label": "To download and get started",
+        "desc": "On iPhone and Android"
       },
       "lessons": {
-        "label": "Completed lessons for Year 1",
-        "desc": "Thousands of hours of learning"
+        "label": "Interface languages",
+        "desc": "French and English"
       },
       "countries": {
-        "label": "Countries represented",
-        "desc": "A global community"
+        "label": "Our starting point: Cameroon",
+        "desc": "Designed in Douala, with native speakers"
       }
     }
   },
@@ -233,7 +233,8 @@
       "Multi-device synchronization",
       "Regular updates with new languages"
     ],
-    "stats": "Over 5,000 downloads • Average rating 4.9/5 ⭐"
+    "stats": "Free on iPhone and Android",
+    "mockup_alt": "Ewondo lesson in the Ovúmá app: matching greetings with their translation"
   },
   "about_page": {
     "hero": {
@@ -270,9 +271,15 @@
       "subtitle": "The principles that guide each of our decisions"
     },
     "values_items": {
-      "excellence": { "title": "Pedagogical Excellence" },
-      "innovation": { "title": "Innovation" },
-      "impact": { "title": "Social Impact" }
+      "excellence": {
+        "title": "Pedagogical Excellence"
+      },
+      "innovation": {
+        "title": "Innovation"
+      },
+      "impact": {
+        "title": "Social Impact"
+      }
     },
     "values_desc": {
       "passion": "We believe every language is a living treasure to be preserved and passed on to future generations.",
@@ -285,7 +292,7 @@
   },
   "contact_page": {
     "hero": {
-      "badge": "✉️ Contact Us",
+      "badge": "Contact Us",
       "title1": "We are here",
       "title2": "to help you",
       "description": "A question? A suggestion? Our team is listening and will respond within 24 hours."
@@ -335,7 +342,7 @@
   },
   "faq": {
     "hero": {
-      "badge": "❓ Frequently Asked Questions",
+      "badge": "Frequently Asked Questions",
       "title1": "How can we",
       "title2": "help you?",
       "description": "Find quick answers to your questions about Ovúmá, African language learning, and our application."
@@ -395,7 +402,7 @@
   },
   "shop": {
     "hero": {
-      "badge": "🛍️ Ovúmá Shop",
+      "badge": "Ovúmá Shop",
       "title1": "Wear your roots",
       "title2": "with pride",
       "description": "Discover our exclusive collection of Ovúmá clothing and books. All products are on pre-order with delivery expected in 3-4 weeks.",
@@ -484,7 +491,7 @@
   },
   "blog": {
     "hero": {
-      "badge": "📚 Ovúmá Blog",
+      "badge": "Ovúmá Blog",
       "title1": "Explore our",
       "title2": "linguistic universe",
       "description": "Discover articles, guides and testimonials about African languages, culture and learning."
@@ -554,13 +561,28 @@
     },
     "mentions": {
       "title": "Legal Notice",
-      "last_update": "Last updated: April 23, 2026",
-      "content": "<h2 style='font-family: var(--font-heading)'>1. Application Publisher</h2>\n<ul>\n<li><strong>Application name:</strong> Ovúmá</li>\n<li><strong>Nature:</strong> Mobile application for learning African languages</li>\n<li><strong>Status:</strong> Sole trader</li>\n</ul>\n<p><strong>Publication manager:</strong></p>\n<p>Emmanuel Etoundi<br />Email: <a href='mailto:etoundiemmanuelj@gmail.com'>etoundiemmanuelj@gmail.com</a><br />Phone: <a href='tel:+237697765352'>+237 697 765 352</a><br />Cameroon</p>\n<h2 style='font-family: var(--font-heading)'>2. Hosting</h2>\n<p>The Ovúmá application is hosted by:</p>\n<ul>\n<li><strong>Vercel Inc.</strong><br />340 Pine Street, Suite 701<br />San Francisco, CA 94104 — United States</li>\n<li><strong>Database:</strong> Neon</li>\n<li><strong>File storage:</strong> Vercel Blob</li>\n</ul>\n<p>These providers ensure the technical infrastructure and data security.</p>\n<h2 style='font-family: var(--font-heading)'>3. Intellectual Property</h2>\n<p>All elements of the Ovúmá application (name, brand, logo, design, educational content, audio, texts, exercises, translations) are the exclusive property of Emmanuel Etoundi, unless otherwise stated.</p>\n<p>Any reproduction, representation, modification, distribution or exploitation, in whole or in part, without prior written authorization is strictly prohibited.</p>\n<p>Any violation constitutes infringement subject to legal action under applicable laws.</p>\n<h2 style='font-family: var(--font-heading)'>4. Personal Data</h2>\n<p>The processing of personal data is described in our Privacy Policy accessible from the application.</p>\n<p>In accordance with applicable laws, you have the following rights:</p>\n<ul>\n<li>Access</li>\n<li>Rectification</li>\n<li>Deletion</li>\n</ul>\n<p>To exercise your rights: <a href='mailto:etoundiemmanuelj@gmail.com'>etoundiemmanuelj@gmail.com</a></p>\n<h2 style='font-family: var(--font-heading)'>5. Cookies and Similar Technologies</h2>\n<p>The Ovúmá mobile application does not use advertising cookies.</p>\n<p>Certain technical data may be stored locally on your device (authentication, progress, preferences) to ensure the proper functioning of the service.</p>\n<h2 style='font-family: var(--font-heading)'>6. Third-Party Services</h2>\n<p>The application may integrate third-party services:</p>\n<ul>\n<li><strong>Videos:</strong> YouTube (Google LLC)</li>\n<li><strong>Notifications:</strong> Firebase / Expo (Google LLC)</li>\n</ul>\n<p>The use of these services is subject to their own terms and privacy policies.</p>\n<p>Ovúmá cannot be held responsible for the operation or content of these third-party services.</p>\n<h2 style='font-family: var(--font-heading)'>7. Distribution via Platforms</h2>\n<p>The application is distributed through third-party platforms such as Google Play.</p>\n<p>These platforms apply their own terms of use and policies.</p>\n<p>Ovúmá cannot be held responsible for decisions, restrictions, or interruptions related to these platforms.</p>\n<h2 style='font-family: var(--font-heading)'>8. Limitation of Liability</h2>\n<p>Ovúmá strives to provide a reliable service and quality content. However:</p>\n<ul>\n<li>We do not guarantee the absolute accuracy of content</li>\n<li>The application is provided \"as is\"</li>\n<li>We are not responsible for indirect damages</li>\n<li>Use of the service is at the user's own risk</li>\n</ul>\n<h2 style='font-family: var(--font-heading)'>9. Service Availability</h2>\n<p>Ovúmá strives to ensure continuous access to the service.</p>\n<p>However, interruptions may occur (maintenance, updates, force majeure events).</p>\n<h2 style='font-family: var(--font-heading)'>10. Applicable Law</h2>\n<p>These legal notices are governed by Cameroonian law.</p>\n<p>In the event of a dispute, the competent courts of Yaoundé shall have exclusive jurisdiction.</p>\n<h2 style='font-family: var(--font-heading)'>11. Contact</h2>\n<p>For any questions, requests, or complaints:</p>\n<p>Email: <a href='mailto:etoundiemmanuelj@gmail.com'>etoundiemmanuelj@gmail.com</a><br />Phone: <a href='tel:+237697765352'>+237 697 765 352</a></p>"
+      "last_update": "Last updated: 7 November 2026",
+      "content": "<h2 style='font-family: var(--font-heading)'>1. Publisher</h2>\n<p>The website <strong>ovuma.org</strong> and the <strong>Ovúmá</strong> mobile app (learning Cameroonian languages) are published by:</p>\n<ul>\n<li><strong>Joseph Emmanuel Etoundi Alloh</strong>, sole trader</li>\n<li>Address: Rue Eto'o, Bonamoussadi, Douala, Cameroon</li>\n<li>Email: <a href='mailto:contact@ovuma.org'>contact@ovuma.org</a></li>\n<li>Phone: <a href='tel:+237697765352'>+237 697 765 352</a></li>\n</ul>\n<p><strong>Publication director:</strong> Joseph Emmanuel Etoundi Alloh.</p>\n<h2 style='font-family: var(--font-heading)'>2. Hosting</h2>\n<p><strong>Website:</strong> Netlify, Inc. - 512 2nd Street, FL2, San Francisco, CA 94107, USA - <a href='https://www.netlify.com' target='_blank' rel='noopener noreferrer'>www.netlify.com</a></p>\n<p><strong>App (servers and data):</strong> Vercel Inc. - 440 N Barranca Ave #4133, Covina, CA 91723, USA - <a href='https://vercel.com' target='_blank' rel='noopener noreferrer'>vercel.com</a>. Database: Neon. File storage: Vercel Blob.</p>\n<p>The app is distributed on Google Play (Google LLC) and the App Store (Apple Inc.), under each platform's own terms.</p>\n<h2 style='font-family: var(--font-heading)'>3. Intellectual property</h2>\n<p>The Ovúmá name and brand, logo, illustrations, design and learning content (texts, audio recordings, exercises, translations) belong to the publisher or its partners, unless stated otherwise.</p>\n<p>Any reproduction, representation, modification or use, in whole or in part, without prior written permission is prohibited.</p>\n<h2 style='font-family: var(--font-heading)'>4. Personal data</h2>\n<p>Personal data is processed in accordance with Cameroon's Law No. 2024/017 of 23 December 2024 on the protection of personal data. The data controller is the publisher named above.</p>\n<p><strong>On this website</strong>, we only collect:</p>\n<ul>\n<li>what you enter in our forms (contact, beta sign-up, newsletter): name or first name, email address, message, phone operating system. It is sent through Netlify Forms and used only to reply to you or keep you informed about Ovúmá;</li>\n<li>audience statistics (Google Analytics), only if you accept them in the cookie banner.</li>\n</ul>\n<p>This data is kept for up to 3 years after our last exchange, then deleted. Some providers are based in the United States, so data may be stored there.</p>\n<p>You have the right to access, correct, delete and object to the processing of your data. Write to <a href='mailto:contact@ovuma.org'>contact@ovuma.org</a>. You may also contact Cameroon's personal data protection authority.</p>\n<p>Data processed by the app is described in our <a href='/politique-de-confidentialite'>privacy policy</a>. To delete your account: <a href='/supprimer-compte'>delete my account</a>.</p>\n<h2 style='font-family: var(--font-heading)'>5. Cookies</h2>\n<p>The website uses no advertising cookies. Google Analytics (Google LLC) audience cookies are only set after you agree in the banner shown on your first visit; they are kept for up to 13 months. You can change your choice at any time with the “Manage cookies” link at the bottom of the page.</p>\n<p>In the app, some technical data is stored on your device (sign-in, progress, preferences) so that it works properly.</p>\n<h2 style='font-family: var(--font-heading)'>6. Third-party services</h2>\n<p>The website and app may include third-party services: YouTube videos (Google LLC), Firebase / Expo notifications, social networks. Their use is subject to their own terms and privacy policies.</p>\n<h2 style='font-family: var(--font-heading)'>7. Liability</h2>\n<p>We take care to keep content accurate but cannot guarantee it is entirely error-free. The website and app are provided “as is”; interruptions may occur (maintenance, updates, force majeure). We are not responsible for the content of external websites we link to.</p>\n<h2 style='font-family: var(--font-heading)'>8. Governing law</h2>\n<p>This notice is governed by Cameroonian law, including Law No. 2010/021 of 21 December 2010 on electronic commerce, Law No. 2010/012 of 21 December 2010 on cybersecurity and cybercrime, and Law No. 2024/017 of 23 December 2024. In the event of a dispute, failing an amicable settlement, the courts of Douala have jurisdiction.</p>\n<h2 style='font-family: var(--font-heading)'>9. Contact</h2>\n<p><a href='mailto:contact@ovuma.org'>contact@ovuma.org</a> - <a href='tel:+237697765352'>+237 697 765 352</a></p>"
     },
     "delete_account": {
       "title": "Delete your Ovúmá account",
       "subtitle": "We respect your right to erasure of your personal data.",
-      "content": "<p>Ovúmá respects your right to the erasure of your personal data, in accordance with the General Data Protection Regulation (GDPR) and Cameroonian law n°2010/012 on cybersecurity and cybercrime.</p>\n<h2 style='font-family: var(--font-heading)'>How to request account deletion</h2>\n<p>Send an email to <a href='mailto:etoundiemmanuelj@gmail.com'>etoundiemmanuelj@gmail.com</a> with:</p>\n<ul>\n<li><strong>Subject:</strong> Ovúmá account deletion</li>\n<li><strong>Content:</strong> The email address associated with your Ovúmá account</li>\n</ul>\n<p>You will receive a confirmation of receipt within 48 hours, and the deletion will be effective within 30 days after verification.</p>\n<h2 style='font-family: var(--font-heading)'>What is deleted</h2>\n<p>When your account is deleted, the following data is permanently erased:</p>\n<ul>\n<li>Your profile (name, email address, profile picture)</li>\n<li>Your progress and learning history</li>\n<li>Your preferences and settings</li>\n<li>Your subscription data (Plus or Premium plan)</li>\n</ul>\n<h2 style='font-family: var(--font-heading)'>What may be retained</h2>\n<p>Certain data may be retained in the following cases:</p>\n<ul>\n<li><strong>Anonymized data</strong> contributed to the Beti-Fang linguistic dataset — these recordings, once anonymized, are part of the collective linguistic heritage and cannot be linked to your identity</li>\n<li><strong>Accounting and financial data</strong> related to your transactions, retained for 10 years in accordance with legal obligations</li>\n<li><strong>Data necessary for fraud prevention</strong>, retained for the time needed to resolve any potential dispute</li>\n</ul>\n<h2 style='font-family: var(--font-heading)'>Delete your account from the app</h2>\n<p>You can also delete your account directly from the application:</p>\n<p><strong>Profile → Edit profile → Delete my account</strong></p>\n<p><em>(This feature will be available from version 1.1)</em></p>\n<h2 style='font-family: var(--font-heading)'>Contact</h2>\n<p>For any questions regarding your personal data:</p>\n<p><a href='mailto:etoundiemmanuelj@gmail.com'>etoundiemmanuelj@gmail.com</a></p>"
+      "content": "<p>Ovúmá respects your right to the erasure of your personal data, in accordance with the General Data Protection Regulation (GDPR) and Cameroonian law n°2010/012 on cybersecurity and cybercrime.</p>\n<h2 style='font-family: var(--font-heading)'>How to request account deletion</h2>\n<p>Send an email to <a href='mailto:etoundiemmanuelj@gmail.com'>etoundiemmanuelj@gmail.com</a> with:</p>\n<ul>\n<li><strong>Subject:</strong> Ovúmá account deletion</li>\n<li><strong>Content:</strong> The email address associated with your Ovúmá account</li>\n</ul>\n<p>You will receive a confirmation of receipt within 48 hours, and the deletion will be effective within 30 days after verification.</p>\n<h2 style='font-family: var(--font-heading)'>What is deleted</h2>\n<p>When your account is deleted, the following data is permanently erased:</p>\n<ul>\n<li>Your profile (name, email address, profile picture)</li>\n<li>Your progress and learning history</li>\n<li>Your preferences and settings</li>\n<li>Your subscription data (Plus or Premium plan)</li>\n</ul>\n<h2 style='font-family: var(--font-heading)'>What may be retained</h2>\n<p>Certain data may be retained in the following cases:</p>\n<ul>\n<li><strong>Anonymized data</strong> contributed to the Beti-Fang linguistic dataset - these recordings, once anonymized, are part of the collective linguistic heritage and cannot be linked to your identity</li>\n<li><strong>Accounting and financial data</strong> related to your transactions, retained for 10 years in accordance with legal obligations</li>\n<li><strong>Data necessary for fraud prevention</strong>, retained for the time needed to resolve any potential dispute</li>\n</ul>\n<h2 style='font-family: var(--font-heading)'>Delete your account from the app</h2>\n<p>You can also delete your account directly from the application:</p>\n<p><strong>Profile → Edit profile → Delete my account</strong></p>\n<p><em>(This feature will be available from version 1.1)</em></p>\n<h2 style='font-family: var(--font-heading)'>Contact</h2>\n<p>For any questions regarding your personal data:</p>\n<p><a href='mailto:etoundiemmanuelj@gmail.com'>etoundiemmanuelj@gmail.com</a></p>"
     }
+  },
+  "common": {
+    "not_found": "This article doesn't exist or has been removed.",
+    "back": "Back to the blog",
+    "nl_ok": "Thanks, you're subscribed.",
+    "nl_err": "Subscription failed. Please try again in a moment.",
+    "copied": "Link copied",
+    "send_err": "Your message wasn't sent. Check your connection and try again, or email us at contact@ovuma.org."
+  },
+  "cookies": {
+    "text": "We use Google Analytics to understand how the site is used. Nothing is stored without your consent.",
+    "accept": "Accept",
+    "refuse": "Decline",
+    "more": "Learn more",
+    "manage": "Manage cookies"
   }
 }

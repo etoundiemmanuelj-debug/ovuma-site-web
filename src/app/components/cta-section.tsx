@@ -1,34 +1,15 @@
 import { motion } from "motion/react";
 import { Smartphone, Download } from "lucide-react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { useTranslation } from "react-i18next";
+import { StoreButtons } from "./store-buttons";
 
 export function CTASection() {
   const { t } = useTranslation();
   return (
     <section className="py-16 md:py-24 relative overflow-hidden">
-      {/* Fond avec gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/10 to-secondary/10"></div>
-      
-      {/* Motif décoratif africain */}
-      <div className="absolute inset-0 opacity-5">
-        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="cta-pattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
-              <circle cx="10" cy="10" r="2" fill="currentColor" className="text-primary" />
-              <circle cx="40" cy="40" r="2" fill="currentColor" className="text-accent" />
-              <circle cx="70" cy="10" r="2" fill="currentColor" className="text-secondary" />
-              <path d="M20,20 L30,30 L20,40 L10,30 Z" fill="currentColor" className="text-primary" opacity="0.3" />
-              <path d="M50,50 L60,60 L50,70 L40,60 Z" fill="currentColor" className="text-accent" opacity="0.3" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#cta-pattern)" />
-        </svg>
-      </div>
-
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-5xl mx-auto">
-          <div className="bg-card rounded-3xl shadow-2xl overflow-hidden border border-border">
+          <div className="bg-card rounded-3xl overflow-hidden border border-border">
             <div className="grid md:grid-cols-2 gap-0">
               {/* Contenu texte */}
               <motion.div
@@ -38,7 +19,7 @@ export function CTASection() {
                 transition={{ duration: 0.6 }}
                 className="p-8 md:p-12 flex flex-col justify-center"
               >
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6 w-fit">
+                <div className="ovm-kicker mb-6">
                   <Download size={16} className="text-primary" />
                   <span className="text-primary font-medium text-sm">{t('cta.badge')}</span>
                 </div>
@@ -68,22 +49,7 @@ export function CTASection() {
                 </div>
 
                 {/* Bouton de téléchargement */}
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <a
-                    href="https://play.google.com/store/apps/details?id=com.etoundi.ovuma"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 px-5 py-3 bg-foreground text-background rounded-xl hover:bg-foreground/90 transition-all hover:scale-105 shadow-lg"
-                  >
-                    <svg className="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
-                    </svg>
-                    <div className="text-left">
-                      <div className="text-xs opacity-90">{t('hero.available_on')}</div>
-                      <div className="text-sm font-semibold -mt-0.5">Google Play</div>
-                    </div>
-                  </a>
-                </div>
+                <StoreButtons />
 
                 <p className="text-xs text-muted-foreground mt-4">
                   {t('cta.stats')}
@@ -96,16 +62,21 @@ export function CTASection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="relative h-64 md:h-auto"
+                className="relative h-[460px] md:h-auto md:min-h-[560px] overflow-hidden"
               >
                 <div className="absolute inset-0">
-                  <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1682668701024-b6508708a764?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwY3VsdHVyZSUyMHRyYWRpdGlvbmFsJTIwYXJ0fGVufDF8fHx8MTc3NTY2NzQ3MHww&ixlib=rb-4.1.0&q=80&w=1080"
-                    alt="Culture africaine"
-                    className="w-full h-full object-cover"
+                  <img src="/images/ovuma-fond.webp" alt="" loading="lazy" className="w-full h-full object-cover object-[center_75%]" />
+                </div>
+                {/* Leçon d'ewondo dans l'app, présentée dans un téléphone */}
+                <div className="absolute inset-0 flex items-center justify-center p-6 md:p-10">
+                  <img
+                    src="/images/ovuma-app-mockup.webp"
+                    alt={t('cta.mockup_alt')}
+                    width={636}
+                    height={1263}
+                    loading="lazy"
+                    className="h-full max-h-[520px] w-auto rotate-[4deg] drop-shadow-[0_30px_40px_rgba(18,61,43,0.3)]"
                   />
-                  {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-transparent to-card/50"></div>
                 </div>
               </motion.div>
             </div>

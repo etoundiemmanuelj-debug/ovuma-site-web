@@ -24,3 +24,123 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-terracotta-dark);
 }
+
+/* ——— Identité Ovúmá ——— */
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Titres : Cormorant plus fin et resserré, jamais en gras lourd */
+:where(h1, h2, h3).font-bold { font-weight: 600; }
+:where(h1, h2) { letter-spacing: -0.01em; text-wrap: balance; }
+
+/* Sur-titre de section : italique, filet sauge, casse normale */
+.ovm-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--color-vert-principal);
+}
+.ovm-kicker::before {
+  content: "";
+  width: 2rem;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--color-orange), var(--color-soleil));
+}
+.ovm-kicker span { color: inherit; font-weight: inherit; font-size: inherit; }
+.text-center .ovm-kicker::after,
+.ovm-kicker.is-centered::after {
+  content: "";
+  width: 2rem;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--color-soleil), var(--color-orange));
+}
+
+/* Fond illustré (brume et feuillage) */
+.ovm-hero-bg {
+  background-color: var(--color-brume);
+  background-image:
+    linear-gradient(to bottom, rgba(241, 246, 240, 0) 82%, var(--color-brume) 100%),
+    linear-gradient(to right, rgba(241, 246, 240, 0.92) 0%, rgba(241, 246, 240, 0.55) 45%, rgba(241, 246, 240, 0) 75%),
+    url('/images/ovuma-fond.webp');
+  background-size: cover;
+  background-position: center 62%;
+}
+@media (max-width: 767px) {
+  .ovm-hero-bg {
+    background-image:
+      linear-gradient(to bottom, rgba(241, 246, 240, 0.35) 0%, rgba(241, 246, 240, 0.9) 60%),
+      url('/images/ovuma-fond.webp');
+    background-position: center 70%;
+  }
+}
+
+/* Bande de paysage (collines, acacias, case) en lisière de section */
+.ovm-paysage {
+  height: clamp(110px, 16vw, 220px);
+  background:
+    linear-gradient(to bottom, rgba(18, 61, 43, 0) 55%, var(--color-canopee) 100%),
+    url('/images/ovuma-paysage.webp') center bottom / cover no-repeat;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 45%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 45%);
+}
+
+/* Focus clavier visible partout */
+:focus-visible {
+  outline: 2px solid var(--color-vert-principal);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* En-têtes des pages intérieures : une variante du paysage par page */
+.ovm-page-hero {
+  position: relative;
+  isolation: isolate;
+  padding-top: clamp(4rem, 8vw, 6.5rem) !important;
+  padding-bottom: clamp(5rem, 9vw, 8rem) !important;
+  background-color: var(--color-brume);
+  background-size: cover;
+  background-position: center 70%;
+}
+.ovm-page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 60% 55% at 50% 45%, rgba(251, 252, 248, 0.82) 0%, rgba(251, 252, 248, 0.35) 60%, rgba(251, 252, 248, 0) 100%),
+    linear-gradient(to bottom, rgba(241, 246, 240, 0) 70%, var(--color-brume) 100%);
+}
+.ovm-bg-aube { background-image: url('/images/ovuma-aube.webp'); }
+.ovm-bg-ciel { background-image: url('/images/ovuma-ciel.webp'); background-position: center top; }
+.ovm-bg-feuillage { background-image: url('/images/ovuma-feuillage.webp'); }
+.ovm-bg-savane { background-image: url('/images/ovuma-savane.webp'); }
+
+/* Chiffres clés : couleurs du logo en alternance */
+.ovm-sun-rule {
+  height: 3px;
+  width: 3rem;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--color-vert-logo), var(--color-ciel), var(--color-soleil), var(--color-orange));
+}
+
+/* Chiffres alignés (Cormorant utilise des chiffres elzéviriens par défaut) */
+h1, h2, h3, h4, [style*="font-heading"] { font-variant-numeric: lining-nums; }
+
+/* Les entrées animées en glissé latéral ne doivent jamais créer de défilement horizontal sur mobile */
+html, body { overflow-x: clip; }

@@ -1,6 +1,5 @@
 import { motion } from "motion/react";
 import { Star, Quote } from "lucide-react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { useTranslation } from "react-i18next";
 
 const testimonials = [
@@ -8,7 +7,6 @@ const testimonials = [
     name: "Amina Ndiaye",
     roleKey: "testimonials.items.1.role",
     location: "Yaoundé",
-    image: "https://images.unsplash.com/photo-1513904989243-829fd07f1725?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYW1lcm9vbiUyMHlvdW5nJTIwcGVvcGxlJTIwaGFwcHl8ZW58MXx8fHwxNzc1NjY3NDY5fDA&ixlib=rb-4.1.0&q=80&w=1080",
     contentKey: "testimonials.items.1.content",
     rating: 5,
   },
@@ -16,7 +14,6 @@ const testimonials = [
     name: "Jean-Paul Mbida",
     roleKey: "testimonials.items.2.role",
     location: "Douala",
-    image: "https://images.unsplash.com/photo-1770843093640-c44ae557928b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwY2hpbGRyZW4lMjBjbGFzc3Jvb218ZW58MXx8fHwxNzc1NjY3NDcwfDA&ixlib=rb-4.1.0&q=80&w=1080",
     contentKey: "testimonials.items.2.content",
     rating: 5,
   },
@@ -24,7 +21,6 @@ const testimonials = [
     name: "Marie Foko",
     roleKey: "testimonials.items.3.role",
     location: "Bamenda",
-    image: "https://images.unsplash.com/photo-1633455153917-7651231ad61b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwd29tYW4lMjBzbWFydHBob25lJTIwbGVhcm5pbmd8ZW58MXx8fHwxNzc1NjY3NDY4fDA&ixlib=rb-4.1.0&q=80&w=1080",
     contentKey: "testimonials.items.3.content",
     rating: 5,
   },
@@ -34,17 +30,6 @@ export function TestimonialsSection() {
   const { t } = useTranslation();
   return (
     <section id="temoignages" className="py-16 md:py-24 bg-muted/30 relative overflow-hidden">
-      {/* Motif décoratif */}
-      <div className="absolute top-0 right-0 w-64 h-64 opacity-10">
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <path
-            fill="currentColor"
-            className="text-primary"
-            d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,79.6,-45.8C87.4,-32.6,90,-16.3,88.5,-0.9C87,14.6,81.4,29.2,73.1,42.3C64.8,55.4,53.8,67,40.4,73.8C27,80.6,11.2,82.6,-4.3,82.1C-19.8,81.6,-35.3,78.6,-48.7,71.8C-62.1,65,-73.4,54.4,-79.8,41.4C-86.2,28.4,-87.7,13.2,-85.6,-1.1C-83.5,-15.4,-77.8,-28.8,-70.3,-41.2C-62.8,-53.6,-53.5,-65,-41.8,-71.9C-30.1,-78.8,-15.1,-81.2,0.5,-82.3C16.1,-83.4,30.6,-83.6,44.7,-76.4Z"
-            transform="translate(100 100)"
-          />
-        </svg>
-      </div>
 
       <div className="container mx-auto px-4 relative z-10">
         {/* En-tête */}
@@ -55,7 +40,7 @@ export function TestimonialsSection() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-4">
+          <div className="ovm-kicker mb-4">
             <span className="text-primary font-medium">{t('testimonials.badge')}</span>
           </div>
           <h2 
@@ -100,12 +85,8 @@ export function TestimonialsSection() {
 
               {/* Profil */}
               <div className="flex items-center gap-3 pt-4 border-t border-border">
-                <div className="w-12 h-12 rounded-full overflow-hidden bg-muted flex-shrink-0">
-                  <ImageWithFallback
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-full h-full object-cover"
-                  />
+                <div aria-hidden="true" className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center flex-shrink-0 text-xl font-semibold" style={{ fontFamily: "var(--font-heading)" }}>
+                  {testimonial.name.split(" ").map((w) => w[0]).slice(0, 2).join("")}
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="font-bold truncate" style={{ fontFamily: 'var(--font-heading)' }}>

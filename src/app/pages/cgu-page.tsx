@@ -5,8 +5,10 @@ import { ScrollToTop } from "../components/scroll-to-top";
 import { motion } from "motion/react";
 import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
+import { useInternalLinks } from "../lib/internal-links";
 
 export function CGUPage() {
+  const onContentClick = useInternalLinks();
   const { t } = useTranslation();
 
   return (
@@ -16,7 +18,7 @@ export function CGUPage() {
       
       <main className="min-h-screen pt-20">
         {/* Hero Section */}
-        <section className="py-16 md:py-24 bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5">
+        <section className="ovm-page-hero ovm-bg-feuillage">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -49,6 +51,7 @@ export function CGUPage() {
             >
               <div 
                 className="text-foreground"
+                onClick={onContentClick}
                 dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(t('legal.cgu.content')) }}
               />
             </motion.div>

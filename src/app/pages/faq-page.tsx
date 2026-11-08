@@ -1,6 +1,7 @@
 import { Plus, Minus } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router";
 import { motion } from "motion/react";
 import { SEOHead } from "../components/seo-head";
 import { Header } from "../components/header";
@@ -142,7 +143,9 @@ function FAQItem({ question, answer, isOpen, onToggle }: { question: string; ans
       className="border border-border rounded-xl overflow-hidden bg-card"
     >
       <button
+        type="button"
         onClick={onToggle}
+        aria-expanded={isOpen}
         className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-muted/50 transition-colors"
       >
         <span className="font-semibold text-foreground pr-4">{question}</span>
@@ -187,7 +190,7 @@ export function FAQPage() {
     <>
       <ScrollToTop />
       <SEOHead
-        title="FAQ — Questions sur l'apprentissage des langues Beti & Ekang"
+        title="FAQ - Questions sur l'apprentissage des langues Beti & Ekang"
         description="Toutes vos questions sur Ovúmá : comment apprendre l'Ewondo, le Bassa, le Duala ? L'application est-elle gratuite ? Fonctionne-t-elle hors ligne ? Trouvez vos réponses ici."
         keywords="faq ovuma, questions ewondo, apprendre langue beti, aide application langues africaines, ewondo débutant, bassa duala tutoriel"
         canonical="/faq"
@@ -196,7 +199,7 @@ export function FAQPage() {
       
       <main className="min-h-screen pt-20">
         {/* Hero Section */}
-        <section className="py-16 md:py-24 bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5">
+        <section className="ovm-page-hero ovm-bg-ciel">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -204,7 +207,7 @@ export function FAQPage() {
               transition={{ duration: 0.6 }}
               className="max-w-3xl mx-auto text-center"
             >
-              <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-6">
+              <div className="ovm-kicker mb-6">
                 <span className="text-primary font-medium">{t('faq.hero.badge')}</span>
               </div>
               
@@ -278,12 +281,12 @@ export function FAQPage() {
               <p className="text-lg text-muted-foreground mb-8">
                 {t('faq.cta.description')}
               </p>
-              <a 
-                href="/contact"
-                className="inline-block px-8 py-4 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all hover:scale-105 shadow-lg"
+              <Link 
+                to="/contact"
+                className="inline-block px-8 py-4 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all  shadow-lg"
               >
                 {t('faq.cta.button')}
-              </a>
+              </Link>
             </motion.div>
           </div>
         </section>

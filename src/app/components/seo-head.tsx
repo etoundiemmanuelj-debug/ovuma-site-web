@@ -9,7 +9,7 @@ interface SEOHeadProps {
 }
 
 const BASE_URL = "https://ovuma.org";
-const DEFAULT_IMAGE = `${BASE_URL}/og-image.png`;
+const DEFAULT_IMAGE = `${BASE_URL}/og-image.jpg`;
 
 export function SEOHead({ title, description, keywords, canonical, ogImage }: SEOHeadProps) {
   const fullTitle = `${title} | Ovúmá`;

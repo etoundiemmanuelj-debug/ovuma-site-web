@@ -1,13 +1,15 @@
 import { Heart, Users, Globe, Target, Award, Zap, BookOpen } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router";
+import { StoreButtons } from "../components/store-buttons";
 import { motion } from "motion/react";
 import { SEOHead } from "../components/seo-head";
 import { Header } from "../components/header";
 import { Footer } from "../components/footer";
 import { ScrollToTop } from "../components/scroll-to-top";
-import logo from "figma:asset/189dbb7d9fefdb250ffd1b5b14a8ba3709ee199d.png";
-import founderImage from "figma:asset/6850c23ad10a139a5e9a54a59e397bfad2fbcd1e.png";
-import founderPhoto from "figma:asset/581adecacb510194b718426d60054c54309cd477.png";
+import logo from "figma:asset/189dbb7d9fefdb250ffd1b5b14a8ba3709ee199d.webp";
+import founderImage from "figma:asset/6850c23ad10a139a5e9a54a59e397bfad2fbcd1e.webp";
+import founderPhoto from "figma:asset/581adecacb510194b718426d60054c54309cd477.webp";
 
 const values = [
   {
@@ -84,7 +86,7 @@ export function AboutPage() {
     <>
       <ScrollToTop />
       <SEOHead
-        title="À propos — Notre mission pour la culture Beti et Ekang"
+        title="À propos - Notre mission pour la culture Beti et Ekang"
         description="Découvrez l'histoire d'Ovúmá, née d'une passion pour les langues Beti et Ekang du Cameroun. Notre mission : préserver l'Ewondo, le Bassa, le Duala et transmettre la culture africaine aux générations futures."
         keywords="à propos ovuma, mission langues africaines, culture beti cameroun, culture ekang, préservation ewondo, fondateur ovuma, patrimoine linguistique africain"
         canonical="/a-propos"
@@ -93,7 +95,7 @@ export function AboutPage() {
       
       <main className="min-h-screen pt-20">
         {/* Hero Section */}
-        <section className="py-16 md:py-24 bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5">
+        <section className="ovm-page-hero ovm-bg-aube">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -150,7 +152,7 @@ export function AboutPage() {
                   <img
                     src={founderImage}
                     alt="Fondateur d'Ovúmá"
-                    className="w-full rounded-2xl shadow-2xl"
+                    className="w-full max-w-md mx-auto aspect-[4/5] object-cover object-[center_35%] rounded-2xl shadow-[0_30px_60px_rgba(18,61,43,0.18)]"
                   />
                 </div>
               </motion.div>
@@ -158,7 +160,7 @@ export function AboutPage() {
           </div>
         </section>
 
-        {/* Statistiques — cartes avec icônes */}
+        {/* Statistiques - cartes avec icônes */}
         <section className="py-16 bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
@@ -318,20 +320,13 @@ export function AboutPage() {
                 {t('about_page.cta.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.etoundi.ovuma"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-8 py-4 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all hover:scale-105 shadow-lg"
-                >
-                  {t('about_page.cta.button_download')}
-                </a>
-                <a 
-                  href="/contact"
-                  className="inline-block px-8 py-4 bg-background text-foreground border-2 border-primary rounded-full hover:bg-muted transition-all hover:scale-105"
+                <StoreButtons className="justify-center" />
+                <Link 
+                  to="/contact"
+                  className="inline-block px-8 py-4 bg-background text-foreground border-2 border-primary rounded-full hover:bg-muted transition-all "
                 >
                   {t('about_page.cta.button_contact')}
-                </a>
+                </Link>
               </div>
             </motion.div>
           </div>

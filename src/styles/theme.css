@@ -2,59 +2,71 @@
 
 :root {
   --font-size: 16px;
-  
-  /* Palette Ovúmá - Couleurs africaines */
-  --color-vert-principal: #197327;
-  --color-vert-principal-light: #3E8C49;
-  --color-vert-principal-dark: #0F5119;
-  --color-or: #F2BD35;
-  --color-or-light: #F7D165;
-  --color-noir: #0D0D0D;
-  --color-noir-light: #2A2A2A;
-  --color-creme: #F2F2F2;
-  --color-sable: #E8E8E8;
-  
-  --background: #FDFBF7;
-  --foreground: var(--color-noir);
-  --card: #ffffff;
-  --card-foreground: var(--color-noir);
-  --popover: oklch(1 0 0);
-  --popover-foreground: var(--color-noir);
+
+  /* Palette Ovúmá — brume, sauge, forêt, canopée, ocre (inspirée du paysage) */
+  --color-brume: #F1F6F0;
+  --color-sauge-pale: #E3EEE2;
+  --color-sauge: #B9D5BF;
+  --color-feuillage: #6E9E7E;
+  --color-vert-principal: #1E6B45;
+  --color-vert-principal-light: #2F8458;
+  --color-vert-principal-dark: #145233;
+  --color-canopee: #123D2B;
+  --color-or: #C9A44A;
+  --color-or-light: #DCC07A;
+  --color-noir: #123D2B;
+  --color-noir-light: #2A4F3E;
+  --color-creme: #E3EEE2;
+  --color-sable: #D6E5D8;
+  --color-terracotta-dark: var(--color-vert-principal-dark);
+
+  /* Couleurs du logo (soleil, orange, ciel, vert) — touches de dynamisme */
+  --color-soleil: #FFC800;
+  --color-orange: #F39200;
+  --color-ciel: #2B8FD6;
+  --color-vert-logo: #2E9B3A;
+
+  --background: var(--color-brume);
+  --foreground: var(--color-canopee);
+  --card: #FAFCF9;
+  --card-foreground: var(--color-canopee);
+  --popover: #FAFCF9;
+  --popover-foreground: var(--color-canopee);
   --primary: var(--color-vert-principal);
   --primary-foreground: #ffffff;
-  --secondary: var(--color-or);
-  --secondary-foreground: var(--color-noir);
-  --muted: var(--color-creme);
-  --muted-foreground: #717182;
-  --accent: var(--color-vert-principal-light);
+  --secondary: var(--color-soleil);
+  --secondary-foreground: var(--color-canopee);
+  --muted: var(--color-sauge-pale);
+  --muted-foreground: #4A6657;
+  --accent: var(--color-ciel);
   --accent-foreground: #ffffff;
-  --destructive: #d4183d;
+  --destructive: #B3261E;
   --destructive-foreground: #ffffff;
-  --border: rgba(0, 0, 0, 0.1);
+  --border: rgba(18, 61, 43, 0.12);
   --input: transparent;
-  --input-background: #f3f3f5;
-  --switch-background: #cbced4;
+  --input-background: #FAFCF9;
+  --switch-background: #B9D5BF;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: #030213;
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-  
+  --ring: var(--color-vert-principal);
+  --chart-1: #1E6B45;
+  --chart-2: #6E9E7E;
+  --chart-3: #C9A44A;
+  --chart-4: #B9D5BF;
+  --chart-5: #123D2B;
+  --radius: 0.75rem;
+  --sidebar: #FAFCF9;
+  --sidebar-foreground: var(--color-canopee);
+  --sidebar-primary: var(--color-vert-principal);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--color-sauge-pale);
+  --sidebar-accent-foreground: var(--color-canopee);
+  --sidebar-border: rgba(18, 61, 43, 0.12);
+  --sidebar-ring: var(--color-vert-principal);
+
   /* Typographie */
-  --font-heading: 'Cormorant Garamond', serif;
-  --font-body: 'DM Sans', sans-serif;
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
 }
 
 .dark {
