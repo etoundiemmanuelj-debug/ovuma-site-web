@@ -1,7 +1,39 @@
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 export const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.etoundi.ovuma";
 export const APP_STORE_URL = "https://apps.apple.com/fr/app/ov%C3%BAm%C3%A1/id6818912260";
+
+/** Système du visiteur : "ios", "android", ou null sur ordinateur. */
+export function detectMobileOS(): "ios" | "android" | null {
+  if (typeof navigator === "undefined") return null;
+  const ua = navigator.userAgent || "";
+  if (/android/i.test(ua)) return "android";
+  // iPhone, iPod, iPad — y compris les iPad récents qui se présentent comme un Mac tactile
+  if (/iphone|ipad|ipod/i.test(ua) || (/macintosh/i.test(ua) && navigator.maxTouchPoints > 1)) return "ios";
+  return null;
+}
+
+/** App Store sur iPhone/iPad, Google Play sur Android et par défaut sur ordinateur. */
+export function storeUrlForDevice() {
+  return detectMobileOS() === "ios" ? APP_STORE_URL : PLAY_STORE_URL;
+}
+
+interface SmartStoreLinkProps {
+  className?: string;
+  children: React.ReactNode;
+}
+
+/** Lien unique « Commencer » qui envoie vers le bon store selon le téléphone. */
+export function SmartStoreLink({ className = "", children }: SmartStoreLinkProps) {
+  const [href, setHref] = useState(PLAY_STORE_URL);
+  useEffect(() => setHref(storeUrlForDevice()), []);
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
+      {children}
+    </a>
+  );
+}
 
 interface StoreButtonsProps {
   /** "dark" : boutons canopée sur fond clair · "light" : boutons clairs sur fond sombre */

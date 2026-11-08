@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
-import { PLAY_STORE_URL } from "./store-buttons";
+import { SmartStoreLink } from "./store-buttons";
 import mockup1 from "figma:asset/99d51b7d4bc296e70828c5bf2f36defb1dfaeaa9.webp";
 import mockup2 from "figma:asset/app-parcours.webp";
 import mockup3 from "figma:asset/2ccc8976f1a18f0ec5a6ebb45085f3fdd30a715e.webp";
@@ -138,9 +138,9 @@ export function HowItWorksSection() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-center mt-16"
         >
-          <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="inline-block px-10 py-4 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors text-lg font-medium">
+          <SmartStoreLink className="inline-block px-10 py-4 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors text-lg font-medium">
             {t('how_it_works.cta_button')}
-          </a>
+          </SmartStoreLink>
         </motion.div>
       </div>
     </section>
