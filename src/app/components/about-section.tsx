@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { Heart, Globe, Users, Target } from "lucide-react";
-import mockupLeaderboard from "figma:asset/d522d6e93858b2b31043668e01abde4dfe40dfdc.webp";
+import mockupLeaderboard from "figma:asset/app-classement.webp";
 import mockupDictionary from "figma:asset/8b2261b930b5ae15e1af60a65d1fdd309a02da8e.webp";
 
 const values = [

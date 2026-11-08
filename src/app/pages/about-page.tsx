@@ -2,6 +2,7 @@ import { Heart, Users, Globe, Target, Award, Zap, BookOpen } from "lucide-react"
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
 import { StoreButtons } from "../components/store-buttons";
+import { stats } from "../components/stats-section";
 import { motion } from "motion/react";
 import { SEOHead } from "../components/seo-head";
 import { Header } from "../components/header";
@@ -41,33 +42,6 @@ const values = [
     icon: Zap,
     titleKey: "about_page.values_items.impact.title",
     descriptionKey: "about_page.values_desc.impact",
-  }
-];
-
-const stats = [
-  { 
-    icon: "users",
-    value: "5 000+",
-    labelKey: "stats.items.learners.label",
-    subKey: "stats.items.learners.desc"
-  },
-  { 
-    icon: "book",
-    value: "10+",
-    labelKey: "stats.items.languages.label",
-    subKey: "stats.items.languages.desc"
-  },
-  { 
-    icon: "award",
-    value: "15 000+",
-    labelKey: "stats.items.lessons.label",
-    subKey: "stats.items.lessons.desc"
-  },
-  { 
-    icon: "globe",
-    value: "25+",
-    labelKey: "stats.items.countries.label",
-    subKey: "stats.items.countries.desc"
   }
 ];
 
@@ -174,10 +148,7 @@ export function AboutPage() {
                   className="bg-background rounded-2xl p-6 shadow-sm flex flex-col items-center text-center gap-4"
                 >
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    {stat.icon === 'users' && <Users className="text-primary" size={22} />}
-                    {stat.icon === 'book' && <BookOpen className="text-primary" size={22} />}
-                    {stat.icon === 'award' && <Award className="text-primary" size={22} />}
-                    {stat.icon === 'globe' && <Globe className="text-primary" size={22} />}
+                    <stat.icon className="text-primary" size={22} />
                   </div>
                   <div>
                     <div
@@ -187,7 +158,7 @@ export function AboutPage() {
                       {stat.value}
                     </div>
                     <div className="font-medium text-foreground text-sm mb-1">{t(stat.labelKey)}</div>
-                    <div className="text-xs text-muted-foreground">{t(stat.subKey)}</div>
+                    <div className="text-xs text-muted-foreground">{t(stat.descriptionKey)}</div>
                   </div>
                 </motion.div>
               ))}

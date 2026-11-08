@@ -1,11 +1,12 @@
 import { motion } from "motion/react";
-import { Languages, Smartphone, MessageSquareText, MapPin } from "lucide-react";
+import { Layers, Smartphone, MessageSquareText, MapPin } from "lucide-react";
 import { AfricanPatternBg } from "./african-pattern-bg";
 
-const stats = [
+/** Chiffres clés partagés par l'accueil et la page À propos : une seule source. */
+export const stats = [
   {
-    icon: Languages,
-    value: "6",
+    icon: Layers,
+    value: "30+",
     labelKey: "stats.items.learners.label",
     descriptionKey: "stats.items.learners.desc",
   },

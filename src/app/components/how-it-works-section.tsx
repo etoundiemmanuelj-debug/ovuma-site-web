@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
 import { PLAY_STORE_URL } from "./store-buttons";
 import mockup1 from "figma:asset/99d51b7d4bc296e70828c5bf2f36defb1dfaeaa9.webp";
-import mockup2 from "figma:asset/694f48c740150aaa8d55f69ddd1c258fac779de3.webp";
+import mockup2 from "figma:asset/app-parcours.webp";
 import mockup3 from "figma:asset/2ccc8976f1a18f0ec5a6ebb45085f3fdd30a715e.webp";
 import mockup4 from "figma:asset/20259e995fd4ef772d7c2bd3088e446eb24edef7.webp";
 

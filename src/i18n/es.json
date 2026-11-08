@@ -46,7 +46,7 @@
     "description": "Descubre Ewondo, Bassa, Duala y más. Una forma divertida e interactiva de preservar nuestra herencia cultural.",
     "download_on": "Descárgalo en la",
     "available_on": "Disponible en",
-    "compatibility": "Gratis • iOS 15.1+ y Android",
+    "compatibility": "Gratis en iPhone y Android",
     "stats1": "Próximamente",
     "stats2": "Estudiantes esperados",
     "stats3": "Satisfacción objetivo"
@@ -205,8 +205,8 @@
     "quote_author": "Proverbio africano",
     "items": {
       "learners": {
-        "label": "Lenguas de Camerún en el programa",
-        "desc": "Primero el ewondo, luego el duala, el bassa, el bulu, el fe'efe' y el fulfulde"
+        "label": "Módulos de aprendizaje previstos",
+        "desc": "Para avanzar paso a paso, empezando por el ewondo"
       },
       "languages": {
         "label": "Para descargar y empezar",

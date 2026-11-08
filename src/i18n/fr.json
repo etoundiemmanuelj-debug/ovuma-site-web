@@ -46,7 +46,7 @@
     "description": "Découvrez l'ewondo, le bassa, le duala et plus encore. Une méthode ludique et interactive pour préserver notre héritage culturel.",
     "download_on": "Télécharger sur",
     "available_on": "Disponible sur",
-    "compatibility": "Gratuit • iOS 15.1+ & Android",
+    "compatibility": "Gratuit sur iPhone et Android",
     "stats1": "À venir",
     "stats2": "Apprenants attendus",
     "stats3": "Satisfaction visée"
@@ -205,8 +205,8 @@
     "quote_author": "Proverbe africain",
     "items": {
       "learners": {
-        "label": "Langues du Cameroun au programme",
-        "desc": "L'ewondo d'abord, puis le duala, le bassa, le bulu, le fe'efe' et le fulfulde"
+        "label": "Modules d'apprentissage à terme",
+        "desc": "Pour progresser pas à pas, en commençant par l'ewondo"
       },
       "languages": {
         "label": "Pour télécharger et commencer",

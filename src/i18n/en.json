@@ -46,7 +46,7 @@
     "description": "Discover Ewondo, Bassa, Duala and more. A fun and interactive way to preserve our cultural heritage.",
     "download_on": "Download on the",
     "available_on": "Get it on",
-    "compatibility": "Free • iOS 15.1+ & Android",
+    "compatibility": "Free on iPhone and Android",
     "stats1": "Coming soon",
     "stats2": "Expected learners",
     "stats3": "Target satisfaction"
@@ -205,8 +205,8 @@
     "quote_author": "African proverb",
     "items": {
       "learners": {
-        "label": "Cameroonian languages on the roadmap",
-        "desc": "Ewondo first, then Duala, Bassa, Bulu, Fe'efe' and Fulfulde"
+        "label": "Learning modules planned",
+        "desc": "To progress step by step, starting with Ewondo"
       },
       "languages": {
         "label": "To download and get started",
